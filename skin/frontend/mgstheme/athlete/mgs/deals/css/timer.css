@@ -1,0 +1,152 @@
+/**
+ * Contus Support Interactive.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file PRICE COUNTDOWN-LICENSE.txt.
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento 1.4.x and 1.5.x COMMUNITY edition
+ * Contus Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento 1.4.x and 1.5.x COMMUNITY edition.
+ * =================================================================
+ */
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato.eot');
+    src: local('?'), url('fonts/Lato.woff') format('woff'), 
+        url('fonts/Lato.ttf') format('truetype'), 
+        url('fonts/Lato.svg') format('svg');
+    font-style: normal;
+    font-weight: 700;
+}
+.timer-grid{float: left;width: 100%;padding: 3px 0 0 0;color: #000000;font-size: 18px;font-family: arial; font-weight: bold;}
+.timer-list{float: left;width: 100%;padding: 0;color: #000000;font-size: 18px;font-family: arial; font-weight: bold;}
+.timer-view{float: left;width: 100%;padding:2px 0 0 0px;color: #000000;font-size: 40px; font-family:arial;font-weight: bold;}
+.timer-view .day{margin:1px 1px}
+.timer-view .hour{margin:1px 1px}
+.timer-view .min{margin:1px 1px}
+.timer-view .sec{margin:1px 1px}
+.timer-compare{float: left;width: 100%;padding: 0;color: #000000;font-size: 22px;font-family: arial; font-weight: bold;}
+.timerspec{float: left;width: 100%;color: #1E7EC8;font-size: 13px;}
+.timerdate{float: left;width: 100%;padding:0 0 3px 0;color: #1E7EC8;font-size: 12px;}
+.timerdate .day{margin:1px 1px; width:20px; text-align: center;}
+.timerdate .hour{margin:1px 1px;width:20px; text-align: center;}
+.timerdate .min{margin:1px 1px; width:20px; text-align: center;}
+.timerdate .sec{margin:1px 1px; width:20px; text-align: center;}
+
+.addcart-button a{   
+    color: #FFFFFF;
+    display: block;
+    font-size: 2em;
+    line-height: 20px;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    text-decoration:none;
+}
+.addcart-button a:hover{
+    background: -moz-linear-gradient(center top , #EB4500, #FF7601) repeat scroll 0 0 transparent;
+}
+#addcartqty {
+    width: 55px !important;   
+    text-align: center;
+	margin: 0 0 10px;
+	padding: 3px;
+}
+.deal-list #addcartqty { float: left; margin-right: 30px;}
+/* deals block */
+.image-deal { position: relative;}
+.discount-save{
+	position: absolute;
+	left: -10px;
+	top: 15px;
+	font-size: 24px;
+	color: #fff;
+	background-color: #f9483e;
+	padding: 5px 8px;
+	z-index: 10;
+}
+#deal_products .item,
+.deal-container.deal-grid .deal-item{	
+	padding: 15px 15px 0;
+}
+.deal-block-content {
+	text-align: left;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.deal-block-content .price-box{
+	margin-bottom: 12px;
+}
+.deal-container .countdown span,
+.deal-carousel .countdown span,
+.deals-container .countdown span,
+.product-view .countdown span{
+	display: inline-block;
+	margin: 0 4px;
+	background-color: #242424;
+	color: #fff;
+	font-size: 13px;
+	padding: 8px 5px;
+	
+}
+.deals-container.product-list .countdown span {
+	background-color: #1b1b1b;
+}
+.deal-container .countdown span p,
+.deal-carousel .countdown span p,
+.deals-container .countdown span p{ margin-bottom: 0;}
+.deal-container .countdown span:first-child,
+.deals-container .countdown span:first-child,
+.deal-carousel .countdown span:first-child{
+	margin-left: 0;
+}
+.deal-container .countdown span:last-child,
+.deal-carousel .countdown span:last-child{
+	margin-right: 0;
+}
+.deal-container .countdown span b,
+.deals-container .countdown span b,
+.deal-carousel .countdown span b,
+.product-view .countdown span b{
+	float: left;
+	margin-right: 5px;
+	font-weight: normal;
+}
+.deal-container.deal-grid .countdown span b{
+	float: none;
+	margin-right: 0;
+}
+.deal-container.deal-grid .countdown span { 
+	min-width: 45px;
+	text-align: center;
+}
+/* deal-list */
+.deals-container .deal-list.deal-item {
+	float: left;
+	margin:15px 0;
+	width: 100%;
+	position: relative;
+	padding: 15px 0;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.deals-container .deal-list.deal-item:first-child{
+	margin-top: 0;
+}
+.deals-container .deal-list.deal-item .product-name,
+.deals-info .item-info{
+	margin-bottom: 15px;
+}
+.deals-container .deal-timer {
+	margin: 15px 0;
+}
+.deals-container .view-detail {
+	float: right;
+	margin-top: 10px;
+}
+.deals-container  .product-price-container {
+	margin-top: 10px;
+}

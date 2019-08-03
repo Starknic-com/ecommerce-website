@@ -1,0 +1,1 @@
+http://www.smsalert.co.in/api/push.json?apikey=5d44311da6f8b&sender=STRKNC&mobileno=9945960685%2C9945960685&text=Dear+Ashok+Mishra%2C%0A+++++Your+100000060+of+amount+INR+6040.0000+has+been+Cancelled.+Our+Customer+care+executive+will+contact+you+soon+for+help.%0A%0ARegards%2C%0AStarknic

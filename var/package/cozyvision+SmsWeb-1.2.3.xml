@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+    <name>cozyvision+SmsWeb</name>
+    <version>1.2.3</version>
+    <stability>stable</stability>
+    <license>GNU General Public License (GPL)</license>
+    <channel>3035c43cf16bb0b37392a1557cc7c706</channel>
+    <extends/>
+    <summary>Our extension will integrate SMS features into your magento store for free. When an order is placed, shipped or status changed you can confirm with your customer and/or store admin via a text message sent directly to their mobile phone.</summary>
+    <description>Send SMS to customers on new orders&amp;#xD;&#xD;
+Send SMS to customers on status updates, e.g. order shipped&amp;#xD;&#xD;
+Use your brand or domain as the Sender ID (Messages appear from &amp;#x2018;YourCompany&amp;#x2019;)&amp;#xD;&#xD;
+Full Delivery Reporting per text sent&amp;#xD;&#xD;
+Fast, easy setup - Free Installation available&amp;#xD;&#xD;
+No integration costs, no monthly subscriptions&amp;#xD;&#xD;
+Pay per message, and credits never expire&amp;#xD;&#xD;
+Full reports and web portal available for bulk SMS campaigns&amp;#xD;&#xD;
+Indian Account Management &amp;amp; Support Team</description>
+    <notes>bug fixes&#xD;
+* custom template/senderid not working for OTP&#xD;
+* OTP template not loading on linux server</notes>
+    <authors><author><name>Cozy Vision Technologies Pvt. Ltd.</name><user>admin</user><email>support@cozyvision.com</email></author></authors>
+    <date>2018-05-07</date>
+    <time>11:00:01</time>
+    <contents><target name="magecommunity"><dir name="SmsWeb"><dir name="SMSNotifications"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Form"><dir name="Field"><file name="Info.php" hash="6b41011464c40dcaab64d8b4543aa6c9"/></dir><dir name="Fieldset"><file name="Hint.php" hash="387bc0c2b40475bf42d6132af4e78ebe"/></dir></dir></dir></dir></dir><dir name="Customer"><dir name="Form"><dir name="Confirm"><file name="Login.php" hash="1d72c00ee6a08335497e5c4d6c70dae8"/><file name="Resetpassword.php" hash="da3850f5c404bb5c1416cd4e2fd56a93"/></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="b078b4d131cf683550c415f06c53ad6c"/></dir><dir name="Model"><file name="Observer.php" hash="c974814cd90be4e39475a9c846ca0db9"/><dir name="SMS"><dir name="Data"><file name="Abstract.php" hash="492d119f92a00c693586080bad16ce34"/><file name="Interface.php" hash="3ef36afb2e7e60c4b68db79088b9f1d6"/><dir name="Order"><file name="Status.php" hash="ad662b0cd956aee31cf4cdfa2860f088"/></dir></dir></dir><file name="Session.php" hash="ed8d917f10d3f753709145837145ed98"/></dir><dir name="controllers"><dir name="Customer"><file name="AccountController.php" hash="ad021842698518036f7f25d79ee56824"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="1d63ce6c9705d0609cbecb8aaf60cfdc"/><file name="config.xml" hash="a25469f9f35eabed855a49dc4316337e"/><file name="system.xml" hash="ea868b1105f14f4b8bc3c57925fd8e4a"/></dir><dir name="sql"><dir name="smsalert_setup"><file name="install-1.2.2.php" hash="f21d2edd9151eab7ac261bc43e84cfed"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><dir name="SmsWeb"><file name="smsalert.xml" hash="4eaa39fb08dfce5ac80a9883ed6e173b"/></dir></dir><dir name="template"><dir name="SmsWeb"><dir name="smsalert"><dir name="customer"><dir name="form"><file name="loginconfirm.phtml" hash="42a8582bb1cb9589d902c0a2da56f7d0"/><file name="resetpasswordconfirm.phtml" hash="59234ed74d2b5a1177c693218166a66a"/></dir></dir></dir></dir></dir></dir></dir></dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="smsweb"><dir name="smsalert"><dir name="sales"><dir name="order"><dir name="comments"><file name="view.phtml" hash="0a745171a82a6dcd41cbdafe5c2770a4"/><file name="view.phtml" hash="0a745171a82a6dcd41cbdafe5c2770a4"/></dir><dir name="view"><file name="history.phtml" hash="94eae1e43c34f6b30f96d8139605142e"/><file name="history.phtml" hash="94eae1e43c34f6b30f96d8139605142e"/></dir></dir></dir><dir name="system"><dir name="config"><dir name="field"><file name="info.phtml" hash="abbf05a83b1e8a72bd23e436f61afa1e"/><file name="info.phtml" hash="abbf05a83b1e8a72bd23e436f61afa1e"/></dir><dir name="fieldset"><file name="hint.phtml" hash="f02b72d29a0dfb001abca9c9811a58ad"/><file name="hint.phtml" hash="f02b72d29a0dfb001abca9c9811a58ad"/></dir></dir></dir></dir></dir></dir><dir name="layout"><dir name="SmsWeb"><file name="smsalert.xml" hash="e85bee0f600bc5c2c017b5cd58fd7e01"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="SmsWeb_SMSNotifications.xml" hash="cdaeb04f429f0fd9db99582ce408afba"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>7.2.5</max></php></required></dependencies>
+</package>
