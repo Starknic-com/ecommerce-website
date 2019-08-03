@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+<config>
+   <sections>
+        <payment>
+            <groups>
+                <ccavenuepay translate="label" module="paygate">
+                    <label>CCAvenue MCPG</label>
+									<comment><![CDATA[				     
+										<a href="https://www.ccavenue.com" target="_blank">CCAvenue MCPG Payment Module Developed by CCAvenue</a><br/><a href="https://www.ccavenue.com" target="_blank"><img src="https://www.ccavenue.com/images_shoppingcart/ccavenue_logo_india.png" alt="CCAVenue Logo" /></a>										<a style=" font-size:16px;font-family:Verdana, Geneva, sans-serif; color:#09F;" href="mailto:shoppingcart@ccavenue.com?subject=India%20Shopping%20Cart%20-%20Magento%201.9">Contact Support</a>
+										]]>
+									</comment>
+					<sort_order>970</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+				   <fields>
+						<active translate="label">
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label">
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<order_status translate="label">
+							<label>New order status</label>
+							<frontend_type>select</frontend_type>
+							<source_model>mage_ccavenuepay_model_source_orderStatus</source_model>                            
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_status>
+						<payment_success_status translate="label">
+							<label>Payment Success order status</label>
+							<frontend_type>select</frontend_type>
+							<source_model>mage_ccavenuepay_model_source_orderStatus</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</payment_success_status>
+						<payment_confirmation_mail translate="label">
+							<label>Payment Confirmation Mail</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>6</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</payment_confirmation_mail>
+						<allowspecific translate="label">
+							<label>Payment from applicable countries</label>
+							<frontend_type>allowspecific</frontend_type>
+							<sort_order>50</sort_order>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label">
+							<label>Payment from Specific countries</label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>51</sort_order>
+							<source_model>adminhtml/system_config_source_country</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</specificcountry>
+						<transaction_mode translate="label">
+							<label>Transaction Mode</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>52</sort_order>
+							<source_model>mage_ccavenuepay_model_source_transactionMode</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</transaction_mode>
+						<merchantid>
+							<label>Merchant Id</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>53</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</merchantid>			
+						<encryptionkey>
+							<label>Encryption Key</label>
+							<frontend_type>password</frontend_type>
+							<sort_order>55</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</encryptionkey>
+						<accesscode>
+							<label>Access Code</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>54</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</accesscode>						
+						<min_order_total translate="label">
+							<label>Minimum Order Total</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>59</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label">
+							<label>Maximum Order Total</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>61</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</max_order_total>
+						<sort_order translate="label">
+							<label>Sort Order</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>63</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<frontend_class>validate-number</frontend_class>
+						</sort_order>						
+					</fields>			
+				</ccavenuepay>
+			</groups>
+        </payment>
+    </sections>
+</config>
+

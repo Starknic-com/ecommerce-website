@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <SmsWeb_SMSNotifications>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Adminhtml />
+                <Mage_Customer />
+            </depends>
+        </SmsWeb_SMSNotifications>
+    </modules>
+</config>

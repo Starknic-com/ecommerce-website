@@ -1,0 +1,91 @@
+<div class="block-account">
+    <div class="block-title">
+       <h3><?php echo $this->__('My Account'); ?></h3>
+    </div>
+    <div class="block-content">
+        <ul class="nav nav-tabs nav-stacked">
+            <?php
+            $_links = array(
+                array(
+                    'path' => 'customer/account/',
+                    'label' => $this->__('Account Dashboard')
+                ),
+                array(
+                    'path' => 'customer/account/edit/',
+                    'label' => $this->__('Account Information')
+                ),
+                array(
+                    'path' => 'customer/address/',
+                    'label' => $this->__('Address Book')
+                ),
+                array(
+                    'path' => 'sales/order/history/',
+                    'label' => $this->__('My Orders')
+                ),
+                /*array(
+                    'path' => 'sales/billing_agreement/',
+                    'label' => $this->__('Billing Agreements')
+                ),
+                array(
+                    'path' => 'sales/recurring_profile/',
+                    'label' => $this->__('Recurring Profiles')
+                ),
+                array(
+                    'path' => 'review/customer/',
+                    'label' => $this->__('My Product Reviews')
+                ),
+                array(
+                    'path' => 'tag/customer/',
+                    'label' => $this->__('My Tags')
+                ),
+                array(
+                    'path' => 'wishlist/',
+                    'label' => $this->__('My Wishlist')
+                ),
+                array(
+                    'path' => 'oauth/customer_token/',
+                    'label' => $this->__('My Applications')
+                ),
+                array(
+                    'path' => 'newsletter/manage/',
+                    'label' => $this->__('Newsletter Subscriptions')
+                ),
+                array(
+                    'path' => 'downloadable/customer/products/',
+                    'label' => $this->__('My Downloadable Products')
+                ),
+                array(
+                    'path' => 'productquestions',
+                    'label' => $this->__('Product Questions')
+                )*/
+            );
+            ?>
+            <?php $_index = 1; ?>
+            <?php $_count = count($_links); ?>
+            <?php foreach ($_links as $_link): ?>
+                <?php $_last = ($_index++ >= $_count); ?>
+                <?php if ($this->isActive($_link)): ?>
+                    <li class="current<?php echo ($_last ? ' last' : '') ?>"><?php echo $_link['label'] ?></li>
+                <?php else: ?>
+                    <li<?php echo ($_last ? ' class="last"' : '') ?>><a href="<?php echo $this->getUrl($_link['path']) ?>"><?php echo $_link['label'] ?></a></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul> 
+    </div>
+</div>
+<?php $helper = $this->helper('mpanel') ?>               
+<?php $templateLayout = $this->getTemplateLayout() ?>
+<?php $blockName = $this->getBlockName() ?>
+<?php $block = $this->getBlockInCustomer() ?>
+<?php $blocks = unserialize($block->getData('left')) ?>        
+<?php if ($blocks != false): ?>
+<?php foreach ($blocks as $key => $value): ?>                        
+    <?php if ($value != 0): ?>
+        <div id="<?php echo $templateLayout . '_' . $blockName . '_' . $value ?>" class="block block-content">                                                           
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($value)->toHtml() ?>
+        </div>
+    <?php else: ?>
+        <?php $helper->renderHtmlContentInCustomer($templateLayout, $blockName, $key, $value, false); ?>                        
+    <?php endif; ?>                        
+<?php endforeach ?>   
+<?php endif ?>

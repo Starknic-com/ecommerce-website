@@ -1,0 +1,16 @@
+<?php $helper = $this->helper('mpanel') ?>               
+<?php $templateLayout = $this->getTemplateLayout() ?>
+<?php $blockName = $this->getBlockName() ?>
+<?php $block = $this->getBlockInCustomer() ?>
+<?php $blocks = unserialize($block->getData('right')) ?>        
+<?php if ($blocks != false): ?>
+    <?php foreach ($blocks as $key => $value): ?>                        
+        <?php if ($value != 0): ?>
+            <div id="<?php echo $templateLayout . '_' . $blockName . '_' . $value ?>" class="block block-content">                                                           
+                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($value)->toHtml() ?>
+            </div>
+        <?php else: ?>
+            <?php $helper->renderHtmlContentInCustomer($templateLayout, $blockName, $key, $value, false); ?>                        
+        <?php endif; ?>                        
+    <?php endforeach ?>    
+<?php endif ?>

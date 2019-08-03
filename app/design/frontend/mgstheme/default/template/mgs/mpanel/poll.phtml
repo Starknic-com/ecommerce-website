@@ -1,0 +1,128 @@
+<?php $template = $this->getRequest()->getParam('template') ?>
+<?php $block = $this->getRequest()->getParam('block') ?>
+<?php $helper = $this->helper('mpanel') ?>
+<?php if($helper->acceptToUsePanel()): ?>        
+	<div class="edit-static-form">
+                <div class="row">
+                        <div class="col-md-12 builder-title">
+                                <h2>Select Specific Poll</h2>
+                        </div>
+                </div>
+		<?php 
+			$form = new Varien_Data_Form(
+				array('id' => 'edit_form', 'action' => $this->getUrl('mpanel/post/pollInCategory'), 'method' => 'post')
+			);
+			
+			$form->setHtmlIdPrefix('block_');
+			
+			$fieldset = $form->addFieldset('base_fieldset', array('legend'=>$this->__(''), 'class' => 'fieldset-wide-custom'));                        
+
+                        $fieldset->addField('poll_id', 'select', array(
+                            'label'     => $this->__('Select Poll'),
+                            'name'      => 'poll_id',
+                            'required'  => true,
+                            'class'     => 'input-text col-sm-8', 
+                           'values'    => Mage::getModel('mpanel/source_poll')->toOptionArray()
+                        ));                                                                                                                                                 
+                        
+                        if($this->getRequest()->getParam('template') == 'category_right'){
+			    $fieldset->addField('position', 'hidden', array(
+                                'name'      => 'position',
+                                'value'		=> 'right'
+                            ));
+			} else {
+                            $fieldset->addField('position', 'hidden', array(
+                                'name'      => 'position',
+                                'value'		=> 'left'
+                            ));
+                        }
+                        
+                        $fieldset->addField('core_block', 'hidden', array(
+                            'name'      => 'core_block',
+                            'value'	=> 'poll'
+                        ));
+                        
+                        if($this->getRequest()->getParam('category_id')){
+			    $fieldset->addField('category_id', 'hidden', array(
+                                'name'      => 'category_id',
+                                'value'		=> $this->getRequest()->getParam('category_id')
+                            ));
+			} 
+                        if($this->getRequest()->getParam('product_id')){
+			    $fieldset->addField('product_id', 'hidden', array(
+                                'name'      => 'product_id',
+                                'value'		=> $this->getRequest()->getParam('product_id')
+                            ));
+			} 
+			
+			$form->setUseContainer(true);
+                        
+                        if($this->getRequest()->getParam('category_id')){
+                            $values = array();  
+                            $values['core_block'] = 'poll';
+                            $values['category_id'] = $this->getRequest()->getParam('category_id');
+                            if($this->getRequest()->getParam('product_id')){
+                                $values['product_id'] = $this->getRequest()->getParam('product_id');
+                            } 
+                            if($this->getRequest()->getParam('template') == 'category_right'){
+                                $values['position'] = 'right';
+                            } else {
+                                $values['position'] = 'left';
+                            }                                              
+                            $form->setValues($values);
+			}
+                        
+			echo $form->toHtml();
+		?>
+	</div>
+	<script type="text/javascript">
+		mgsjQuery("#block_base_fieldset").append( '<div class="form-group builder-action"><div class="col-md-12"><div class="buttons"><button type="button" class="btn btn-back" onclick="history.go(-1)"><span><span><?php echo $this->__('Back') ?></span></span></button><button type="button" class="btn btn-primary" onclick="updateForm.submit(this)" id="submit-button"><span><span><?php echo $this->__('Submit') ?></span></span></button></div></div></div>' );
+		
+		var updateForm = new VarienForm('edit_form');
+		
+		updateForm.submit = function(button, url) {
+		
+			if (this.validator.validate()) {
+				mgsjQuery('#submit-button span span').html('<?php echo $this->__('Saving...') ?>');
+				mgsjQuery('#toggleblock_content').click();
+				button.disabled = true;
+				var form = this.form;
+				var oldUrl = form.action;
+
+				if (url) {
+				   form.action = url;
+				}
+				var e = null;
+				try {
+					mgsjQuery.ajax({
+						type: 'POST',
+						url: form.action,
+						dataType : 'json',
+						data: mgsjQuery('#edit_form').serialize(),
+						success: function(data, textStatus, xhr){
+							if(data.result=='success'){
+								button.disabled = false;
+								mgsjQuery('#submit-button span span').html('<?php echo $this->__('Submit') ?>');								
+								
+								if (window.parent == window.top) {
+									window.parent.jQuery.magnificPopup.close();
+                                                                        window.top.location.reload();
+								}                                                                
+							}
+						}
+					});
+				} catch (e) {
+				}
+				this.form.action = oldUrl;
+				if (e) {
+					throw e;
+				}
+
+				if (button && button != 'undefined') {
+					button.disabled = true;
+				}
+			}
+		}.bind(updateForm);
+
+	</script>
+<?php endif ?>

@@ -1,0 +1,37 @@
+<cms_page>
+	<item>
+		<title>Athlete page with left sidebar</title>
+		<identifier>athlete_page_with_left_sidebar</identifier>
+		<content_heading><![CDATA[]]></content_heading>
+		<root_template>two_columns_left</root_template>
+		<content>
+			<![CDATA[<div class="left">
+<div class="title">
+<h2>About Page</h2>
+</div>
+<p><strong>In consectetur semper mauris et tincidunt. Sed rutrum posuere luctus. Curabitur fermentum massa risus, sit amet blandit dolor adipiscing a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</strong></p>
+<p>Mauris vitae pulvinar eros. Etiam neque velit, aliquam nec lacinia at, aliquam vel quam. Aenean id quam velit, non egestas magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fringilla bibendum arcu, at pretium ipsum scelerisque sed. Pellentesque commodo faucibus viverra. Sed vitae lectus nunc, non facilisis metus.</p>
+<p>Phasellus eu aliquam mauris. Suspendisse potenti. Fusce fringilla, est in condimentum suscipit, eros justo semper lectus, eget convallis libero urna at quam. Maecenas nec aliquet tellus. Phasellus sit amet massa in ante iaculis facilisis cursus a nisi. Fusce id ligula ligula.</p>
+<blockquote>Mauris vitae pulvinar eros. Etiam neque velit, aliquam nec lacinia at, aliquam vel quam. Aenean id quam velit, non egestas magna. Cum sociis natoque penatibus et magnis dis parturient montes. <cite>&mdash; Somebody</cite></blockquote>
+</div>]]>
+		</content>
+	</item>
+	
+	<item>
+		<title>Athlete page with right sidebar</title>
+		<identifier>athlete_page_with_right_sidebar</identifier>
+		<content_heading><![CDATA[]]></content_heading>
+		<root_template>two_columns_right</root_template>
+		<content>
+			<![CDATA[<div class="left">
+<div class="title">
+<h2>About Page</h2>
+</div>
+<p><strong>In consectetur semper mauris et tincidunt. Sed rutrum posuere luctus. Curabitur fermentum massa risus, sit amet blandit dolor adipiscing a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</strong></p>
+<p>Mauris vitae pulvinar eros. Etiam neque velit, aliquam nec lacinia at, aliquam vel quam. Aenean id quam velit, non egestas magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fringilla bibendum arcu, at pretium ipsum scelerisque sed. Pellentesque commodo faucibus viverra. Sed vitae lectus nunc, non facilisis metus.</p>
+<p>Phasellus eu aliquam mauris. Suspendisse potenti. Fusce fringilla, est in condimentum suscipit, eros justo semper lectus, eget convallis libero urna at quam. Maecenas nec aliquet tellus. Phasellus sit amet massa in ante iaculis facilisis cursus a nisi. Fusce id ligula ligula.</p>
+<blockquote>Mauris vitae pulvinar eros. Etiam neque velit, aliquam nec lacinia at, aliquam vel quam. Aenean id quam velit, non egestas magna. Cum sociis natoque penatibus et magnis dis parturient montes. <cite>&mdash; Somebody</cite></blockquote>
+</div>]]>
+		</content>
+	</item>
+</cms_page>

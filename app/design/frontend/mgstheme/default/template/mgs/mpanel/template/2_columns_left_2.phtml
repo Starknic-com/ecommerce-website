@@ -1,0 +1,48 @@
+<?php $helper = $this->helper('mpanel') ?>
+<div class="home-2columns-left-2">
+	<section>
+		<div class="container">
+			<div class="row">
+				<?php // Block 1 content ?>
+				<div<?php echo $this->getBlockSetting('2_columns_left_2', 1, 'col-md-8') ?>>
+					<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block1')->setTemplate('mgs/mpanel/template/child.phtml')->toHtml() ?>
+				</div>
+				
+				<?php // Block 2 content ?>
+				<div<?php echo $this->getBlockSetting('2_columns_left_2', 2, 'col-md-4') ?>>
+					<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block2')->setTemplate('mgs/mpanel/template/child.phtml')->toHtml() ?>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php // Block 3 content ?>
+	<section<?php echo $this->getBlockSetting('2_columns_left_2', 3) ?>>
+		<div class="container">
+			<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block3')->setTemplate('mgs/mpanel/template/child.phtml')->toHtml() ?>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<?php // Block 4 content ?>
+				<div<?php echo $this->getBlockSetting('2_columns_left_2', 4, 'col-md-3') ?>>
+					<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block4')->setTemplate('mgs/mpanel/template/child.phtml')->toHtml() ?>
+				</div>
+				
+				<?php // Block 5 content ?>
+				<div<?php echo $this->getBlockSetting('2_columns_left_2', 5, 'col-md-9') ?>>
+					<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block5')->setTemplate('mgs/mpanel/template/child.phtml')->toHtml() ?>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php // Block 6 content ?>
+	<section<?php echo $this->getBlockSetting('2_columns_left_2', 6) ?>>
+		<div class="container">
+			<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block6')->setTemplate('mgs/mpanel/template/child.phtml')->toHtml() ?>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,34 @@
+<?php $helper = $this->helper('mpanel') ?>
+<div class="home-1column-1">
+	<?php // Block 1 content ?>
+	<section<?php echo $this->getBlockSetting('1_column_1', 1, 'builder-container section1') ?>>
+			<div class="container">
+				<?php echo $helper->getEditPanel('1_column_1', 1) ?>
+				<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('1_column_1')->setBlockName('block1')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+			</div>
+	</section>
+
+	<?php // Block 2 content ?>
+	<section<?php echo $this->getBlockSetting('1_column_1', 2, 'builder-container section3') ?>>
+		<div class="container">
+			<?php echo $helper->getEditPanel('1_column_1', 2) ?>
+			<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('1_column_1')->setBlockName('block2')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+		</div>
+	</section>
+
+	<?php // Block 3 content ?>
+	<section<?php echo $this->getBlockSetting('1_column_1', 3, 'builder-container section5') ?>>
+		<div class="container">
+			<?php echo $helper->getEditPanel('1_column_1', 3) ?>
+			<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('1_column_1')->setBlockName('block3')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+		</div>
+	</section>
+
+	<?php // Block 4 content ?>
+	<section<?php echo $this->getBlockSetting('1_column_1', 4, 'builder-container section7') ?>>
+		<div class="container">
+			<?php echo $helper->getEditPanel('1_column_1', 4) ?>
+			<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('1_column_1')->setBlockName('block4')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+		</div>
+	</section>
+</div>

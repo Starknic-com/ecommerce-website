@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <smsnotifications module="smsnotifications">
+            <tab>service</tab>
+            <label>SMS Alert</label>
+            <sort_order>150</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <smsalert_notice module="smsnotifications">
+                    <frontend_model>smsnotifications/adminhtml_system_config_form_fieldset_hint</frontend_model>
+                    <help_link>https://www.smsalert.co.in/#registerbox</help_link>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </smsalert_notice>
+
+                <smsalert_help translate="label comment" module="smsnotifications">
+                    <label><![CDATA[SMS Alert Help]]></label>
+                    <expanded>1</expanded>
+                    <frontend_class>complex</frontend_class>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment><![CDATA[]]></comment>
+                    <fields>
+                        <info>
+                            <frontend_model>smsnotifications/adminhtml_system_config_form_field_info</frontend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                            <home_link>https://www.smsalert.co.in</home_link>
+                            <info_link>https://www.smsalert.co.in</info_link>
+                            <phone_number>+91 (0) 80 1055 1055</phone_number>
+                            <email>support@cozyvision.com</email>
+                        </info>
+                    </fields>
+                </smsalert_help>
+                <sms_api_credentials module="smsnotifications">
+                    <label>API Credentials</label>
+                    <expanded>1</expanded>
+					<sort_order>90</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <comment><![CDATA[
+                    ]]></comment>
+                    <fields>
+                        <auth_token>
+                            <label>SMS Alert API Key</label>
+                            <validate>required-entry</validate>
+                            <frontend_type>text</frontend_type>
+							<sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment></comment>
+                        </auth_token>
+                        <sender_name>
+                            <label>SMS ALERT SENDER ID</label>
+                            <validate>required-entry</validate>
+                            <frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment></comment>
+                        </sender_name>
+                    </fields>
+                </sms_api_credentials>
+                <order_notification module="smsnotifications">
+                    <label>Order Notification Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+					<sort_order>100</sort_order>
+                    <show_in_store>0</show_in_store>
+                    <comment><![CDATA[
+                        <p> </p>
+                    ]]></comment>
+                    <fields>
+                        <recipients>
+                            <label>Primary Admin Number</label>
+                            <expanded>1</expanded>
+							<sort_order>100</sort_order>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[You can specify multiple numbers seperated by comma]]></comment>
+                        </recipients>
+						<order_status_enable>
+                            <label>Order Placed SMS Enabled</label>
+							<sort_order>110</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_status_enable>
+                        <order_status>
+                            <label>Order Placed SMS</label>
+                            <expanded>1</expanded>
+							<sort_order>120</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<b>Possible variables:</b> {{name}},{{amount}},{{order}}]]></comment>
+                        </order_status>
+						<order_hold_enable>
+                            <label>Order Hold SMS Enabled</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_hold_enable>
+                        <order_hold_status>
+                            <label>Order Hold SMS</label>
+                            <expanded>1</expanded>
+							<sort_order>140</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<b>Possible variables:</b> {{name}},{{amount}},{{order}}]]></comment>
+                        </order_hold_status>
+						<order_unhold_enable>
+                            <label>Order Unhold SMS Enabled</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>150</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_unhold_enable>
+                        <order_unhold_status>
+                            <label>Order Unhold SMS</label>
+                            <expanded>1</expanded>
+							<sort_order>160</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<b>Possible variables:</b> {{name}},{{amount}},{{order}}]]></comment> 
+                        </order_unhold_status>
+						<order_complete_enable>
+                            <label>Order Complete SMS Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+							<sort_order>170</sort_order>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_complete_enable>
+                        <order_complete_status>
+                            <label>Order Complete SMS</label>
+                            <expanded>1</expanded>
+							<sort_order>180</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<b>Possible variables:</b> {{name}},{{amount}},{{order}}]]></comment>
+						</order_complete_status>
+						<order_canceled_enable>
+                            <label>Order Cancelled SMS Enabled</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>190</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_canceled_enable>
+                        <order_canceled_status>
+                            <label>Order Cancelled SMS</label>
+                            <expanded>1</expanded>
+							<sort_order>200</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<b>Possible variables:</b> {{name}},{{amount}},{{order}}]]></comment>
+							</order_canceled_status>
+						<order_closed_enable>
+                            <label>Order Closed SMS Enabled</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>210</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_closed_enable>
+                        <order_closed_status>
+                            <label>Order Closed SMS</label>
+                            <expanded>1</expanded>
+							<sort_order>220</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<b>Possible variables:</b> {{name}},{{amount}},{{order}}]]></comment>
+                        </order_closed_status>
+                    </fields>
+                </order_notification>
+				<invoice_notification module="smsnotifications">
+                    <label>Invoice Notification Settings</label>
+					<sort_order>110</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+						<order_invoice_enable>
+							<label>Invoice SMS Enabled </label>
+							<frontend_type>select</frontend_type>
+							<sort_order>110</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_invoice_enable>
+                        <message>
+                            <label>Invoice Notification SMS</label>
+							<sort_order>120</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment><![CDATA[<b>Possible variables:</b> {{name}},{{amount}},{{order}},{{invoiceno}}]]></comment>
+                        </message>
+                    </fields>
+                </invoice_notification>
+                <shipment_notification module="smsnotifications">
+                    <label>Shipment Notification Settings</label>
+					<sort_order>120</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+						<order_shipment_enable>
+							<label>Shipment SMS Enabled</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>110</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_shipment_enable>
+                        <message>
+                            <label>Shipment Notification SMS</label>
+                            <frontend_type>textarea</frontend_type>
+							<sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment><![CDATA[<b>Possible variables:</b> {{name}},{{amount}},{{order}},{{shipmentno}},{{shipmentno}},{{trackID}},{{track_number}},{{title}},{{carrier_code}}]]></comment>
+                        </message>
+                    </fields>
+                </shipment_notification>
+                <otp_verification module="smsnotifications">
+                    <label>2 Factor Authentication / OTP Verification</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>130</sort_order>
+                    <comment><![CDATA[ ]]></comment>
+                    <fields>					
+                        <confirm_registered_customer>
+                            <label>2 Factor Login Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </confirm_registered_customer>
+                        <confirm_registered_customer_message>
+                            <label>Login OTP SMS</label>
+                            <comment><![CDATA[<b>Possible variables:</b> {{OTP}}]]></comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </confirm_registered_customer_message>
+                        <reset_password>
+                            <label>2 Factor Password Reset Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </reset_password>
+                        <reset_password_message>
+                            <label>Reset Password OTP SMS</label>
+                            <comment><![CDATA[<b>Possible variables:</b> {{OTP}}]]></comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </reset_password_message>
+                    </fields>
+                </otp_verification>
+            </groups>
+        </smsnotifications>
+    </sections>
+</config>

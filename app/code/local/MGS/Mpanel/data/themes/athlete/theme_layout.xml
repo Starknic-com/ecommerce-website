@@ -1,0 +1,29 @@
+<theme_layout>
+	<item>
+		<page_type>category</page_type>
+		<indentifier>0</indentifier>
+		<left><![CDATA[a:2:{s:17:"layeredNavigation";s:17:"layeredNavigation";s:14:"compareSidebar";s:14:"compareSidebar";}]]></left>
+		<right><![CDATA[a:3:{s:11:"cartSidebar";s:11:"cartSidebar";s:11:"tagsPopular";s:11:"tagsPopular";s:4:"poll";s:6:"poll-1";}]]></right>
+	</item>
+	
+	<item>
+		<page_type>product</page_type>
+		<indentifier>0</indentifier>
+		<left><![CDATA[a:2:{s:11:"cartSidebar";s:11:"cartSidebar";s:14:"compareSidebar";s:14:"compareSidebar";}]]></left>
+		<right><![CDATA[a:2:{s:14:"productRelated";s:14:"productRelated";s:4:"poll";s:6:"poll-1";}]]></right>
+	</item>
+	
+	<item>
+		<page_type>cms</page_type>
+		<indentifier>0</indentifier>
+		<left><![CDATA[a:3:{s:18:"categoryNavigation";s:18:"categoryNavigation";s:14:"compareSidebar";s:14:"compareSidebar";s:11:"tagsPopular";s:11:"tagsPopular";}]]></left>
+		<right><![CDATA[]]></right>
+	</item>
+	
+	<item>
+		<page_type>customer</page_type>
+		<indentifier>0</indentifier>
+		<left><![CDATA[a:2:{s:14:"reorderSidebar";s:14:"reorderSidebar";s:11:"cartSidebar";s:11:"cartSidebar";}]]></left>
+		<right><![CDATA[]]></right>
+	</item>
+</theme_layout>

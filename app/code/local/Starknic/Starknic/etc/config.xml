@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Starknic_Starknic>
+            <version>0.1.0</version>
+        </Starknic_Starknic>
+    </modules>
+    <frontend>
+        <routers>
+            <checkout>
+                <args>
+                    <modules>
+                        <Starknic_Starknic before="Mage_Checkout">Starknic_Starknic</Starknic_Starknic>
+                    </modules>
+                </args>
+            </checkout>
+        </routers>
+    </frontend>
+</config>

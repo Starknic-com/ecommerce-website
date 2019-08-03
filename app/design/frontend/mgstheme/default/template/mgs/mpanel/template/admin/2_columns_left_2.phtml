@@ -1,0 +1,55 @@
+<?php $helper = $this->helper('mpanel') ?>
+<div class="home-2columns-left-2">
+	<section>
+		<div class="container">
+			<div class="row">
+				<?php // Block 1 content ?>
+				<div<?php echo $this->getBlockSetting('2_columns_left_2', 1, 'builder-container col-md-8 section1') ?>>
+					<?php echo $helper->getEditPanel('2_columns_left_2', 1) ?>
+					<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block1')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+				</div>
+				
+				<?php // Block 2 content ?>
+				<div<?php echo $this->getBlockSetting('2_columns_left_2', 2, 'builder-container col-md-4 section2') ?>>
+					<?php echo $helper->getEditPanel('2_columns_left_2', 2) ?>
+					<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block2')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php // Block 3 content ?>
+	<section<?php echo $this->getBlockSetting('2_columns_left_2', 3, 'builder-container section3') ?>>
+		<div class="container">
+				<?php echo $helper->getEditPanel('2_columns_left_2', 3) ?>
+				<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block3')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<?php // Block 4 content ?>
+				<div<?php echo $this->getBlockSetting('2_columns_left_2', 4, 'builder-container col-md-3 section4') ?>>
+					<?php echo $helper->getEditPanel('2_columns_left_2', 4) ?>
+					<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block4')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+				</div>
+				
+				<?php // Block 5 content ?>
+				<div<?php echo $this->getBlockSetting('2_columns_left_2', 5, 'builder-container col-md-9 section5') ?>>
+					<?php echo $helper->getEditPanel('2_columns_left_2', 5) ?>
+					<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block5')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php // Block 6 content ?>
+	<section<?php echo $this->getBlockSetting('2_columns_left_2', 6, 'builder-container section7') ?>>
+		
+		<div class="container">
+			<?php echo $helper->getEditPanel('2_columns_left_2', 6) ?>
+			<?php echo $this->getLayout()->createBlock('mpanel/template_child')->setTemplateLayout('2_columns_left_2')->setBlockName('block6')->setTemplate('mgs/mpanel/template/admin/child.phtml')->toHtml() ?>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_customer_edit>
+        <reference name="customer_edit_tabs">
+            <action method="addTab" ifconfig="creditpoint/general/active">
+                <name>customer_edit_tab_creditpoint</name>
+                <block>creditpoint/adminhtml_customer_edit_tab_creditpoint</block>
+            </action>
+        </reference>
+    </adminhtml_customer_edit>
+</layout>

@@ -1,0 +1,51 @@
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+	<?php $helper = $this->helper('mpanel') ?>
+	<?php $size = $helper->convertRatioToSize() ?>
+		<?php if($this->getRequest()->getParam('perrow')): ?>
+			<?php $perrow = $this->getRequest()->getParam('perrow') ?>
+		<?php else: ?>
+			<?php $perrow = $this->getCountPerRow() ?>
+		<?php endif ?>
+		
+		<?php $i=0; foreach ($_products->getItems() as $_product): ?>
+			<?php $_product = Mage::getModel('catalog/product')->load($_product->getId()) ?>
+			<li class="item col-md-<?php echo $helper->convertColRow($perrow) ?> col-sm-6 col-xs-12">
+				<div class="product-info-box">
+					<div class="image-container">
+						<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="product-image">
+							<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($size['width'], $size['height']) ?>" alt="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="img-responsive"/>
+						</a>
+						
+						<div class="actions">
+							<div class="buttons">
+								<?php if($this->helper('core')->isModuleEnabled('MGS_QuickView') && Mage::getStoreConfig('quickview/general/active')): ?>
+									<button class="btn btn-primary btn-quickview quick-view" onclick="quickView('<?php echo $_product->getProductUrl() ?>'); return false;"><em class="fa fa-search-plus"></em></button>
+								<?php endif ?>
+								
+								<ul class="add-to-links tooltip-links">
+									<?php if ($this->helper('wishlist')->isAllow()) : ?>
+										<li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist" data-toggle="tooltip" data-placement="bottom" data-original-title="<?php echo $this->__('Add to Wishlist') ?>"><em class="fa fa-heart"></em></a></li>
+									<?php endif; ?>
+									<?php if($_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+										<li><a href="<?php echo $_compareUrl ?>" class="link-compare" data-toggle="tooltip" data-placement="bottom" data-original-title="<?php echo $this->__('Add to Compare') ?>"><em class="fa fa-retweet"></em></a></li>
+									<?php endif; ?>
+								</ul>
+							</div>
+						</div>
+						
+						<?php echo $helper->getProductLabel($_product) ?>
+					</div>
+					<h4 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>)"><?php echo $this->helper('catalog/output')->productAttribute($_product, $_product->getName() , 'name') ?></a></h4>
+
+					<?php echo $this->getPriceHtml($_product, true, '-widget-new-grid') ?>
+					
+					<?php if ($_product->isSaleable()): ?>
+						<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-primary btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><em class="fa fa-shopping-cart"></em><?php echo $this->__('Add to Cart') ?></button>
+					<?php endif; ?>
+					
+				</div>
+			</li>
+		<?php endforeach ?>
+		
+		
+<?php endif ?>

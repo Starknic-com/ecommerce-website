@@ -1,0 +1,79 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php $helper = $this->helper('mpanel'); ?>	 
+<div class="header header-container header-container-2 alt reveal builder-container header-builder<?php if(Mage::getStoreConfig('mgs_theme/general/sticky_menu')): ?> sticky-menu<?php endif ?>" id="header-v3">    
+	<?php echo $helper->getEditHeaderPanel() ?>
+	<div class="topbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 col-md-9 col-sm-6 col-xs-12">
+					<div class="cp hidden-xs">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('athlete_call_phone')->setCanEdit(1)->toHtml(); ?>
+					</div>
+					<div class="welcome-msg builder-container inline-builder">
+						<?php echo $helper->getEditStoreConfig('design-header-welcome', Mage::getStoreConfig('design/header/welcome')) ?>
+						<span id="design-header-welcome-text"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></span>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 lefttop nopadding">
+					<?php echo $this->getChildHtml('top.currency') ?>
+                	<?php echo $this->getChildHtml('store_language') ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content-h">
+		<div class="container">
+			<div class="row wrap">
+				<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 logo">
+					<div class="logo-container builder-container child-builder">
+						<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+							<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+						</a>	
+						<?php echo $helper->getEditLogoPanel() ?>
+					</div>
+				</div>
+				<div class="col-lg-10 col-md-10 col-sm-9 col-xs-8 nav-container">
+					<?php echo $this->getChildHtml('topSearch') ?>
+					<?php echo $this->getChildHtml('cart_sidebar3') ?>
+					<?php echo $this->getChildHtml('topLinks') ?>
+					<div class="content-wrapper">
+						<div class="main-menu">
+							<h4 class="title-menu">Main menu</h4>
+							<button id="close-button" class="close-button"><i class="fa fa-times"></i></button>
+						</div>
+						<?php echo $this->getChildHtml('topMenu') ?>
+					</div>
+				</div>
+				<button id="open-button" class="menu-button"></button>
+			</div>
+		</div>
+	</div>
+</div>

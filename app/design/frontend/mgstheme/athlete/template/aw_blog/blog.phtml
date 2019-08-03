@@ -1,0 +1,61 @@
+<?php $posts = $this->getPosts(); ?>
+<div>
+    <?php Mage::app()->getLayout()->getMessagesBlock()->setMessages(Mage::getSingleton('customer/session')->getMessages(true)); ?>
+    <?php echo Mage::app()->getLayout()->getMessagesBlock()->getGroupedHtml(); ?>
+</div>
+
+<?php //echo $this->getChildHtml('aw_blog_comments_toolbar'); ?>
+<?php foreach ($posts as $post): ?>
+    <div class="postWrapper">
+		<div class="col-lg-4 col-md-4 nopadding">
+			<?php if($post->getFeaturedImage()!=''): ?>
+				<p class="featured-image"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'blog/'.$post->getFeaturedImage(); ?>" alt="" class="img-responsive"/></p>
+			<?php endif ?>
+		</div>
+		<div class="col-lg-8 col-md-8">
+			<div class="postTitle">
+				<a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a>
+			</div>
+			<div class="postDetails">
+				<span><?php echo $this->__('By ') ?><label><?php echo $post->getUser(); ?></label></span>
+				<span>
+					<?php echo $this->__('On ') ?><?php echo date('F d', strtotime($post->getCreatedTime())) ?>
+				</span>        	
+				<?php $postCats = $post->getCats(); ?>
+				<?php if (!empty($postCats)): ?>
+				<span>
+					<?php echo $this->__('In ') ?>
+					<?php foreach ($postCats as $data): ?>
+						<a href="<?php echo $data['url']; ?>"><?php echo $data['title']; ?></a>
+					<?php endforeach; ?>
+				</span>
+				<?php endif; ?>
+				
+				
+				<?php if ($this->getCommentsEnabled()): ?>
+					<?php if($post->getCommentCount() > 0): ?>
+						<span>
+							<?php echo $post->getCommentCount(); ?>
+							<a href="<?php echo $post->getAddress(); ?>#commentBox">
+								<?php if ($post->getCommentCount() < 2): ?>
+								<?php echo $this->__('Comment') ?>
+								<?php else: ?>
+									 <?php echo $this->__('Comments') ?>
+								<?php endif ?>
+							</a>
+						</span>
+						
+					<?php endif; ?>
+					
+				<?php endif; ?>
+				<div class="tags" style="display: inline;"><?php echo $this->getTagsHtml($post) ?></div>
+			</div>
+			<div class="postContent">
+				<?php echo $post->getPostContent(); ?>
+			</div>
+		</div>
+        <?php echo $this->getBookmarkHtml($post) ?>
+    </div>
+<?php endforeach; ?>
+
+<?php echo $this->getChildHtml('aw_blog_comments_toolbar'); ?>

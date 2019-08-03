@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+		<reference name="head">
+			<block type="mpanel/head" name="theme.setting"/>
+		</reference>
+        <reference name="after_body_start">
+            <block type="mpanel/mpanel" name="mpanel" template="mgs/mpanel/toppanel.phtml" />
+        </reference>
+    </default>
+	
+    <default>
+        <reference name="before_body_end">
+            <block type="core/template" name="mpanel.script" template="mgs/mpanel/script.phtml" />
+            <block type="core/template" name="mpanel.home.button" template="mgs/mpanel/button.phtml" />
+        </reference>
+    </default>
+	
+    <editor>
+        <reference name="head">
+			<block type="core/template" name="head.editor" template="mgs/mpanel/editor.phtml"/>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            
+            <action method="addCss">
+                <name>lib/prototype/windows/themes/magento.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ext-all.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ytheme-magento.css</name>
+            </action>
+        </reference>
+    </editor>
+	
+    <popup>
+        <update handle="default"/>
+        <remove name="header"/>
+        <remove name="menu"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>popup.phtml</template>
+            </action>
+        </reference>
+    </popup>
+	
+    <overlay_popup>
+        <update handle="popup"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>mgs/mpanel/overlay_popup.phtml</template>
+            </action>
+        </reference>
+    </overlay_popup>
+	
+    <mpanel_wysiwyg_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>mgs/mpanel/overlay_popup.phtml</template>
+            </action>
+        </reference>
+        <remove name="footer" />
+        <remove name="head" />
+		
+        <reference name="content">
+            <block type="mpanel/content" name="wysiwyg_images.content" template="mgs/mpanel/browser/content.phtml">
+                <block name="wysiwyg_images.js" type="mpanel/cms_wysiwyg_images_content" template="mgs/mpanel/browser/js.phtml" />
+                <block name="wysiwyg_images.tree" type="mpanel/cms_wysiwyg_images_tree" template="mgs/mpanel/browser/tree.phtml" />
+				
+                <block type="mpanel/cms_wysiwyg_images_content_uploader" name="wysiwyg_images.uploader" template="mgs/mpanel/browser/content/uploader.phtml" />
+                <block type="mpanel/cms_wysiwyg_images_content_newfolder" name="wysiwyg_images.newfolder" template="mgs/mpanel/browser/content/newfolder.phtml" />
+            </block>
+        </reference>
+    </mpanel_wysiwyg_index>
+	
+	
+    <mpanel_wysiwyg_contents>
+        <block name="wysiwyg_images.files" type="mpanel/cms_wysiwyg_images_content_files" template="mgs/mpanel/browser/content/files.phtml" output="toHtml" />
+    </mpanel_wysiwyg_contents>
+	
+	
+    <mpanel_edit_popup>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.popup" template="mgs/mpanel/popup/child.phtml"/>
+        </reference>
+    </mpanel_edit_popup>
+	
+    <mpanel_edit_block>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="mpanel/edit_block" name="mpanel.popup" template="mgs/mpanel/popup/block.phtml"/>
+        </reference>
+    </mpanel_edit_block>
+	
+	<mpanel_edit_static>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.popup" template="mgs/mpanel/popup/static.phtml"/>
+        </reference>
+    </mpanel_edit_static>
+	
+    <mpanel_edit_header>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="mpanel/edit_block" name="mpanel.popup" template="mgs/mpanel/popup/header.phtml"/>
+        </reference>
+    </mpanel_edit_header>
+	
+    <mpanel_edit_footer>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="mpanel/edit_block" name="mpanel.popup" template="mgs/mpanel/popup/footer.phtml"/>
+        </reference>
+    </mpanel_edit_footer>
+	
+    <mpanel_edit_twitter>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="mpanel/edit_block" name="mpanel.popup" template="mgs/mpanel/popup/twitter.phtml"/>
+        </reference>
+    </mpanel_edit_twitter>
+	
+    <mpanel_post_logo>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="mpanel/edit_block" name="mpanel.popup" template="mgs/mpanel/popup/logo.phtml"/>
+        </reference>
+    </mpanel_post_logo>
+    
+    <mpanel_post_categoryimage>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.popup.category.image" template="mgs/mpanel/popup/category-image.phtml"/>
+        </reference>
+    </mpanel_post_categoryimage>
+    
+    <mpanel_post_categorydescription>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.popup.category.description" template="mgs/mpanel/popup/category-description.phtml"/>
+        </reference>
+    </mpanel_post_categorydescription>
+    
+    <mpanel_post_editcmscontent>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.popup.edit.cms.content" template="mgs/mpanel/popup/edit-cms-content.phtml"/>
+        </reference>
+    </mpanel_post_editcmscontent>
+	
+	<mpanel_post_map>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="mpanel/edit_block" name="mpanel.popup" template="mgs/mpanel/popup/map.phtml"/>
+        </reference>
+    </mpanel_post_map>
+	
+	<mpanel_post_info>
+		<update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="mpanel/edit_block" name="mpanel.popup" template="mgs/mpanel/popup/contact.phtml"/>
+        </reference>
+    </mpanel_post_info>
+	
+    <mpanel_index_new>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.popup" template="mgs/mpanel/popup/new.phtml"/>
+        </reference>
+    </mpanel_index_new>
+    
+    <mpanel_index_newincategory>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.popup.in.category" template="mgs/mpanel/popup/new-in-category.phtml"/>
+        </reference>
+    </mpanel_index_newincategory>
+    
+    <mpanel_index_createproducttab>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="mpanel/product_tab" name="mpanel.popup.create.product.tab" template="mgs/mpanel/popup/create-product-tab.phtml"/>
+        </reference>
+    </mpanel_index_createproducttab>
+	
+    <mpanel_index_form>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form" template="mgs/mpanel/form.phtml"/>
+        </reference>
+    </mpanel_index_form>
+    
+    <mpanel_index_formincategory>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.in.category" template="mgs/mpanel/form-in-category.phtml"/>
+        </reference>
+    </mpanel_index_formincategory>
+    
+    <mpanel_index_createstaticblock>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.create.static.block" template="mgs/mpanel/create-static-block.phtml"/>
+        </reference>
+    </mpanel_index_createstaticblock>
+    
+    <mpanel_index_poll>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.poll" template="mgs/mpanel/poll.phtml"/>
+        </reference>
+    </mpanel_index_poll>
+    
+    <mpanel_index_pollincms>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.poll.in.cms" template="mgs/mpanel/poll-in-cms.phtml"/>
+        </reference>
+    </mpanel_index_pollincms>
+    
+    <mpanel_index_pollincustomer>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.poll.in.customer" template="mgs/mpanel/poll-in-customer.phtml"/>
+        </reference>
+    </mpanel_index_pollincustomer>
+    
+    <mpanel_index_promo>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.promo" template="mgs/mpanel/promo.phtml"/>
+        </reference>
+    </mpanel_index_promo>
+    
+    <mpanel_index_promoincms>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.promo.in.cms" template="mgs/mpanel/promo-in-cms.phtml"/>
+        </reference>
+    </mpanel_index_promoincms>
+    
+    <mpanel_index_promoincustomer>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.promo.in.customer" template="mgs/mpanel/promo-in-customer.phtml"/>
+        </reference>
+    </mpanel_index_promoincustomer>
+    
+    <mpanel_index_after>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.after" template="mgs/mpanel/after.phtml"/>
+        </reference>
+    </mpanel_index_after>
+    
+    <mpanel_index_redirectincustomer>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.redirect.in.customer" template="mgs/mpanel/redirect-in-customer.phtml"/>
+        </reference>
+    </mpanel_index_redirectincustomer>
+    
+    <mpanel_index_newincms>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.popup.in.cms" template="mgs/mpanel/popup/new-in-cms.phtml"/>
+        </reference>
+    </mpanel_index_newincms>
+    
+    <mpanel_index_newincustomer>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.popup.in.customer" template="mgs/mpanel/popup/new-in-customer.phtml"/>
+        </reference>
+    </mpanel_index_newincustomer>
+    
+    <mpanel_index_formincms>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.in.cms" template="mgs/mpanel/form-in-cms.phtml"/>
+        </reference>
+    </mpanel_index_formincms>
+    
+    <mpanel_index_formincustomer>
+        <update handle="editor"/>
+        <remove name="mpanel"/>
+		<remove name="theme.setting"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/popup.phtml</template>
+            </action>
+        </reference>
+		
+        <reference name="content">
+            <block type="core/template" name="mpanel.form.in.customer" template="mgs/mpanel/form-in-customer.phtml"/>
+        </reference>
+    </mpanel_index_formincustomer>
+	
+    <empty>
+    </empty>
+</layout> 

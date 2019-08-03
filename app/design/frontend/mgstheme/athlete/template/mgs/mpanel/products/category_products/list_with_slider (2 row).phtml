@@ -1,0 +1,66 @@
+<?php 
+	$categories = $this->getCategoryCollection();
+	$panelHelper = $this->helper('mpanel');
+	$size = $panelHelper->convertRatioToMinSize();
+	if($this->getColumn()){
+		$col = $this->getColumn();
+	}
+	else{
+		$col = 3;
+	}
+	
+	$col = $panelHelper->convertColRow($col);
+?>
+
+
+<?php if(count($categories)>0): ?>
+	<div class="block product-list-block category-product-list popular-product">
+		<?php if($this->getTitle()!=''): ?>
+			<div class="carousel_wrapper carousel-title">
+				<div class="title title-name ">
+					<h4><?php echo $this->getTitle() ?></h4>
+				</div>
+			</div>
+		<?php endif ?>
+		<div class="product-list">
+			<?php foreach($categories as $_category): ?>
+				<div class="products-list" id="list-slider-category-product-<?php echo $_category->getId() ?>">
+					<?php $products = $this->getProductByCategory($_category) ?>
+					<?php $_collectionSize = count($products) ?>
+					<?php $_columnCount = 2*$this->getColumn(); ?>
+					<?php if(count($products)>0): ?>
+						<?php $i=0; foreach ($products as $_product): ?>
+							<?php if ($i++%$_columnCount==0): ?>
+								<div class="col-md-12">
+							<?php endif ?>
+							<div class="item">
+								<div class="product-image">
+									<a href="<?php echo $_product->getProductUrl() ?>">
+									<img alt="<?php echo $this->stripTags($_product->getName(), null, true) ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($size['width'], $size['height']) ?>" class="img-responsive">
+									 
+									</a>
+								</div>
+								<div class="info-products">
+									<div class="product-name"><a href="<?php echo $_product->getProductUrl() ?>">							
+										 <?php echo $this->helper('catalog/output')->productAttribute($_product, $_product->getName() , 'name') ?>
+									 </a></div>
+									 <div class="border-bottom"></div>
+									 <?php echo $this->getPriceHtml($_product, true) ?>
+								</div>
+							</div>
+							<?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+								</div>
+							<?php endif ?>
+						<?php endforeach ?>
+						
+					<?php endif ?>
+				</div>
+			<?php endforeach ?>
+			
+			<script type="text/javascript">
+				initSlider('list-slider-category-product-<?php echo $_category->getId() ?>', 1, false, false, true, false);
+			</script>
+		</div>
+
+	</div>
+<?php endif ?>

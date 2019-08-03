@@ -1,0 +1,24 @@
+<?php $panelHelper = $this->helper('mpanel');
+	$size = $panelHelper->convertRatioToSize(); ?>
+<?php $_product = $this->getProduct() ?>
+<div class="mgs_megamenu_product widget widget-products">
+	<a class="product-image" title="<?php echo $_product->getName() ?>" href="<?php echo $_product->getProductUrl() ?>">
+		<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($size['width'],$size['height']); ?>" />
+	</a>
+	<div class="price_name">
+		<h3 class="product-name">
+			<a title="<?php echo $_product->getName() ?>" href="<?php echo $_product->getProductUrl() ?>"><?php echo $_product->getName() ?></a>
+		</h3>
+		<?php echo $this->getPriceHtml($_product, true) ?>
+	</div>
+	<!--
+	<div class="actions">
+		<?php if($_product->isSaleable()): ?>
+			<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+		<?php else: ?>
+			<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+		<?php endif; ?>
+	</div>
+	-->
+</div>
+<div class="clear"></div>

@@ -1,0 +1,73 @@
+<?php $helper = $this->helper('mpanel') ?>
+<?php
+if($this->getCategoryId()) {
+    $currentCategoryId= $this->getCategoryId();
+} else {
+    $layer = Mage::getSingleton('catalog/layer');
+    $category = $layer->getCurrentCategory();
+    $currentCategoryId= $category->getId();
+}
+$currentProductId = 0;
+$parts = parse_url(Mage::helper('core/url')->getCurrentUrl());
+$arr = explode('/', $parts['path']);
+$urlPath = end($arr);
+$collection = Mage::getModel('core/url_rewrite')->getCollection()
+        ->addFieldToFilter('request_path', array('like' => '%' . $urlPath . '%'));
+foreach ($collection as $r) {
+    if (strpos($parts['path'], $r->getData('request_path')) !== false) {
+        $currentProductId = (int) $r->getProductId();
+    }
+}
+?>
+<section class="builder-container">
+    <div>                
+        <?php $templateLayout = $this->getTemplateLayout() ?>
+        <?php $blockName = $this->getBlockName() ?>
+        <?php $block = $this->getBlock() ?>
+        <?php $blocks = unserialize($block->getData('right')) ?>        
+        <?php if ($blocks != false): ?>
+            <div id="sortable<?php echo $templateLayout ?><?php echo $blockName ?>" class="sort-block">
+                <?php foreach ($blocks as $key => $value): ?>                        
+                    <?php if ($value != 0): ?>
+                        <div class="sort-item builder-container child-builder" id="<?php echo $templateLayout . '_' . $blockName . '_' . $value ?>">
+                            <?php echo $helper->getEditChildInCategory($templateLayout, $blockName, $value, 'static', $currentCategoryId, $currentProductId) ?>                                
+                            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($value)->toHtml() ?>
+                        </div>
+                    <?php else: ?>
+                        <?php $helper->renderHtmlContent($templateLayout, $blockName, $currentCategoryId, $key, $value, true, $currentProductId); ?>                        
+                    <?php endif; ?>                        
+                <?php endforeach ?>
+            </div>
+            <script type="text/javascript">
+                mgsjQuery(document).ready(function () {
+                    <?php if($currentProductId): ?>
+                    initSortable("sortable<?php echo $templateLayout ?><?php echo $blockName ?>", "<?php echo $this->getUrl('mpanel/post/sortInCategory', array('el' => $templateLayout . '_' . $blockName, 'category_id' => $currentCategoryId, 'position' => 'right', 'product_id' => $currentProductId)) ?>");
+                    <?php else: ?>
+                    initSortable("sortable<?php echo $templateLayout ?><?php echo $blockName ?>", "<?php echo $this->getUrl('mpanel/post/sortInCategory', array('el' => $templateLayout . '_' . $blockName, 'category_id' => $currentCategoryId, 'position' => 'right')) ?>");
+                    <?php endif; ?>                
+                });
+            </script>
+            <div class="col-md-12">
+                <?php if($currentProductId): ?>
+                    <a class="btn btn-primary popup-link btn-new-block" href="<?php echo $this->getUrl('mpanel/index/newInCategory', array('template' => $templateLayout, 'block' => $blockName, 'category_id' => $currentCategoryId, 'product_id' => $currentProductId)) ?>"><em class="fa fa-plus"></em><?php echo $this->__(' Add new Block') ?></a>
+                    <a class="btn btn-primary apply-to-all" href="<?php echo $this->getUrl('mpanel/post/applyToAll', array('template' => $templateLayout, 'block' => $blockName, 'category_id' => $currentCategoryId, 'product_id' => $currentProductId)) ?>"><em class="fa fa-check"></em><?php echo $this->__(' Apply To All') ?></a>
+                <?php else: ?>
+                    <a class="btn btn-primary popup-link btn-new-block" href="<?php echo $this->getUrl('mpanel/index/newInCategory', array('template' => $templateLayout, 'block' => $blockName, 'category_id' => $currentCategoryId)) ?>"><em class="fa fa-plus"></em><?php echo $this->__(' Add new Block') ?></a>
+                    <a class="btn btn-primary apply-to-all" href="<?php echo $this->getUrl('mpanel/post/applyToAll', array('template' => $templateLayout, 'block' => $blockName, 'category_id' => $currentCategoryId)) ?>"><em class="fa fa-check"></em><?php echo $this->__(' Apply To All') ?></a>
+                <?php endif; ?>                                    
+            </div>
+        <?php else: ?>
+            <div class="empty-block">
+                <div class="col-md-12">
+                    <?php if($currentProductId): ?>
+                        <a class="btn btn-primary popup-link btn-new-block" href="<?php echo $this->getUrl('mpanel/index/newInCategory', array('template' => $templateLayout, 'block' => $blockName, 'category_id' => $currentCategoryId, 'product_id' => $currentProductId)) ?>"><em class="fa fa-plus"></em><?php echo $this->__(' Add new Block') ?></a>
+                        <a class="btn btn-primary apply-to-all" href="<?php echo $this->getUrl('mpanel/post/applyToAll', array('template' => $templateLayout, 'block' => $blockName, 'category_id' => $currentCategoryId, 'product_id' => $currentProductId)) ?>"><em class="fa fa-check"></em><?php echo $this->__(' Apply To All') ?></a>
+                    <?php else: ?>
+                        <a class="btn btn-primary popup-link btn-new-block" href="<?php echo $this->getUrl('mpanel/index/newInCategory', array('template' => $templateLayout, 'block' => $blockName, 'category_id' => $currentCategoryId)) ?>"><em class="fa fa-plus"></em><?php echo $this->__(' Add new Block') ?></a>
+                        <a class="btn btn-primary apply-to-all" href="<?php echo $this->getUrl('mpanel/post/applyToAll', array('template' => $templateLayout, 'block' => $blockName, 'category_id' => $currentCategoryId)) ?>"><em class="fa fa-check"></em><?php echo $this->__(' Apply To All') ?></a>
+                    <?php endif; ?>                    
+                </div>
+            </div>
+        <?php endif ?>
+    </div>
+</section>

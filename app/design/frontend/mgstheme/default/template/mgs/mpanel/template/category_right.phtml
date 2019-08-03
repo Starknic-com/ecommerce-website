@@ -1,0 +1,36 @@
+<?php $helper = $this->helper('mpanel') ?>
+<?php
+if ($this->getCategoryId()) {
+    $currentCategoryId = $this->getCategoryId();
+} else {
+    $layer = Mage::getSingleton('catalog/layer');
+    $category = $layer->getCurrentCategory();
+    $currentCategoryId = $category->getId();
+}
+$currentProductId = 0;
+$parts = parse_url(Mage::helper('core/url')->getCurrentUrl());
+$arr = explode('/', $parts['path']);
+$urlPath = end($arr);
+$collection = Mage::getModel('core/url_rewrite')->getCollection()
+        ->addFieldToFilter('request_path', array('like' => '%' . $urlPath . '%'));
+foreach ($collection as $r) {
+    if (strpos($parts['path'], $r->getData('request_path')) !== false) {
+        $currentProductId = (int) $r->getProductId();
+    }
+}
+?>             
+<?php $templateLayout = $this->getTemplateLayout() ?>
+<?php $blockName = $this->getBlockName() ?>
+<?php $block = $this->getBlock() ?>
+<?php $blocks = unserialize($block->getData('right')) ?>
+<?php if ($blocks != false): ?>
+    <?php foreach ($blocks as $key => $value): ?>                        
+        <?php if ($value != 0): ?>
+            <div id="<?php echo $templateLayout . '_' . $blockName . '_' . $value ?>" class="block block-content">                                                                
+                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($value)->toHtml() ?>
+            </div>
+        <?php else: ?> 
+            <?php $helper->renderHtmlContent($templateLayout, $blockName, $currentCategoryId, $key, $value, false, $currentProductId); ?>
+        <?php endif; ?>                        
+    <?php endforeach ?>     
+<?php endif ?>

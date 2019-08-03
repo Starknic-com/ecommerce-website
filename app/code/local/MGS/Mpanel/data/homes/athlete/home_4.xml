@@ -1,0 +1,220 @@
+<layout>
+	<name>2_columns_left_1</name>
+
+	<!--  Blocks  -->
+	<block>
+		<block_name>block3</block_name>
+		<class><![CDATA[man-girl]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>50</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block4</block_name>
+		<custom_class><![CDATA[]]></custom_class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>50</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block5</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-brand.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>15</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<!--  Childs  -->
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-for-man]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_2_columns_left_1_block4_3]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="collection-block">
+<div class="col-md-12 price-table-content">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/img-men-white.png"}}" alt="" /></div>
+<div class="price-table-text">
+<h3>Collection</h3>
+<h2>For man</h2>
+<span class="link">From</span> <a href="#">$59</a></div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>3</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>6</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-for-ladies]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_2_columns_left_1_block4_4]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="collection-block">
+<div class="price-table-content">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/img-women-white.png"}}" alt="" /></div>
+<div class="price-table-text">
+<h3>Collection</h3>
+<h2>For ladies</h2>
+<span class="link">From</span> <a href="#">$59</a></div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>4</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>6</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-title-blog]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block6_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="title-blog">
+<h2 style="margin-top: 0;">Athlete blog</h2>
+<p>Working from home meant we could vary snack and coffee breaks, change our desks or view, goof off, drink on the job, even spend the day in pajamas.</p>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>10</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<type>separator</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"20","margin_bottom":"20"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<type>separator</type>
+		<position>5</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"20","margin_bottom":"20"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<type>separator</type>
+		<position>11</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"15","margin_bottom":"15"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[{{block type="abrands/abrands" slider="1" title="" brand_count="6" auto_play="false" stop_hover="false" navigation="false" pagination="true" template="mgs/abrands/brands.phtml"}}]]></block_content>
+		<type>brands</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","title":"","slider":{"active":"1","auto":"false","stop_hover":"false","navigation":"false","pagination":"true"},"brand_count":"6"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<type>separator</type>
+		<position>6</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"15","margin_bottom":"15"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[{{block type="mpanel/products" products_count="9" slider="1" count_per_row="3" title="Featured items" auto_play="false" stop_hover="false" navigation="true" pagination="false" template="mgs/mpanel/products/featured_products.phtml"}}]]></block_content>
+		<type>featured_products</type>
+		<position>6</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","product_count":"9","title":"Featured items","view_mode":"grid","count_per_row":"3","slider":{"active":"1","auto":"false","stop_hover":"false","navigation":"true","pagination":"false"},"load_more":"0"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[{{block type="mpanel/products" products_count="5" title="Popular products" template="mgs/mpanel/products/list/featured_products.phtml"}}]]></block_content>
+		<type>featured_products</type>
+		<position>3</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","product_count":"5","title":"Popular products","view_mode":"list","count_per_row":"1","slider":{"active":"0","auto":"false","stop_hover":"false","navigation":"false","pagination":"false"},"load_more":"0"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[{{block type="mpanel/products" products_count="5" title="Sale products" template="mgs/mpanel/products/list/hot_products.phtml"}}]]></block_content>
+		<type>hot</type>
+		<position>5</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","product_count":"5","title":"Sale products","view_mode":"list","count_per_row":"1","slider":{"active":"0","auto":"false","stop_hover":"false","navigation":"false","pagination":"false"},"load_more":"0"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[{{block type="promobanners/promobanners" banner_id="%s" template="mgs/promobanners/banner.phtml"}}]]></block_content>
+		<type>promo_banner</type>
+		<banner_title>Athlete-promo-home4</banner_title>
+		<banner_filename>banner.png</banner_filename>
+		<banner_url><![CDATA[]]></banner_url>
+		<banner_content><![CDATA[<div class="parallax-text parallax-shop parallax-gallery">
+<h2>Discount code</h2>
+<p style="float:none;">for new custmers</p>
+<span style="float: left;" class="button open-btn"><span>Get it now</span></span></div>]]></banner_content>
+		<banner_text_align>left</banner_text_align>
+		<position>8</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","banner_id":"%s"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[{{block type="promobanners/promobanners" banner_id="%s" template="mgs/promobanners/banner.phtml"}}]]></block_content>
+		<type>promo_banner</type>
+		<banner_title>Athlete-sidebar-banner</banner_title>
+		<banner_filename>img-bestseling.png</banner_filename>
+		<banner_url><![CDATA[]]></banner_url>
+		<banner_content><![CDATA[<div class="price-table-text">
+<h3>2015</h3>
+<h2>Best selling</h2>
+<div class="border-bottom"> </div>
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<span class="link"> From</span> <a href="#">$59</a>
+</div>]]></banner_content>
+		<banner_text_align>bottom-left</banner_text_align>
+		<position>7</position>
+		<setting><![CDATA[{"custom_class":"sidebar-banner","animation":"","animation_delay":"","banner_id":"%s"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+</layout>

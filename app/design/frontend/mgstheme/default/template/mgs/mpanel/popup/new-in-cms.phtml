@@ -1,0 +1,81 @@
+<?php $helper = $this->helper('mpanel') ?>
+<?php if ($helper->acceptToUsePanel()): ?>
+    <?php $template = $this->getRequest()->getParam('template') ?>
+    <?php $block = $this->getRequest()->getParam('block') ?>
+    <?php $pageId = $this->getRequest()->getParam('page_id') ?>
+<div class="edit-static-form">
+    <div class="row">
+        <div class="col-md-12 builder-title">
+            <h2>Select Block</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="bs-glyphicons">
+                <ul class="bs-glyphicons-list" id="list-item">      
+                    <li id="static-item" onclick="setLocation('<?php echo $this->getUrl('mpanel/index/formInCms', array('template' => $template, 'block' => $block, 'type' => 'static', 'page_id' => $pageId)) ?>')">
+                        <span class="glyphicon glyphicon-text-width"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Static Block') ?></span>
+                    </li>
+                    <li id="static-item" onclick="newInCms('<?php echo $this->getUrl('mpanel/post/newInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId, 'core_block' => 'categoryNavigation')) ?>')">
+                        <span class="glyphicon glyphicon-th"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Category Navigation') ?></span>
+                    </li>
+                    <li id="static-item" onclick="newInCms('<?php echo $this->getUrl('mpanel/post/newInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId, 'core_block' => 'cartSidebar')) ?>')">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Cart Sidebar') ?></span>
+                    </li>                       
+                    <li id="static-item" onclick="newInCms('<?php echo $this->getUrl('mpanel/post/newInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId, 'core_block' => 'compareSidebar')) ?>')">
+                        <span class="glyphicon glyphicon-retweet"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Compare Sidebar') ?></span>
+                    </li>                       
+                    <li id="static-item" onclick="newInCms('<?php echo $this->getUrl('mpanel/post/newInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId, 'core_block' => 'reorderSidebar')) ?>')">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Reorder Sidebar') ?></span>
+                    </li>                       
+                    <li id="static-item" onclick="setLocation('<?php echo $this->getUrl('mpanel/index/pollInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId, 'product_id' => $this->getRequest()->getParam('product_id'))) ?>')">
+                        <span class="glyphicon glyphicon-align-left"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Poll') ?></span>
+                    </li>  
+                    <li id="static-item" onclick="newInCms('<?php echo $this->getUrl('mpanel/post/newInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId, 'core_block' => 'productViewed')) ?>')">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Product Viewed') ?></span>
+                    </li>                                                                     
+                    <li id="static-item" onclick="newInCms('<?php echo $this->getUrl('mpanel/post/newInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId, 'core_block' => 'wishlistSidebar')) ?>')">
+                        <span class="glyphicon glyphicon-heart"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Wishlist Sidebar') ?></span>
+                    </li>                        
+                    <li id="static-item" onclick="newInCms('<?php echo $this->getUrl('mpanel/post/newInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId, 'core_block' => 'tagsPopular')) ?>')">
+                        <span class="glyphicon glyphicon-tags"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Tags Popular') ?></span>
+                    </li>                       
+                    <li id="static-item" onclick="newInCms('<?php echo $this->getUrl('mpanel/post/newInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId, 'core_block' => 'newsletter')) ?>')">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Newsletter') ?></span>
+                    </li>                                             
+                    <li id="static-item" onclick="setLocation('<?php echo $this->getUrl('mpanel/index/promoInCms', array('template' => $template, 'block' => $block, 'type' => 'core', 'page_id' => $pageId)) ?>')">
+                        <span class="glyphicon glyphicon-gift"></span>
+                        <span class="glyphicon-class"><?php echo $this->__('Promo Banner') ?></span>
+                    </li> 
+                </ul>
+            </div>
+            <script type="text/javascript">
+                function newInCms(url) {
+                    mgsjQuery.ajax({
+                        type: 'POST',
+                        url: url,
+                        dataType: 'json',
+                        success: function (data, textStatus, xhr) {
+                            if (data.result == 'success') {                                
+                                parent.mgsjQuery.magnificPopup.close();
+                                window.top.location.reload();                                
+                            }
+                        }
+                    });
+                }
+            </script>
+        </div>
+    </div>
+</div>
+<?php endif ?>
+

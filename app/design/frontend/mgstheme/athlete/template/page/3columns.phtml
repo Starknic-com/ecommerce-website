@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <?php echo $this->getChildHtml('head') ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body <?php echo $this->getBodyClass() ? ' class="' . $this->getBodyClass() . '"' : '' ?>>
+                <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K8X9L3P');</script>
+<!-- End Google Tag Manager -->
+		<?php echo $this->getChildHtml('after_body_start') ?>
+		
+		<?php  $helper = Mage::helper('mpanel'); $setting = $helper->getThemeSettings(); ?>
+
+			<div id="wrapper">
+
+        
+        <?php echo $this->getChildHtml('global_notices') ?>
+        <header>
+            <?php echo $this->getChildHtml('header') ?>
+        </header>
+        <section id="after-header">
+            <div class="container">
+                <?php echo $this->getChildHtml('slider') ?>
+            </div>
+        </section>
+        <?php $helper = $this->helper('mpanel') ?>
+        <?php if ($helper->isHomepage()): ?>
+            <section id="maincontent">
+                <div class="container">
+                    <div class="row">
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                    </div>
+                </div>
+                <?php if($helper->useHomepageBuilder()): ?>
+					<div id="homepage-content-container">
+						<?php echo $helper->getLayoutConfig() ?>
+					</div>
+				<?php else: ?>
+					<div class="container">
+						<div class="row">
+							<aside class="col-left sidebar col-md-3">
+								<?php echo $this->getChildHtml('left') ?>
+							</aside>
+							<div class="col-main col-md-6 three_columns">
+								<?php echo $this->getChildHtml('global_messages') ?>
+								<?php echo $this->getChildHtml('content') ?>
+							</div>
+							<aside class="col-left sidebar col-md-3">
+								<?php echo $this->getChildHtml('right') ?>
+							</aside>
+						</div>
+					</div>
+				<?php endif ?>
+            </section>
+        <?php else: ?>
+            <section id="maincontent">
+                <?php echo $this->getChildHtml('breadcrumbs') ?> 
+                <div class="container">
+                	<div class="row">
+	                    <aside class="col-left sidebar col-md-3">
+		                        <?php if ($helper->isCategoryPage() || $helper->isProductPage()): ?>
+		                            <div id="left-content-container">
+		                                <?php echo $helper->getLayoutConfigCategoryLeft() ?>
+		                            </div>
+		                        <?php elseif ($helper->isCmsPage()): ?>
+		                            <?php echo $helper->getLayoutConfigCmsLeft() ?>
+		                        <?php elseif ($helper->isCustomerPage()): ?>
+		                            <?php echo $helper->getLayoutConfigCustomerLeft() ?>
+		                        <?php else: ?>
+		                            <?php echo $this->getChildHtml('left') ?>
+		                        <?php endif; ?>
+	                    </aside>
+	                    <div class="col-main col-md-6 three_columns">
+	                        <?php echo $this->getChildHtml('global_messages') ?>
+	                        <?php echo $this->getChildHtml('content') ?>
+	                    </div>
+	                    <aside class="col-left sidebar col-md-3">
+		                        <?php if ($helper->isCategoryPage() || $helper->isProductPage()): ?>
+		                            <div id="right-content-container">
+		                                <?php echo $helper->getLayoutConfigCategoryRight() ?>
+		                            </div>
+		                        <?php elseif ($helper->isCmsPage()): ?>
+		                            <?php echo $helper->getLayoutConfigCmsRight() ?>
+		                        <?php elseif ($helper->isCustomerPage()): ?>
+		                            <?php echo $helper->getLayoutConfigCustomerRight() ?>
+		                        <?php else: ?>
+		                            <?php echo $this->getChildHtml('right') ?>
+		                        <?php endif; ?>
+	                    </aside>
+                    </div>
+                </div>
+            </section>
+        <?php endif ?>
+        <footer id="footer">
+            <?php echo $this->getChildHtml('footer') ?>
+        </footer>
+		<div id="copyright">
+			<div class="container">
+				<div class="back-to-top"><a title="BACK_TO_TOP" href="#top"><i class="fa fa-chevron-up"></i></a></div>
+				<div class="clrDiv"></div>
+			</div>
+		</div>
+
+			</div>
+
+		
+        <?php echo $this->getChildHtml('before_body_end') ?>
+        <?php echo $this->getAbsoluteFooter() ?>
+        <?php echo $this->getChildHtml('theme_popup') ?>
+    </body>
+</html>

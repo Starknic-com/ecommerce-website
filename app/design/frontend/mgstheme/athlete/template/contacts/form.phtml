@@ -1,0 +1,66 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="contact-submit">
+<div class="container">
+	<div class="row">
+		<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+		<div class="col-md-3 col-sm-12 col-xs-12">
+			<div class="contact">
+			<h4><?php echo Mage::helper('contacts')->__('Contacts Form') ?></h4>
+			<div class="headding-bottom"></div>
+			<form action="<?php echo $this->getUrl('contacts/index/post'); ?>" id="contactForm" method="post" class="form-contacts-page main-contact-form row">
+				<div class="form-group col-md-12">
+					<input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="form-control required-entry" type="text" placeholder="<?php echo Mage::helper('contacts')->__('Your Name *') ?>"/>
+				</div>
+				<div class="form-group col-md-12">
+				<input name="email" id="email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="form-control required-entry validate-email" type="text" placeholder="<?php echo Mage::helper('contacts')->__('Email *') ?>"/>
+				</div>
+				<div class="form-group col-md-12">
+				<input name="telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="" class="form-control" type="text" placeholder="<?php echo Mage::helper('contacts')->__('Telephone') ?>"/>
+				</div>
+				<div class="form-group col-md-12">				
+				<textarea name="comment" id="comment" title="<?php echo Mage::helper('contacts')->__('Comment') ?>" class="required-entry form-control" cols="5" rows="8" style="height: 100px;" placeholder="<?php echo Mage::helper('contacts')->__('Your Comments *') ?>"></textarea>
+				</div>
+												
+				<div class="form-group form-submit col-md-12">
+					<input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+					<button type="submit" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="btn btn-primary btn-submit"><span><span><?php echo Mage::helper('contacts')->__('Send message') ?></span></span></button>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+		
+		<script type="text/javascript">
+		//<![CDATA[
+			var contactForm = new VarienForm('contactForm', false);
+		//]]>
+		</script>
+</div>
+</div>

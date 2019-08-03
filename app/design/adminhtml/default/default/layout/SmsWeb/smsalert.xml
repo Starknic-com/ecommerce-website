@@ -1,0 +1,34 @@
+<layout>
+    <adminhtml_sales_order_view>
+        <reference name="order_history">
+            <action method="setTemplate"><name>smsweb/smsalert/sales/order/view/history.phtml</name></action>
+        </reference>
+    </adminhtml_sales_order_view>
+    <adminhtml_sales_order_addcomment>
+        <reference name="order_history">
+            <action method="setTemplate"><name>smsweb/smsalert/sales/order/view/history.phtml</name></action>
+        </reference>
+    </adminhtml_sales_order_addcomment>
+
+    <adminhtml_sales_order_invoice_view>
+        <reference name="order_comments">
+            <action method="setTemplate"><name>smsweb/smsalert/sales/order/comments/view.phtml</name></action>
+        </reference>
+    </adminhtml_sales_order_invoice_view>
+    <adminhtml_sales_order_invoice_addcomment>
+        <reference name="order_comments">
+            <action method="setTemplate"><name>smsweb/smsalert/sales/order/comments/view.phtml</name></action>
+        </reference>
+    </adminhtml_sales_order_invoice_addcomment>
+
+    <adminhtml_sales_order_shipment_view>
+        <reference name="order_comments">
+            <action method="setTemplate"><name>smsweb/smsalert/sales/order/comments/view.phtml</name></action>
+        </reference>
+    </adminhtml_sales_order_shipment_view>
+    <adminhtml_sales_order_shipment_addcomment>
+        <reference name="order_comments">
+            <action method="setTemplate"><name>smsweb/smsalert/sales/order/comments/view.phtml</name></action>
+        </reference>
+    </adminhtml_sales_order_shipment_addcomment>
+</layout>

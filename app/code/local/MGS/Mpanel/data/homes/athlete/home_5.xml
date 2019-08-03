@@ -1,0 +1,374 @@
+<layout>
+	<name>1_column_full</name>
+
+	<!--  Blocks  -->
+	<block>
+		<block_name>block1</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block2</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>100</padding_top>
+		<padding_bottom>50</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block3</block_name>
+		<custom_class><![CDATA[]]></custom_class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block4</block_name>
+		<class><![CDATA[background-center background-norepeat background-cover]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-center.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>45</padding_top>
+		<padding_bottom>10</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block5</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>60</padding_top>
+		<padding_bottom>50</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block6</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-brand.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>15</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	<!--  Childs  -->
+	<child>
+		<block_name>block2</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-daily-deals]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block2_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="our-pricing">
+<div class="our-pricing-title">
+<div class="ch-item">
+<div class="ch-info-wrap">
+<div class="ch-info">
+<div class="ch-info-front">
+<h2>Daily</h2>
+<h3>Deals</h3>
+</div>
+<div class="ch-info-back">
+<h2>Daily</h2>
+<h3>Deals</h3>
+</div>
+</div>
+<!-- end ch-info --></div>
+<!-- end ch-info-wrap --></div>
+<!-- end ch-item --></div>
+<div class="boxing-card">
+<div class="our-price col-md-6 col-sm-6 col-xs-12">
+<div class="image-price-right">
+<div class="label-product-save">Save 23%</div>
+<img src="{{media url="wysiwyg/static-block/our-price-1.jpg"}}" alt="" /></div>
+<div class="boxing-card-content">
+<h3>Boxing Gloves</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adi sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis</p>
+<div class="price"><a class="shopping-buy" href="#"><span>$199</span></a></div>
+</div>
+</div>
+</div>
+<div class="yoga-card">
+<div class="our-price col-md-6 col-sm-6 col-xs-12">
+<div class="image-price-left">
+<div class="label-product-save">Save 23%</div>
+<img src="{{media url="wysiwyg/static-block/our-price-2.jpg"}}" alt="" /></div>
+<div class="yoga-content">
+<div class="yoga-card-content ">
+<h3>Yoga monthly card</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adi sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis</p>
+<div class="price"><a class="shopping-buy" href="#"><span>$39</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[{{block type="core/template" products_count="8" slider="0" count_per_row="4" tabs="new_products,featured_products" template="mgs/mpanel/tabs.phtml"}}]]></block_content>
+		<type>tabs</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"title-center","animation":"","animation_delay":"","product_tab":["new_products","featured_products"],"product_count":"8","count_per_row":"4","slider":{"active":"0","auto":"false","stop_hover":"false","navigation":"false","pagination":"false"}}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-shoes-sale]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block4_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="parallax-text parallax-shop parallax-gallery summer-discount">
+<h2 style="font-size: 48px;">shoes for sale</h2>
+<p>Click here to discover our promotion</p>
+<a href="{{store url=""}}men.html"><span class="button open-btn" style="margin-bottom: 45px;"><span>Discover Now</span></span></a>
+<div class="row">
+<div class="col-md-4 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product4.png"}}" alt="" /></a>
+<div class="discount-off"><span>15%</span></div>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product5.png"}}" alt="" /></a>
+<div class="discount-off"><span>15%</span></div>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product6.png"}}" alt="" /></a>
+<div class="discount-off"><span>15%</span></div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>6</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-clothing-sale]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block4_2]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="parallax-text parallax-shop parallax-gallery summer-discount text-right pull-right">
+<h2 style="font-size: 48px;">fitness clothing</h2>
+<p>37 sets - 40% off - Just only this week - Discover to more</p>
+<a href="{{store url=""}}women.html"><span class="button open-btn" style="margin-bottom: 45px;"><span>Discover Now</span></span></a>
+<div class="col-md-12 item"><a href="{{store url=""}}women.html"><img src="{{media url="wysiwyg/static-block/bn-product11.png"}}" alt="" /></a>
+<div class="discount-off" style="top: -50px; right: 50%;"><span>45%</span></div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>6</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<type>separator</type>
+		<position>3</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"25","margin_bottom":"25"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[{{block type="promobanners/promobanners" banner_id="%s" template="mgs/promobanners/banner.phtml"}}]]></block_content>
+		<type>promo_banner</type>
+		<banner_title>Athlete-boximg-1</banner_title>
+		<banner_filename>boximg-1.png</banner_filename>
+		<banner_url><![CDATA[]]></banner_url>
+		<banner_content><![CDATA[]]></banner_content>
+		<banner_text_align>left</banner_text_align>
+		<position>4</position>
+		<setting><![CDATA[{"custom_class":"box-image nopadding col-sm-12 col-xs-12","animation":"","animation_delay":"","banner_id":"%s"}]]></setting>
+		<col>3</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[{{block type="promobanners/promobanners" banner_id="%s" template="mgs/promobanners/banner.phtml"}}]]></block_content>
+		<type>promo_banner</type>
+		<banner_title>Athlete-boximg-2</banner_title>
+		<banner_filename>boximg-2.png</banner_filename>
+		<banner_url><![CDATA[]]></banner_url>
+		<banner_content><![CDATA[]]></banner_content>
+		<banner_text_align>left</banner_text_align>
+		<position>5</position>
+		<setting><![CDATA[{"custom_class":"box-image nopadding col-sm-12 col-xs-12","animation":"","animation_delay":"","banner_id":"%s"}]]></setting>
+		<col>6</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[{{block type="promobanners/promobanners" banner_id="%s" template="mgs/promobanners/banner.phtml"}}]]></block_content>
+		<type>promo_banner</type>
+		<banner_title>Athlete-boximg-3</banner_title>
+		<banner_filename>boximg-3.png</banner_filename>
+		<banner_url><![CDATA[]]></banner_url>
+		<banner_content><![CDATA[]]></banner_content>
+		<banner_text_align>left</banner_text_align>
+		<position>6</position>
+		<setting><![CDATA[{"custom_class":"box-image nopadding col-sm-12 col-xs-12","animation":"","animation_delay":"","banner_id":"%s"}]]></setting>
+		<col>3</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[{{block type="promobanners/promobanners" banner_id="%s" template="mgs/promobanners/banner.phtml"}}]]></block_content>
+		<type>promo_banner</type>
+		<banner_title>Athlete-boximg-4</banner_title>
+		<banner_filename>boximg-4.png</banner_filename>
+		<banner_url><![CDATA[]]></banner_url>
+		<banner_content><![CDATA[]]></banner_content>
+		<banner_text_align>left</banner_text_align>
+		<position>7</position>
+		<setting><![CDATA[{"custom_class":"box-image nopadding col-sm-12 col-xs-12","animation":"","animation_delay":"","banner_id":"%s"}]]></setting>
+		<col>5</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[{{block type="promobanners/promobanners" banner_id="%s" template="mgs/promobanners/banner.phtml"}}]]></block_content>
+		<type>promo_banner</type>
+		<banner_title>Athlete-boximg-5</banner_title>
+		<banner_filename>boximg-5.png</banner_filename>
+		<banner_url><![CDATA[]]></banner_url>
+		<banner_content><![CDATA[]]></banner_content>
+		<banner_text_align>left</banner_text_align>
+		<position>8</position>
+		<setting><![CDATA[{"custom_class":"box-image nopadding col-sm-12 col-xs-12","animation":"","animation_delay":"","banner_id":"%s"}]]></setting>
+		<col>2</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[{{block type="promobanners/promobanners" banner_id="%s" template="mgs/promobanners/banner.phtml"}}]]></block_content>
+		<type>promo_banner</type>
+		<banner_title>Athlete-boximg-6</banner_title>
+		<banner_filename>boximg-6.png</banner_filename>
+		<banner_url><![CDATA[]]></banner_url>
+		<banner_content><![CDATA[]]></banner_content>
+		<banner_text_align>left</banner_text_align>
+		<position>9</position>
+		<setting><![CDATA[{"custom_class":"box-image nopadding col-sm-12 col-xs-12","animation":"","animation_delay":"","banner_id":"%s"}]]></setting>
+		<col>5</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<type>separator</type>
+		<position>10</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"50","margin_bottom":"50"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-title-blog]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block6_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="title-blog">
+<h2 style="margin-top: 0;">Athlete blog</h2>
+<p>Working from home meant we could vary snack and coffee breaks, change our desks or view, goof off, drink on the job, even spend the day in pajamas.</p>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>11</position>
+		<setting><![CDATA[{"custom_class":"text-center","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<type>separator</type>
+		<position>12</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"30","margin_bottom":"30"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-layer-bottom-left]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block5_14]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="box-left ">
+<div class="icon"><em class="fa fa-globe">&nbsp;</em></div>
+<div class="content-about">
+<h4 class="about-title">free ship worldwide</h4>
+<p>Fusce gravida tortor felis. Ac dictum risus sagittis id morbi posu justo eleifend libero ultricies asunt</p>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>14</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>6</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-layer-bottom-right]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block5_15]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="box-right ">
+<div class="icon"><em class="fa fa-cog">&nbsp;</em></div>
+<div class="content-about">
+<h4 class="about-title">Powerful Theme Option</h4>
+<p>Fusce gravida tortor felis. Ac dictum risus sagittis id morbi posu justo eleifend libero ultricies asunt</p>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>15</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>6</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block6</block_name>
+		<block_content><![CDATA[{{block type="abrands/abrands" slider="1" title="" brand_count="6" auto_play="false" stop_hover="false" navigation="false" pagination="true" template="mgs/abrands/brands.phtml"}}]]></block_content>
+		<type>brands</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","title":"","slider":{"active":"1","auto":"false","stop_hover":"false","navigation":"false","pagination":"true"},"brand_count":"6"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+</layout>

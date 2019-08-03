@@ -1,0 +1,139 @@
+<?php if ($posts = $this->getRecent()): ?>
+	<div class="widget-latest timetable-top">
+		<?php if($this->getViewMode()=='grid'): ?>
+			<?php if($this->getTitle()!=''): ?>
+				<div class="carousel_wrapper">
+						<div class="title title-name">
+							<h4><?php echo $this->getTitle() ?></h4>
+						</div>
+				</div>
+			<?php endif;?>
+			<?php if($this->getSlider()==1): ?>
+				
+				<div class="owl-carousel latest-post-carousel" id="latest-post-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
+					<?php $i=0; foreach ($posts as $post): ?>
+						<div class="item day">
+							<div class="timetable-cont">
+								<div class="time-table-title">
+									<span><?php echo date('F , d', strtotime($post->getCreatedTime())); ?></span>
+									<p><?php echo date('l', strtotime($post->getCreatedTime())); ?></p>
+								</div>
+								<?php if($post->getFeaturedImage()!=''): ?>									
+										<a href="<?php echo $post->getAddress() ?>">
+											<img class="img-responsive" alt="" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'blog/'.$post->getFeaturedImage(); ?>"/>
+										</a>									
+								<?php endif ?>
+								<div class="box-content">
+									<div class="table">
+										<div class="box-cell">
+											<div class="timetable-info">
+												<div class="title-content">
+													<div class="blog-title">
+													<a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a>
+													</div>
+													<div class="product-bottom"></div>
+													<p><?php echo date('G A', strtotime($post->getCreatedTime())); ?> - <?php echo $post->getUser(); ?></p>
+												</div>
+												<?php if($post->getShortContent()): ?>
+													<p>
+														<?php $short_content = strip_tags($post->getShortContent()); 
+															$arrwords = explode(" ",$short_content);
+															$arrsubwords = array_slice($arrwords,0,20);
+															echo implode(" ",$arrsubwords);
+														?>	
+													</p>
+												<?php endif ?>
+												<div class="timetable_details">
+													<a href="<?php echo $post->getAddress(); ?>" ><?php echo $this->__('Read more') ?></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>							
+						</div>
+					<?php endforeach; ?>
+				</div>
+				
+				<script type="text/javascript">
+					initSlider('latest-post-carousel', <?php echo $this->getColumn() ?>, <?php echo $this->getAutoPlay()?>, <?php echo $this->getStopHover()?>, <?php echo $this->getNavigation()?>, <?php echo $this->getPagination()?>);
+				</script>
+			<?php else: ?>
+			
+				<div class="latest-post-container row">
+					<?php $i=0; foreach ($posts as $post): ?>
+						<div class="col-md-<?php echo $this->helper('mpanel')->convertColRow($this->getColumn()) ?> col-sm-6 col-xs-12 day" >
+							<div class="timetable-cont">
+								<div class="time-table-title">
+									<span><?php echo date('F , d', strtotime($post->getCreatedTime())); ?></span>
+									<p><?php echo date('l', strtotime($post->getCreatedTime())); ?></p>
+								</div>
+								<?php if($post->getFeaturedImage()!=''): ?>									
+										<a href="<?php echo $post->getAddress() ?>">
+											<img class="img-responsive" alt="" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'blog/'.$post->getFeaturedImage(); ?>"/>
+										</a>									
+								<?php endif ?>
+								<div class="box-content">
+									<div class="table">
+										<div class="box-cell">
+											<div class="timetable-info">
+												<div class="title-content">
+													<div class="blog-title">
+													<a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a>
+													</div>
+													<div class="product-bottom"></div>
+													<p><?php echo date('G A', strtotime($post->getCreatedTime())); ?> - <?php echo $post->getUser(); ?></p>
+												</div>
+												<?php if($post->getShortContent()): ?>
+													<p>
+														<?php $short_content = strip_tags($post->getShortContent()); 
+															$arrwords = explode(" ",$short_content);
+															$arrsubwords = array_slice($arrwords,0,20);
+															echo implode(" ",$arrsubwords);
+														?>	
+													</p>
+												<?php endif ?>
+												<div class="timetable_details">
+													<a href="<?php echo $post->getAddress(); ?>" ><?php echo $this->__('Read more') ?></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
+					<?php endforeach; ?>
+				</div>
+			<?php endif ?>
+		<?php else: ?>
+			<div class="latest-post-list">
+				<div class="popular-event-title">
+					<h4><?php echo Mage::helper('blog')->__('Latest Posts'); ?></h4>
+				</div>
+				<div class="news-content">
+					<ul>
+					<?php $i=0; foreach ($posts as $post): ?>
+						<li class="latest-news-item">
+							<div class="news-item-inner">
+							
+								<div class="news-date">
+									<div class="news-day"><?php echo date('d', strtotime($post->getCreatedTime())) ?></div>
+									<div class="news-month"><?php echo date('M', strtotime($post->getCreatedTime())) ?></div>
+								</div>
+								<div class="news-info">
+									<div class="news-title">
+										<a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a>
+									</div>
+									<div class="news-time">
+										<p><?php echo date('G A', strtotime($post->getCreatedTime())); ?> - <?php echo $post->getUser(); ?></p>
+									</div>
+								</div>
+							</div>
+						</li>
+					<?php endforeach; ?>
+					</ul>
+				</div>
+			</div>
+		<?php endif ?>
+	</div>
+<?php endif; ?>

@@ -1,0 +1,154 @@
+<?php $template = $this->getRequest()->getParam('template') ?>
+<?php $block = $this->getRequest()->getParam('block') ?>
+<?php
+$exist = 0;
+if ($id = $this->getRequest()->getParam('id')) {
+    $cmsBlock = Mage::getModel('cms/block')->load($id);
+    $exist = 1;
+}
+?>
+<?php $helper = $this->helper('mpanel') ?>
+<?php if ($helper->acceptToUsePanel()): ?>    
+    <div class="edit-static-form">
+		<div class="row">
+			<div class="col-md-12 builder-title">
+				<h2><?php echo $this->__('Text & Image Block') ?></h2>
+			</div>
+		</div>
+        <?php
+        $form = new Varien_Data_Form(
+			array('id' => 'edit_form', 'action' => $this->getUrl('mpanel/post/childInCustomer'), 'method' => 'post')
+        );
+
+        $form->setHtmlIdPrefix('block_');
+
+        $fieldset = $form->addFieldset('base_fieldset', array('legend' => '', 'class' => 'fieldset-wide-custom'));
+
+        $fieldset->addField('title', 'text', array(
+            'name' => 'title',
+            'label' => $this->__('Block Title'),
+            'title' => $this->__('Block Title'),
+            'required' => true,
+        ));
+
+        $fieldset->addField('identifier', 'text', array(
+            'name' => 'identifier',
+            'label' => $this->__('Identifier'),
+            'title' => $this->__('Identifier'),
+            'required' => true,
+            'class' => 'validate-xml-identifier',
+        ));
+
+        $fieldset->addField('store_id', 'hidden', array(
+            'name' => 'stores[]',
+            'value' => Mage::app()->getStore()->getStoreId()
+        ));
+		
+        $fieldset->addField('is_active', 'hidden', array(
+            'name' => 'is_active',
+            'value' => 1
+        ));
+
+        $fieldset->addField('content', 'editor', array(
+            'name' => 'content',
+            'label' => $this->__('Content'),
+            'title' => $this->__('Content'),
+            'style' => 'height:22em',
+            'required' => true,
+            'config' => $helper->getConfig(),
+			'class'		=> 'input-text'
+        ));
+
+        if ($this->getRequest()->getParam('template') == 'customer_right') {
+            $fieldset->addField('position', 'hidden', array(
+                'name' => 'position',
+                'value' => 'right'
+            ));
+        } else {
+            $fieldset->addField('position', 'hidden', array(
+                'name' => 'position',
+                'value' => 'left'
+            ));
+        }        
+
+        if ($this->getRequest()->getParam('id')) {
+            $fieldset->addField('block_id', 'hidden', array(
+                'name' => 'block_id'
+            ));
+        }
+
+        $form->setUseContainer(true);
+
+        if ($this->getRequest()->getParam('id')) {
+            $values = array();
+            $values['block_id'] = $cmsBlock->getData('block_id');            
+            if ($this->getRequest()->getParam('template') == 'customer_right') {
+                $values['position'] = 'right';
+            } else {
+                $values['position'] = 'left';
+            }
+            $values['title'] = $cmsBlock->getData('title');
+            $values['identifier'] = $cmsBlock->getData('identifier');
+            $values['content'] = $cmsBlock->getData('content');
+            $values['is_active'] = $cmsBlock->getData('is_active');
+            $values['store_id'] = $cmsBlock->getData('store_id');
+            $form->setValues($values);
+        }
+
+        echo $form->toHtml();
+        ?>
+    </div>
+
+
+
+    <script type="text/javascript">
+        mgsjQuery("#block_base_fieldset").append('<div class="builder-action"><div class="buttons"><?php if(!$exist): ?><button onclick="history.go(-1)" class="btn btn-back" type="button"><span><span><?php echo $this->__('Back') ?></span></span></button><?php endif ?><button id="submit-button" onclick="updateForm.submit(this)" class="btn btn-primary" type="button"><span><span><?php echo $this->__("Submit"); ?></span></span></button></div></div>');
+
+        var updateForm = new VarienForm('edit_form');
+
+        updateForm.submit = function (button, url) {
+
+            if (this.validator.validate()) {
+                mgsjQuery('#submit-button span span').html('<?php echo $this->__('Saving...') ?>');
+                mgsjQuery('#toggleblock_content').click();
+                button.disabled = true;
+                var form = this.form;
+                var oldUrl = form.action;
+
+                if (url) {
+                    form.action = url;
+                }
+                var e = null;
+                try {
+                    mgsjQuery.ajax({
+                        type: 'POST',
+                        url: form.action,
+                        dataType: 'json',
+                        data: mgsjQuery('#edit_form').serialize(),
+                        success: function (data, textStatus, xhr) {
+                            if (data.result == 'success') {
+                                button.disabled = false;
+                                mgsjQuery('#submit-button span span').html('<?php echo $this->__('Submit') ?>');
+
+                                if (window.parent == window.top) {
+                                    //window.parent.jQuery.magnificPopup.close();
+                                    window.top.location.reload();
+                                }
+                            }
+                        }
+                    });
+                } catch (e) {
+                }
+                this.form.action = oldUrl;
+                if (e) {
+                    throw e;
+                }
+
+                if (button && button != 'undefined') {
+                    button.disabled = true;
+                }
+            }
+        }.bind(updateForm);
+
+    </script>
+<?php endif; ?>

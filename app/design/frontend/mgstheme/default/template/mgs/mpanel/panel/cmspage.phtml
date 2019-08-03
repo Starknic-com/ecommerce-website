@@ -1,0 +1,60 @@
+<?php $cmsPageUrlKey = Mage::getSingleton('cms/page')->getIdentifier(); ?>
+<?php $pageId = Mage::getBlockSingleton('cms/page')->getPage()->getId(); ?>
+<?php $helper = $this->helper('mpanel') ?>
+<form action="<?php echo $this->getUrl('mpanel/post/cms') ?>" method="POST" id="panel-form" enctype="multipart/form-data">
+    <input type="hidden" name="identifier" value="<?php echo $cmsPageUrlKey ?>"/>
+    <input type="hidden" name="current_url" value="<?php echo Mage::helper('core/url')->getCurrentUrl() ?>"/>
+    <div class="col-md-7 col-sm-10 col-xs-10">
+        <div class="row">
+            <div id="settings" class="panel-group catalog-settings">
+                <div class="panel">
+                    <div class="general-setting">
+                        <a data-toggle="collapse" data-parent="#settings" href="#general-setting" title="<?php echo $this->__('General Settings') ?>" class="collapsed"><em class="fa fa-gear"></em></a>
+                        <h2 class="title">
+                            <?php echo $this->__('CMS Page') ?>
+                        </h2>
+                    </div>
+
+                    <div class="layout-button" id="layout-button">
+                        <?php echo $helper->getPageLayoutHtml($pageId) ?>
+                    </div>
+
+                    <div class="seo-setting">
+                        <a data-toggle="collapse" data-parent="#settings" href="#seo-setting" title="<?php echo $this->__('Seo Settings') ?>" class="collapsed"><em class="fa fa-globe"></em>&nbsp;<?php echo $this->__('SEO') ?></a>
+                    </div>
+                </div>
+
+                <div class="panel col-md-12">
+                    <div id="general-setting" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('mgs/mpanel/panel/general.phtml')->toHtml() ?>
+                        </div>
+                    </div>
+
+                    <div id="seo-setting" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('mgs/mpanel/panel/seo.phtml')->toHtml() ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-5 col-sm-4 col-xs-4">
+        <a href="<?php echo $this->getUrl('adminhtml') ?>" class="backend-link" title="<?php echo $this->__('Go to backend') ?>" target="_blank">
+            <?php echo $this->__('Admin') ?><em class="fa fa-user"></em>
+        </a>
+        <?php echo $this->getLayout()->createBlock('page/switch')->setTemplate('mgs/mpanel/languages.phtml')->toHtml() ?>
+
+        <?php if (Mage::getStoreConfig('dev/translate_inline/active')): ?>
+            <a href="<?php echo $this->getUrl('mpanel/index/translate', array('value' => 0, 'referrer' => Mage::helper('core/url')->getCurrentBase64Url())) ?>" class="translate-link" title="<?php echo $this->__('Disable Translate Inline') ?>">
+                <?php echo $this->__('Disable Translate Inline') ?>&nbsp;<em class="fa fa-book"></em>
+            </a>
+        <?php else: ?>
+            <a href="<?php echo $this->getUrl('mpanel/index/translate', array('value' => 1, 'referrer' => Mage::helper('core/url')->getCurrentBase64Url())) ?>" class="translate-link" title="<?php echo $this->__('Enable Translate Inline') ?>">
+                <?php echo $this->__('Enable Translate Inline') ?>&nbsp;<em class="fa fa-book"></em>
+            </a>
+        <?php endif ?>
+    </div>
+</form>

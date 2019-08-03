@@ -1,0 +1,109 @@
+<static_block>
+	<item>
+		<title>MGS Panel Category Landing Page</title>
+		<identifier>mgs_panel_category_landing_page</identifier>
+		<content><![CDATA[{{block type="catalog/navigation" name="catalog.landing" template="mgs/mpanel/landing.phtml"}}]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Call Us</title>
+		<identifier>athlete_call_us</identifier>
+		<content><![CDATA[<div class="footer-title">
+<h4>Our location</h4>
+</div>
+<div class="address">
+<p>Room 1214&nbsp; #187 Tay Son Building, Dong Da Distr<br />Ha Noi, Vietnam<br />Phone : +84 4 22414757<br />Email : inwavethemes@gmail.com</p>
+</div>]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Social</title>
+		<identifier>athlete_social</identifier>
+		<content><![CDATA[<div class="social_icon"><a href="#"><em class="fa fa-facebook">&nbsp;</em></a> <a href="#"><em class="fa fa-twitter">&nbsp;</em></a> <a href="#"><em class="fa fa-google-plus">&nbsp;</em></a> <a href="#"><em class="fa fa-youtube">&nbsp;</em></a></div>]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Main Menu</title>
+		<identifier>athlete_main_menu</identifier>
+		<content><![CDATA[<div class="footer-title">
+<h4>Our offers</h4>
+</div>
+<ul>
+<li><a href="#">New products</a></li>
+<li><a href="#">Top sellers</a></li>
+<li><a href="#">Specials</a></li>
+<li><a href="#">Manufacturers</a></li>
+<li><a href="#">Suppliers</a></li>
+<li><a href="#">Specials</a></li>
+<li><a href="#">Service</a></li>
+</ul>]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Shopping Info</title>
+		<identifier>athlete_shopping_info</identifier>
+		<content><![CDATA[<div class="footer-title">
+<h4>Shopping info</h4>
+</div>
+<ul>
+<li><a href="#">Returns</a></li>
+<li><a href="#">Delivery</a></li>
+<li><a href="#">Service</a></li>
+<li><a href="#">Gift Cards</a></li>
+<li><a href="#">Mobile</a></li>
+<li><a href="#">Gift Cards</a></li>
+<li><a href="#">Manufacturers</a></li>
+</ul>]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Policies</title>
+		<identifier>athlete_policies</identifier>
+		<content><![CDATA[<div class="footer-title">
+<h4>Policies</h4>
+</div>
+<ul>
+<li><a href="#">Terms Of Service</a></li>
+<li><a href="#">Privacy</a></li>
+<li><a href="#">Security</a></li>
+<li><a href="#">Terms of Use</a></li>
+</ul>]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Brand</title>
+		<identifier>athlete_brand</identifier>
+		<content><![CDATA[<ul class="payment">
+<li><a href="#"><img class="img-responsive" src="{{media url="wysiwyg/payment_logo1.png"}}" alt="" /></a></li>
+<li><a href="#"><img class="img-responsive" src="{{media url="wysiwyg/payment_logo5.png"}}" alt="" /></a></li>
+<li><a href="#"><img class="img-responsive" src="{{media url="wysiwyg/payment_logo6.png"}}" alt="" /></a></li>
+<li><a href="#"><img class="img-responsive" src="{{media url="wysiwyg/payment_logo3.png"}}" alt="" /></a></li>
+<li><a href="#"><img class="img-responsive" src="{{media url="wysiwyg/payment_logo2.png"}}" alt="" /></a></li>
+<li><a href="#"><img class="img-responsive" src="{{media url="wysiwyg/payment_logo4.png"}}" alt="" /></a></li>
+</ul>]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Text</title>
+		<identifier>athlete_text</identifier>
+		<content><![CDATA[<p>Accessories is a premium Magento theme with advanced admin module. It&rsquo;s extremely customizable, easy to use and fully responsive. Morbi diam leo, ultrices in tempor ac, facilisis consequat odio. Aenean condimentum vestibulum justo in imperdiet.</p>]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Call Us 3</title>
+		<identifier>athlete_call_us_3</identifier>
+		<content><![CDATA[<div class="top-call-us"><span class="address-top"><em class="fa fa-map-marker "></em>Room 1214 #187 Tay Son Building, Dong Da Distr Ha Noi, Vietnam</span> <span class="call-top"><em class="fa fa-phone"></em>Call us: (0123) 456 7893</span></div>]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Call Phone</title>
+		<identifier>athlete_call_phone</identifier>
+		<content><![CDATA[<p><span class="call-top"><em class="fa fa-phone"></em>Call us: (0123) 456 7893</span></p>]]></content>
+	</item>
+	
+	<item>
+		<title>Athlete Newsletter</title>
+		<identifier>athlete_newsletter</identifier>
+		<content><![CDATA[<div>{{block type="newsletter/subscribe" name="footer.newsletter" as="footer.newsletter" template="newsletter/footer-subscribe.phtml"/}}</div>]]></content>
+	</item>
+</static_block>

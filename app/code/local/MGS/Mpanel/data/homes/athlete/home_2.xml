@@ -1,0 +1,212 @@
+<layout>
+	<name>1_column_full</name>
+
+	<!--  Blocks  -->
+	<block>
+		<block_name>block2</block_name>
+		<class><![CDATA[man-girl]]></class>
+		<background><![CDATA[#ec3642]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block3</block_name>
+		<custom_class><![CDATA[]]></custom_class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>50</padding_top>
+		<padding_bottom>30</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block4</block_name>
+		<class><![CDATA[background-norepeat background-cover]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-fitstrong.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>100</padding_top>
+		<padding_bottom>100</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block5</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block6</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+
+	<!--  Childs  -->
+	
+	<child>
+		<block_name>block1</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Scroll-to-bottom]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block1_2]]></static_block_identifier>
+		<static_block_content><![CDATA[<div id="to-bottom" class="to-bottom"><em class="fa fa-angle-down">&nbsp;</em></div>]]></static_block_content>
+		<type>static</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block2</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Men-ladies]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block2_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="content-main content-main-left col-md-6 col-sm-6 col-xs-12 fadeInLeft">
+<div class="img-class img-class-left "><img src="{{media url="wysiwyg/static-block/image-1.png"}}" alt="" /></div>
+<div class="class-content class-content-left">
+<div class="title">
+<h2 class="title-men">men collection</h2>
+</div>
+<div class="class-content-text">
+<p class="desc-content">Lorem ipsum dolor sit amet, consectetur adi sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis tellus neque vitae elit</p>
+<div class="join  move_to_center"><a href="#">Shop Now</a></div>
+</div>
+</div>
+</div>
+<div class="content-main content-main-right col-md-6 col-sm-6 col-xs-12 fadeInRight">
+<div class="img-class img-class-right"><img src="{{media url="wysiwyg/static-block/image-2.png"}}" alt="" /></div>
+<div class="class-content class-content-right">
+<div class="title">
+<h2 class="title-men">ladies collection</h2>
+</div>
+<div class="class-content-text">
+<p class="desc-content  ">Lorem ipsum dolor sit amet, consectetur adi sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis tellus neque vitae elit</p>
+<div class="join  move_to_center"><a href="#">Shop Now</a></div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-store]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block4_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="fit-strong-top row" style="padding-bottom: 0;">
+<div class="col-md-6">
+<h3 class="fit-strong-text move_to_fadein_title" style="margin-top: 0;">athlete store</h3>
+<h2 class="fit-strong-text move_to_fadein_title" style="font-size: 48px; margin-top: 15px;">best selling</h2>
+</div>
+<div class="col-md-6">
+<p class="fit-strong-sub move_to_fadein_title">Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit Phasellus fermentum in, dolor. Pellentesque facilisis.</p>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>10</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-our-team]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block5_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="our-team">
+<div class="our-team-content">
+<div class="our-team-inner">
+<div class="custom">
+<div class="our-team-tabs our-team-bottom our-team-fit  content-our-team" data-active="1">
+<div class="our-team-panes">
+<div class="our-team-pane our-team-clear active" style="display: block;">
+<div class="our-team-img col-md-4 col-sm-4 col-xs-12"><img src="{{media url="wysiwyg/static-block/img_tabBlock4.jpg"}}" alt="" /></div>
+<div class="detail-our-team col-md-8 col-sm-8 col-xs-12">
+<div class="detail-our-team-inner">
+<div class="detail-our-team-desc">Hello, I'm Mike Stramond, a personal trainer based in San Diego, dedicated to getting people in great shape &amp; improving their lifestyle.</div>
+<div class="detail-our-team-user">Mike Stramond</div>
+<div class="detail-our-team-pos">Co-Founder</div>
+</div>
+</div>
+</div>
+<div class="our-team-pane our-team-clear" style="display: none;">
+<div class="our-team-img col-md-4 col-sm-4 col-xs-12"><img src="{{media url="wysiwyg/static-block/img_tabBlock4_2.jpg"}}" alt="" /></div>
+<div class="detail-our-team col-md-8 col-sm-8 col-xs-12">
+<div class="detail-our-team-inner">
+<div class="detail-our-team-desc">Hello, I'm Claire Freemon, a personal trainer based in San Diego, dedicated to getting people in great shape &amp; improving their lifestyle.</div>
+<div class="detail-our-team-user">Claire Freemon</div>
+<div class="detail-our-team-pos">Yoga trainer</div>
+</div>
+</div>
+</div>
+<div class="our-team-pane our-team-clear" style="display: none;">
+<div class="our-team-img col-md-4 col-sm-4 col-xs-12"><img src="{{media url="wysiwyg/static-block/img_tabBlock4_3.jpg"}}" alt="" /></div>
+<div class="detail-our-team col-md-8 col-sm-8 col-xs-12">
+<div class="detail-our-team-inner">
+<div class="detail-our-team-desc">Hello, I'm Vincent Bryant, a personal trainer based in San Diego, dedicated to getting people in great shape &amp; improving their lifestyle.</div>
+<div class="detail-our-team-user">Vincent Bryant</div>
+<div class="detail-our-team-pos">Boxing trainer</div>
+</div>
+</div>
+</div>
+</div>
+<div class="our-team-nav"><span class="our-team-current" style="width: 33.33333333%;"> <span class="our-team-name">Mike Stramond</span> <span class="our-team-position">Co-Founder</span> </span> <span class="yoga-trainer" style="width: 33.33333333%;"> <span class="our-team-name">Claire Freemon</span> <span class="our-team-position">Yoga trainer</span> </span> <span class="boxing-trainer" style="width: 33.33333333%;"> <span class="our-team-name">Vincent Bryant</span> <span class="our-team-position">Boxing trainer</span> </span></div>
+</div>
+</div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"nopadding","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[{{block type="mpanel/products" products_count="6" slider="0" count_per_row="3" title="" load_more="0" template="mgs/mpanel/products/hot_products.phtml"}}]]></block_content>
+		<type>hot</type>
+		<position>3</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","product_count":"6","title":"","view_mode":"grid","count_per_row":"3","slider":{"active":"0","auto":"false","stop_hover":"false","navigation":"false","pagination":"false"},"load_more":"0"}]]></setting>
+		<col>10</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[{{block type="mpanel/products" products_count="6" slider="0" count_per_row="3" title="" load_more="0" template="mgs/mpanel/products/hot_products.phtml"}}]]></block_content>
+		<type>separator</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"10","margin_bottom":"10"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+</layout>

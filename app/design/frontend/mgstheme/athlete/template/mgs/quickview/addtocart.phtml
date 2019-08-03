@@ -1,0 +1,48 @@
+<?php
+/* * ****************************************************
+ * Package   : QuickView
+ * Author    : HIEPNH
+ * Copyright : (c) 2014
+ * ***************************************************** */
+?>
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__(' Add Cart'); ?>
+<?php if ($_product->isSaleable()): ?>
+    <div class="add-to-cart">
+        <?php if (!$_product->isGrouped()): ?>
+                <div class="add-to-cart">
+                    <input onclick="minusQty('qty')" class="minus" type="button" value="-" />
+					<input type="text" class=" qty text form-control" title="Qty" value="<?php echo $this->getProductDefaultQty() * 1 ?>" name="qty" id="qty"/>
+					<input onclick="plusQty('qty')" class="plus" type="button" value="+"/>
+                </div>
+        <?php endif; ?>        
+            
+        <button type="button" title="<?php echo $buttonTitle ?>" class="btn-primary button" onclick="ajaxSubmitForm.submit(this)"><em class="fa-icon"><i class="fa fa-shopping-cart"></i></em><span><?php echo $buttonTitle ?></span></button>        
+                &nbsp;<span id="ajax_cart_loader" style="display:none;"><img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>"/></span>
+            
+		
+        <?php echo $this->getChildHtml('', true, true) ?>
+        <script type="text/javascript">
+            function plusQty(qtyInput){
+                if(jQuery('#'+qtyInput).attr('disabled')!='disabled'){
+                    qty = $(qtyInput).value;
+                    qty = parseInt(qty);
+                    qty++;
+                    $(qtyInput).value = qty;
+                }
+            }
+    		
+            function minusQty(qtyInput){
+                if(jQuery('#'+qtyInput).attr('disabled')!='disabled'){
+                    qty = $(qtyInput).value;
+                    qty = parseInt(qty);
+    				
+                    if(qty>1){
+                        qty--;
+                        $(qtyInput).value = qty;
+                    }
+                }
+            }
+        </script>
+    </div>
+<?php endif; ?>

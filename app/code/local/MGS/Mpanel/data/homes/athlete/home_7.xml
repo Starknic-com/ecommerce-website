@@ -1,0 +1,288 @@
+<layout>
+	<name>1_column_full</name>
+
+	<!--  Blocks  -->
+	<block>
+		<block_name>block2</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>100</padding_top>
+		<padding_bottom>70</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block3</block_name>
+		<custom_class><![CDATA[]]></custom_class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>50</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block4</block_name>
+		<class><![CDATA[background-center background-norepeat background-cover  parallax]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-summer.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>30</padding_top>
+		<padding_bottom>55</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block5</block_name>
+		<class><![CDATA[background-center background-norepeat background-cover parallax]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg_free-text.jpg]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>50</padding_top>
+		<padding_bottom>95</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block6</block_name>
+		<class><![CDATA[parallax]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg_free-text.jpg]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+
+	<!--  Childs  -->
+	<child>
+		<block_name>block2</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-sport-collection]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block2_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="col-md-12 price-table-content">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/images-1.png"}}" alt="" /></div>
+<div class="price-table-text">
+<h3>New Products</h3>
+<h2>Sport Collection</h2>
+<div class="border-bottom">&nbsp;</div>
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<a href="#"><span>Shop Now</span></a></div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>4</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block2</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-step-machines]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block2_2]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="col-md-12 price-table-content hover">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/images-2.png"}}" alt="" /></div>
+<div class="price-table-text">
+<h3>Popular Products</h3>
+<h2>Step Machines</h2>
+<div class="border-bottom">&nbsp;</div>
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<a href="#"><span>Shop Now</span></a></div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"hover","animation":"","animation_delay":""}]]></setting>
+		<col>4</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block2</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-home-gyms]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block2_3]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="col-md-12 price-table-content">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/images-3.png"}}" alt="" /></div>
+<div class="price-table-text">
+<h3>Sale Products</h3>
+<h2>Home gyms</h2>
+<div class="border-bottom">&nbsp;</div>
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<a href="#"><span>Shop Now</span></a></div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>3</position>
+		<setting><![CDATA[{"custom_class":"hover","animation":"","animation_delay":""}]]></setting>
+		<col>4</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[{{block type="core/template" products_count="6" slider="0" count_per_row="3" tabs="new_products,hot_products" template="mgs/mpanel/tabs.phtml"}}]]></block_content>
+		<type>tabs</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","product_tab":["new_products","hot_products"],"product_count":"6","count_per_row":"3","slider":{"active":"0","auto":"false","stop_hover":"false","navigation":"false","pagination":"false"}}]]></setting>
+		<col>9</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[{{block type="mpanel/products" products_count="5" title="Popular products" template="mgs/mpanel/products/list/featured_products.phtml"}}]]></block_content>
+		<type>featured_products</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","product_count":"5","title":"Popular products","view_mode":"list","count_per_row":"1","slider":{"active":"0","auto":"false","stop_hover":"false","navigation":"false","pagination":"false"},"load_more":"0"}]]></setting>
+		<col>3</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<type>separator</type>
+		<position>3</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"15","margin_bottom":"15"}]]></setting>
+		<col>3</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-summer-discount]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block4_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="parallax-text parallax-shop parallax-gallery summer-discount">
+<div class="row">
+<div class="col-md-6">
+<h2 style="font-size: 48px;">summer discount</h2>
+<p>Click here to discover our Summer promotion</p>
+<a href="{{store url=""}}men.html"><span class="button open-btn"><span>Discover Now</span></span></a></div>
+<div class="col-md-6">
+<div class="row">
+<div class="col-md-4 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product1.png"}}" alt="" /></a>
+<div class="discount-off"><span>45% </span>Off</div>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product2.png"}}" alt="" /></a>
+<div class="discount-off"><span>45% </span>Off</div>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product3.png"}}" alt="" /></a>
+<div class="discount-off"><span>45% </span>Off</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-2 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product4.png"}}" alt="" /></a>
+<div class="discount-off"><span>45% </span>Off</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product5.png"}}" alt="" /></a>
+<div class="discount-off"><span>45% </span>Off</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product6.png"}}" alt="" /></a>
+<div class="discount-off"><span>45% </span>Off</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product7.png"}}" alt="" /></a>
+<div class="discount-off"><span>45% </span>Off</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product8.png"}}" alt="" /></a>
+<div class="discount-off"><span>45% </span>Off</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 item"><a href="{{store url=""}}new-balance-men-s-896-tennis-shoes.html"><img src="{{media url="wysiwyg/static-block/bn-product9.png"}}" alt="" /></a>
+<div class="discount-off"><span>45% </span>Off</div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-what's-client]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block5_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="row">
+<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="fit-strong-left">
+<div class="fit-strong-top">
+<h3 class="fit-strong-text">What's</h3>
+<h2 class="fit-strong-text">Client say</h2>
+<p class="fit-strong-sub">Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit Phasellus fermentum in, dolor. Pellentesque facilisis.</p>
+</div>
+<div class="fit-strong-bottom">
+<h3 style="font-size: 20px; text-align: center; text-transform: uppercase; margin-top: 0;">emily brontie</h3>
+<div class="fit-background">&nbsp;</div>
+<div class="carousel-image">
+<div id="carousel-image" class="owl-carousel" data-plugin-options="{'singleItem':true,'autoPlay':false,'autoHeight':true, 'mouseDrag': false}">
+<div class="caroussel-slide"><img src="{{media url="wysiwyg/static-block/fit-2.jpg"}}" alt="" /></div>
+<div class="caroussel-slide"><img src="{{media url="wysiwyg/static-block/fit-2.jpg"}}" alt="" /></div>
+<div class="caroussel-slide"><img src="{{media url="wysiwyg/static-block/fit-2.jpg"}}" alt="" /></div>
+</div>
+</div>
+<div class="owl-controls clickable">
+<div class="owl-pagination">
+<div class="owl-page active" data-page="0">&nbsp;</div>
+<div class="owl-page" data-page="1">&nbsp;</div>
+<div class="owl-page" data-page="2">&nbsp;</div>
+</div>
+</div>
+<div class="carousel-text">
+<div id="carousel-text" class="owl-carousel" data-plugin-options="{'singleItem':true,'autoPlay':false,'autoHeight':true, 'mouseDrag': false}" data-pager="owl-page">
+<div class="slide-caption">
+<h4 class="caption-title">Try your first training for free</h4>
+<p class="caption-slide">Aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id. Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque</p>
+</div>
+<div class="slide-caption">
+<h4 class="caption-title">Try your first training for free</h4>
+<p class="caption-slide">Aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id. Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque</p>
+</div>
+<div class="slide-caption">
+<h4 class="caption-title">Try your first training for free</h4>
+<p class="caption-slide">Aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id. Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="fit-strong-right">
+<div id="boxOpenTime" class="img-box-right"><img src="{{media url="wysiwyg/static-block/fit-4.png"}}" alt="" />
+<div class="open-hour"><em class="fa fa fa-clock-o"></em>
+<div class="open-hours-title">
+<h4>Opening</h4>
+<p>Hours</p>
+</div>
+</div>
+<div class="img-box-right-border">&nbsp;</div>
+</div>
+<div class="bottomright">&nbsp;</div>
+<div class="text-box">
+<p>Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor.</p>
+<h5>From monday to friday</h5>
+<span class="open-hours">8 <sup>A.M</sup> - 8 <sup>P.M</sup></span>
+<h5>Saturday and sunday</h5>
+<span class="open-hours">7 <sup>A.M</sup> - 9 <sup>P.M</sup></span></div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+</layout>

@@ -1,0 +1,19 @@
+<div class="title"><?php echo Mage::helper('oscheckout')->__('Review your order') ?></div>
+<div class="review-content">
+<div class="order-review table-responsive" id="oscheckout-review"></div>
+
+<div id="checkout-review-submit">
+	<?php if(Mage::getStoreConfig('oscheckout/terms/enabled')){ echo $this->getChildHtml('agreements'); } ?>
+	<div class="button-set" id="review-buttons-container">
+		<div class="wait" id="review-require"></div>
+	</div>
+</div>
+<div class="mandatory-note"><?php //echo Mage::helper('oscheckout')->__('<span>*</span> mandatory field') ?></div>
+
+<script type="text/javascript">
+	//<![CDATA[
+		var review = new Review('oscheckout-form','<?php echo $this->getUrl('oscheckout/index/saveOrder', array('_secure'=>true)) ?>','<?php echo $this->getUrl('checkout/onepage/success', array('_secure'=>true)) ?>', $('checkout-agreements'));
+	//]]>
+</script>
+<div id="product-details"></div>
+</div>

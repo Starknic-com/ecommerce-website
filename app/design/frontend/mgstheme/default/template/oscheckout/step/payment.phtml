@@ -1,0 +1,13 @@
+<script type="text/javascript">
+//<![CDATA[
+    var payment = new Payment('<?php echo $this->getUrl('oscheckout/index/loadreview/', array('_secure'=>true)) ?>','<?php echo $this->getUrl('oscheckout/index/loadpayment/', array('_secure'=>true)) ?>','<?php echo $this->getUrl('oscheckout/index/index', array('_secure'=>true)) ?>');
+//]]>	
+ </script>
+
+<div class="step-title payment-title">
+	<h2><?php echo Mage::helper('oscheckout')->__('Payment Methods') ?></h2>
+</div>
+
+<div id="ajax-payment-methods">
+<?php echo $this->getChildHtml('methods'); ?>
+</div>

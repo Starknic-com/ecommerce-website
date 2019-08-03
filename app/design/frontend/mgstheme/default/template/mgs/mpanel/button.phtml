@@ -1,0 +1,15 @@
+<?php if($this->helper('mpanel')->showButton()): ?>
+	<?php $referrer = Mage::helper('core/url')->getCurrentBase64Url(); ?>
+	<div class="button-fixed hidden-xs hidden-sm">
+		<div class="button">
+			<?php if($this->helper('mpanel')->isCategoryPage() && $this->helper('mpanel')->hasDifferentLayout()): ?>
+				<a href="<?php echo $this->getUrl('mpanel/index/resetlayout', array('referrer'=>$referrer, 'id'=>$this->getRequest()->getParam('id'))) ?>" class="btn btn-primary deactive reset-layout"><em class="fa fa-close"></em><?php echo $this->__(' Reset Left and Right') ?></a>
+			<?php endif ?>
+			<?php if(Mage::getSingleton('core/session')->getUsePanel()==1):?>
+				<a href="<?php echo $this->getUrl('mpanel/index/deactive', array('referrer'=>$referrer)) ?>" class="btn btn-primary deactive"><em class="fa fa-close"></em><?php echo $this->__(' Disable Builder') ?></a>
+			<?php else: ?>
+				<a href="<?php echo $this->getUrl('mpanel/index/active', array('referrer'=>$referrer)) ?>" class="btn btn-primary active"><em class="fa fa-pencil"></em><?php echo $this->__(' Active Builder') ?></a>
+			<?php endif ?>
+		</div>
+	</div>
+<?php endif ?>

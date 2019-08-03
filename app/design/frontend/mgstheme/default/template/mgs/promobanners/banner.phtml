@@ -1,0 +1,15 @@
+<?php $banner = Mage::getModel('promobanners/promobanners')->load($this->getBannerId()); ?>
+<div class="promo-banner <?php if ($banner->getTextAlign() != ''): ?>text-<?php echo $banner->getTextAlign() ?><?php endif ?>">
+    <figure>
+        <img alt="<?php echo $banner->getTitle() ?>" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'promobanners/' . $banner->getFilename() ?>" class="img-responsive"/>
+        <figcaption>
+            <div class="caption">
+                <?php echo $banner->getContent() ?>
+                <?php if ($banner->getButton()): ?>
+                    <button class="btn btn-default btn-promo-banner"><?php echo $banner->getButton() ?></button>
+                <?php endif ?>
+            </div>
+            <span class="banner-hover"><a href="<?php echo $banner->getUrl() ?>">&nbsp;</a></span>
+        </figcaption>
+    </figure>
+</div>

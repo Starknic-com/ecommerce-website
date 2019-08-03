@@ -1,0 +1,34 @@
+<?php
+/* * ****************************************************
+ * Package   : AjaxCart
+ * Author    : http://www.arrowhitech.com
+ * Copyright : (c) 2013 - ArrowHiTech.Com
+ * ***************************************************** */
+?>
+<?php $_product = $this->getProduct(); 
+$panelHelper = $this->helper('mpanel');
+$size = $panelHelper->convertRatioToMinSize();
+?>
+<div class="loader ajaxcart-iframe" id="success-message-container" style="min-height: 305px;">
+    <p style="margin: 0;"><?php echo $this->__('You\'ve just deleted this product to the cart:') ?></p>
+    <p style="margin: 0;">
+        <b><?php echo $_product->getName(); ?></b>
+    </p>
+    <img src="<?php echo Mage::helper('catalog/image')->init($_product, 'image')->resize($size['width'], $size['height']); ?>"/>
+    <br><br>
+    <button class="btn btn-default" id="finish_and_checkout" onclick="window.location.href = '<?php echo $this->getUrl('checkout/cart') ?>'" name="finish_and_checkout" type="button">
+        <span>
+            <span><?php echo $this->__('Go to cart page') ?></span>                    
+        </span>
+    </button>
+    <button class="btn btn-primary btn-default" id="continue_shopping" onclick="closeMgs()" name="continue_shopping" type="button">
+        <span>
+            <span><?php echo $this->__('Continue shopping') ?></span>                                    
+        </span>
+    </button>
+</div>
+<script type="text/javascript">
+    function closeMgs() {
+        mgsjQuery.magnificPopup.close();
+    }
+</script>

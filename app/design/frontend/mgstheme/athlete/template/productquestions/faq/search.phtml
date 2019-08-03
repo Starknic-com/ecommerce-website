@@ -1,0 +1,30 @@
+<?php
+/* * ****************************************************
+ * Package   : ProductQuestions
+ * Author    : http://www.arrowhitech.com
+ * Copyright : (c) 2013 - ArrowHiTech.Com
+ * ***************************************************** */
+?>
+<form id="search-form" method="get" action="<?php echo Mage::helper('productquestions')->faqsPageUrl() ?>" method="get">
+    <div class="fieldset">
+        <h2 class="legend"><?php echo Mage::helper('productquestions')->__('Search') ?></h2>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label for="query" class="required"><?php echo Mage::helper('productquestions')->__('Keyword ') ?><i>*</i> </label>
+                    <div class="input-box">
+                        <input name="query" id="query" title="<?php echo Mage::helper('productquestions')->__('Keyword') ?>" <?php if ($this->getRequest()->getParam('query')): ?>value="<?php echo $this->getRequest()->getParam('query'); ?>"<?php endif; ?> class="input-text required-entry search-faq form-control" type="text" />
+                    </div>
+					<div class="buttons-set" style="margin-top: 10px;">
+						<!--<p class="required"><?php echo Mage::helper('productquestions')->__('* Required Fields') ?></p>-->                
+						<button type="submit" title="<?php echo Mage::helper('productquestions')->__('Search') ?>" class="btn btn-primary"><span><span><?php echo Mage::helper('productquestions')->__('Search') ?></span></span></button>        
+					</div>
+                </div>               
+            </li>                                
+        </ul>        
+    </div>
+    
+</form>
+<script type="text/javascript">
+    var searchForm = new VarienForm('search-form');
+</script>

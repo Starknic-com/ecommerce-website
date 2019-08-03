@@ -1,0 +1,78 @@
+<?php if ($posts = $this->getRecent()): ?>
+	<div class="widget-latest">
+		<?php if($this->getTitle() && $this->getTitle()!=''): ?>
+			<h2><?php echo $this->getTitle(); ?></h2>
+		<?php endif ?>
+		<?php if($this->getViewMode()=='grid'): ?>
+			<?php if($this->getSlider()==1): ?>
+				<div class="owl-carousel latest-post-carousel" id="latest-post-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
+					<?php $i=0; foreach ($posts as $post): ?>
+						<div class="item">
+							<article>
+								<?php echo $this->helper('mpanel')->getFirstImage($post->getOrigData('post_content'), $post->getAddress()) ?>
+								<div class="date">
+									<span class="day"><?php echo date('d', strtotime($post->getCreatedTime())) ?></span>
+									<span class="month"><?php echo date('M', strtotime($post->getCreatedTime())) ?></span>
+								</div>
+								<h4><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></h4>
+								<?php if($post->getShortContent()): ?>
+									<p>
+										<?php echo strip_tags($post->getShortContent()); ?>
+										<a href="<?php echo $post->getAddress(); ?>" class="read-more"><?php echo Mage::helper('blog')->__('read more'); ?> <i class="icon icon-angle-right"></i></a>
+									</p>
+								<?php endif ?>
+							</article>
+						</div>
+					<?php endforeach; ?>
+				</div>
+				
+				<script type="text/javascript">
+					initSlider('latest-post-carousel', <?php echo $this->getColumn() ?>, <?php echo $this->getAutoPlay()?>, <?php echo $this->getStopHover()?>, <?php echo $this->getNavigation()?>, <?php echo $this->getPagination()?>);
+				</script>
+			<?php else: ?>
+			
+				<div class="latest-post-container">
+					<?php $i=0; foreach ($posts as $post): ?>
+						<div>
+							<article>
+								<?php echo $this->helper('mpanel')->getFirstImage($post->getOrigData('post_content'), $post->getAddress()) ?>
+								<div class="date">
+									<span class="day"><?php echo date('d', strtotime($post->getCreatedTime())) ?></span>
+									<span class="month"><?php echo date('M', strtotime($post->getCreatedTime())) ?></span>
+								</div>
+								<h4><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></h4>
+								<?php if($post->getShortContent()): ?>
+									<p>
+										<?php echo strip_tags($post->getShortContent()); ?>
+										<a href="<?php echo $post->getAddress(); ?>" class="read-more"><?php echo Mage::helper('blog')->__('read more'); ?> <i class="icon icon-angle-right"></i></a>
+									</p>
+								<?php endif ?>
+							</article>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			<?php endif ?>
+		<?php else: ?>
+			<div class="latest-post-list">
+				<?php $i=0; foreach ($posts as $post): ?>
+					<div>
+						<article>
+							<?php echo $this->helper('mpanel')->getFirstImage($post->getOrigData('post_content'), $post->getAddress()) ?>
+							<div class="date">
+								<span class="day"><?php echo date('d', strtotime($post->getCreatedTime())) ?></span>
+								<span class="month"><?php echo date('M', strtotime($post->getCreatedTime())) ?></span>
+							</div>
+							<h4><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></h4>
+							<?php if($post->getShortContent()): ?>
+								<p>
+									<?php echo strip_tags($post->getShortContent()); ?>
+									<a href="<?php echo $post->getAddress(); ?>" class="read-more"><?php echo Mage::helper('blog')->__('read more'); ?> <i class="icon icon-angle-right"></i></a>
+								</p>
+							<?php endif ?>
+						</article>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		<?php endif ?>
+	</div>
+<?php endif; ?>

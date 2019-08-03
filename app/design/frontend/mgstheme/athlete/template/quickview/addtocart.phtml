@@ -1,0 +1,58 @@
+<?php
+/* * ****************************************************
+ * Package   : QuickView
+ * Author    : HIEPNH
+ * Copyright : (c) 2014
+ * ***************************************************** */
+?>
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__(' Add to Cart'); ?>
+<?php if ($_product->isSaleable()): ?>
+    <div class="add-to-cart">
+        <?php if (!$_product->isGrouped()): ?>
+            <p class="uppercase"><?php echo $this->__('Qty:') ?></p>
+            <div class="shop_meta">
+                <div class="">
+                    <div class="btn-shop">
+                        <div class="form-inline">
+                            <div class="form-group">
+                               <input onclick="minusQty('qty')" class="minus form-control" type="button" value="-" />
+								<input type="text" class=" qty text form-control" title="Qty" value="<?php echo $this->getProductDefaultQty() * 1 ?>" name="qty" id="qty"/>
+								<input onclick="plusQty('qty')" class="plus form-control" type="button" value="+"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+        
+            <div class="btn-shop addtocart">
+                <button type="button" title="<?php echo $buttonTitle ?>" class="btn btn-primary btn-lg" onclick="ajaxSubmitForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>        
+                &nbsp;<span id="ajax_cart_loader" style="display:none;"><img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>"/></span>
+            </div>
+		
+        <?php echo $this->getChildHtml('', true, true) ?>
+        <script type="text/javascript">
+            function plusQty(qtyInput){
+                if(jQuery('#'+qtyInput).attr('disabled')!='disabled'){
+                    qty = $(qtyInput).value;
+                    qty = parseInt(qty);
+                    qty++;
+                    $(qtyInput).value = qty;
+                }
+            }
+    		
+            function minusQty(qtyInput){
+                if(jQuery('#'+qtyInput).attr('disabled')!='disabled'){
+                    qty = $(qtyInput).value;
+                    qty = parseInt(qty);
+    				
+                    if(qty>1){
+                        qty--;
+                        $(qtyInput).value = qty;
+                    }
+                }
+            }
+        </script>
+    </div>
+<?php endif; ?>

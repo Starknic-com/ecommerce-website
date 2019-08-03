@@ -1,0 +1,43 @@
+<script type="text/javascript">
+	var updateForm = new VarienForm('edit_form');
+	updateForm.submit = function(button, url) {
+		if (this.validator.validate()) {
+			mgsjQuery('#submit-button span span').html('<?php echo $this->__('Saving...') ?>');
+			button.disabled = true;
+			var form = this.form;
+			var oldUrl = form.action;
+
+			if (url) {
+			   form.action = url;
+			}
+			var e = null;
+			try {
+				mgsjQuery.ajax({
+					type: 'POST',
+					url: form.action,
+					dataType : 'json',
+					data: mgsjQuery('#edit_form').serialize(),
+					success: function(data, textStatus, xhr){
+						if(data.result=='success'){
+							button.disabled = false;
+							mgsjQuery('#submit-button span span').html('<?php echo $this->__('Submit') ?>');
+							parent.loadHomepageContent();
+							
+							if (window.parent == window.top) {
+								window.parent.mgsjQuery.magnificPopup.close();
+							}
+						}
+					}
+				});
+			} catch (e) {
+			}
+			this.form.action = oldUrl;
+			if (e) {
+				throw e;
+			}
+			if (button && button != 'undefined') {
+				button.disabled = true;
+			}
+		}
+	}.bind(updateForm);
+</script>

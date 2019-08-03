@@ -1,0 +1,346 @@
+<layout>
+	<name>3_columns_equal</name>
+
+	<!--  Blocks  -->
+	<block>
+		<block_name>block1</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block3</block_name>
+		<custom_class><![CDATA[box-gird-h6]]></custom_class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>120</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block4</block_name>
+		<class><![CDATA[box-gird-h6]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-summer.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>100</padding_top>
+		<padding_bottom>100</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block5</block_name>
+		<class><![CDATA[parallax]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg_free-text.jpg]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>100</padding_top>
+		<padding_bottom>100</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block6</block_name>
+		<class><![CDATA[services background-norepeat background-cover]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-popular.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>65</padding_top>
+		<padding_bottom>35</padding_bottom>
+	</block>
+
+	<block>
+		<block_name>block7</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>50</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block8</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-sport-new.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>50</padding_top>
+		<padding_bottom>50</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block12</block_name>
+		<class><![CDATA[facts background-norepeat background-cover]]></class>
+		<background><![CDATA[#ec3642]]></background>
+		<background_image><![CDATA[bg-facts.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<!--  Childs  -->
+	<child>
+		<block_name>block12</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-famous-brands]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block12_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="facts-page">
+<div class="title-page title-facts">
+<h3 class="module-title-h3">Famous Brands</h3>
+<p>Working from home meant we could vary snack and coffee breaks, change our desks or view, goof off, drink on the job, even spend the day in pajamas,</p>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="facts-content">
+<div class="facts-icon">&nbsp;</div>
+<div class="count"><span id="counter-1">1344</span>
+<div class="facts-border">&nbsp;</div>
+</div>
+<p class="facts-text">Club member</p>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="facts-content">
+<div class="facts-icon">&nbsp;</div>
+<div class="count"><span id="counter-2">153</span>
+<div class="facts-border">&nbsp;</div>
+</div>
+<p class="facts-text">Club trainers</p>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="facts-content">
+<div class="facts-icon">&nbsp;</div>
+<div class="count"><span id="counter-3">89</span>
+<div class="facts-border">&nbsp;</div>
+</div>
+<p class="facts-text">Fitness class</p>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="facts-content">
+<div class="facts-icon">&nbsp;</div>
+<div class="count"><span id="counter-4">344</span>
+<div class="facts-border">&nbsp;</div>
+</div>
+<p class="facts-text">Club equipment</p>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-mansory-women]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block3_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="women-content">
+<div class="masonry-small">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/images-3.png"}}" alt="" /></div>
+<div class="price-table-text">
+<h3>Collection</h3>
+<h2>For Man</h2>
+<div class="border-bottom">&nbsp;</div>
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<span>From <span> $59</span></span></div>
+</div>
+<div class="masonry-lagar move_to_center">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/img-shop.png"}}" alt="" /></div>
+<div class="price-table-text">
+<div class="masonry-lagar-content">
+<div class="title-masonry">
+<h3>2015</h3>
+<h2>Best Trending</h2>
+<div class="border-bottom">&nbsp;</div>
+</div>
+<div class="text-masonry">
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<span>From <span> $59</span></span></div>
+</div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"box","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-woman-view]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block10_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="sub-title">
+<div class="title-collection">
+<h2>Women</h2>
+<h4>View full collection</h4>
+</div>
+<div class="icon-next">&nbsp;</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-masonry-men]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block4_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="man-content">
+<div class="masonry-lagar">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/img-shop-2.png"}}" alt="" /></div>
+<div class="price-table-text">
+<div class="masonry-lagar-content">
+<div class="title-masonry">
+<h3>2015</h3>
+<h2>Best Selling</h2>
+<div class="border-bottom">&nbsp;</div>
+</div>
+<div class="text-masonry">
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<span>From <span> $59</span></span></div>
+</div>
+</div>
+</div>
+<div class="masonry-small">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/images-2.png"}}" alt="" /></div>
+<div class="price-table-text">
+<h3>Collection</h3>
+<h2>For Ladies</h2>
+<div class="border-bottom">&nbsp;</div>
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<span>From <span> $59</span></span></div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"box","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-men-view]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block10_2]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="sub-title">
+<div class="title-collection">
+<h2>Man</h2>
+<h4>View full collection</h4>
+</div>
+<div class="icon-next">&nbsp;</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-masonry-accessories]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block5_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="collect-content">
+<div class="masonry-small">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/images-1.png"}}" alt="" /></div>
+<div class="price-table-text">
+<h3>Fitness</h3>
+<h2>Accessories</h2>
+<div class="border-bottom">&nbsp;</div>
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<span>From <span> $59</span></span></div>
+</div>
+<div class="masonry-lagar move_to_center">
+<div class="price-table-img"><img src="{{media url="wysiwyg/static-block/img-shop-3.png"}}" alt="" /></div>
+<div class="price-table-text">
+<div class="masonry-lagar-content">
+<div class="title-masonry">
+<h3>Famous</h3>
+<h2>Brands</h2>
+<div class="border-bottom">&nbsp;</div>
+</div>
+<div class="text-masonry">
+<p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem ipsum dolor.</p>
+<span>From <span> $59</span></span></div>
+</div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"box","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-accessories-view]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block10_3]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="sub-title">
+<div class="title-collection">
+<h2>Accessories</h2>
+<h4>View full collection</h4>
+</div>
+<div class="icon-next">&nbsp;</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block6</block_name>
+		<block_content><![CDATA[{{block type="mpanel/products" products_count="12" slider="1" count_per_row="4" title="Popular product" auto_play="false" stop_hover="false" navigation="true" pagination="false" template="mgs/mpanel/products/featured_products.phtml"}}]]></block_content>
+		<type>featured_products</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"popular-title","animation":"","animation_delay":"","product_count":"12","title":"Popular product","view_mode":"grid","count_per_row":"4","slider":{"active":"1","auto":"false","stop_hover":"false","navigation":"true","pagination":"false"},"load_more":"0"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block7</block_name>
+		<block_content><![CDATA[{{block type="mpanel/product_new" display_type="new_products" products_count="8" slider="0" count_per_row="4" title="new products" load_more="0" template="mgs/mpanel/products/new_products.phtml"}}]]></block_content>
+		<type>new_products</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"custom-title-h6 text-center","animation":"","animation_delay":"","product_count":"8","title":"new products","view_mode":"grid","count_per_row":"4","slider":{"active":"0","auto":"false","stop_hover":"false","navigation":"false","pagination":"false"},"load_more":"0"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+</layout>

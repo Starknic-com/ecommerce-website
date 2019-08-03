@@ -1,0 +1,112 @@
+<div class="block block-account">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('My Account'); ?></span></strong>
+    </div>
+    <div class="block-content">
+        <ul>
+            <?php
+            $_links = array(
+                array(
+                    'path' => 'customer/account/',
+                    'label' => $this->__('Account Dashboard')
+                ),
+                array(
+                    'path' => 'customer/account/edit/',
+                    'label' => $this->__('Account Information')
+                ),
+                array(
+                    'path' => 'customer/address/',
+                    'label' => $this->__('Address Book')
+                ),
+                array(
+                    'path' => 'sales/order/history/',
+                    'label' => $this->__('My Orders')
+                ),
+                array(
+                    'path' => 'sales/billing_agreement/',
+                    'label' => $this->__('Billing Agreements')
+                ),
+                array(
+                    'path' => 'sales/recurring_profile/',
+                    'label' => $this->__('Recurring Profiles')
+                ),
+                array(
+                    'path' => 'review/customer/',
+                    'label' => $this->__('My Product Reviews')
+                ),
+                array(
+                    'path' => 'tag/customer/',
+                    'label' => $this->__('My Tags')
+                ),
+                array(
+                    'path' => 'wishlist/',
+                    'label' => $this->__('My Wishlist')
+                ),
+                array(
+                    'path' => 'oauth/customer_token/',
+                    'label' => $this->__('My Applications')
+                ),
+                array(
+                    'path' => 'newsletter/manage/',
+                    'label' => $this->__('Newsletter Subscriptions')
+                ),
+                array(
+                    'path' => 'downloadable/customer/products/',
+                    'label' => $this->__('My Downloadable Products')
+                ),
+                array(
+                    'path' => 'productquestions',
+                    'label' => $this->__('Product Questions')
+                )
+            );
+            ?>
+            <?php $_index = 1; ?>
+            <?php $_count = count($_links); ?>
+            <?php foreach ($_links as $_link): ?>
+                <?php $_last = ($_index++ >= $_count); ?>
+                <?php if ($this->isActive($_link)): ?>
+                    <li class="current<?php echo ($_last ? ' last' : '') ?>"><strong><?php echo $_link['label'] ?></strong></li>
+                <?php else: ?>
+                    <li<?php echo ($_last ? ' class="last"' : '') ?>><a href="<?php echo $this->getUrl($_link['path']) ?>"><?php echo $_link['label'] ?></a></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php $helper = $this->helper('mpanel') ?>
+<section class="builder-container">
+    <div>                
+        <?php $templateLayout = $this->getTemplateLayout() ?>
+        <?php $blockName = $this->getBlockName() ?>
+        <?php $block = $this->getBlockInCustomer() ?>
+        <?php $blocks = unserialize($block->getData('left')) ?>        
+        <?php if ($blocks != false): ?>
+            <div id="sortable<?php echo $templateLayout ?><?php echo $blockName ?>" class="sort-block">
+                <?php foreach ($blocks as $key => $value): ?>                        
+                    <?php if ($value != 0): ?>
+                        <div class="sort-item builder-container child-builder" id="<?php echo $templateLayout . '_' . $blockName . '_' . $value ?>">
+                            <?php echo $helper->getEditChildInCustomer($templateLayout, $blockName, $value, 'static') ?>                                
+                            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($value)->toHtml() ?>
+                        </div>
+                    <?php else: ?>
+                        <?php $helper->renderHtmlContentInCustomer($templateLayout, $blockName, $key, $value, true); ?>                        
+                    <?php endif; ?>                        
+                <?php endforeach ?>
+            </div>
+            <script type="text/javascript">
+                mgsjQuery(document).ready(function () {
+                    initSortable("sortable<?php echo $templateLayout ?><?php echo $blockName ?>", "<?php echo $this->getUrl('mpanel/post/sortInCustomer', array('el' => $templateLayout . '_' . $blockName, 'position' => 'left')) ?>");
+                });
+            </script>
+            <div class="col-md-12">                
+                <a class="btn btn-primary popup-link btn-new-block" href="<?php echo $this->getUrl('mpanel/index/newInCustomer', array('template' => $templateLayout, 'block' => $blockName)) ?>"><em class="fa fa-plus"></em><?php echo $this->__(' Add new Block') ?></a>                
+            </div>
+        <?php else: ?>
+            <div class="empty-block">
+                <div class="col-md-12">                    
+                    <a class="btn btn-primary popup-link btn-new-block" href="<?php echo $this->getUrl('mpanel/index/newInCustomer', array('template' => $templateLayout, 'block' => $blockName)) ?>"><em class="fa fa-plus"></em><?php echo $this->__(' Add new Block') ?></a>                    
+                </div>
+            </div>
+        <?php endif ?>
+    </div>
+</section>

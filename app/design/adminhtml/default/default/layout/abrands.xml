@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <abrands_adminhtml_abrands_edit>
+        <reference name="content">
+            <block type="core/template" name="abrands" template="mgs/abrands/script.phtml"/>
+        </reference>
+    </abrands_adminhtml_abrands_edit>
+</layout>

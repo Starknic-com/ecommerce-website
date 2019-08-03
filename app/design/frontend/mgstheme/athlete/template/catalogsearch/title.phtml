@@ -1,0 +1,8 @@
+<div class="page-title">
+    <h3>
+		<?php if ($this->helper('rss/catalog')->getTagFeedUrl()): ?>
+			<a href="<?php echo $this->helper('rss/catalog')->getTagFeedUrl() ?>" class="nobr link-rss"><?php echo $this->__('Subscribe to Feed') ?></a>
+		<?php endif; ?>
+		<span><?php echo ($this->getHeaderText() || $this->getHeaderText() === false) ? $this->getHeaderText() : $this->__("Search results for '%s'", $this->helper('catalogsearch')->getEscapedQueryText()) ?></span>
+	</h3>
+</div>

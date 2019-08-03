@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+		<mgs_theme translate="label">
+            <label>Theme Settings</label>
+            <tab>mgscore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+				<install translate="label">
+					<label>Theme Installation</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>0</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<import translate="label">
+							<frontend_type>button</frontend_type>
+							<frontend_model>mpanel/adminhtml_config_button</frontend_model>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</import>
+						<!--data_demo translate="label">
+							<label>Import Demo Data</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<comment><![CDATA[Save this field before installing theme.]]></comment>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</data_demo-->
+					</fields>
+				</install>
+				
+				<demo translate="label">
+					<label>Import Demo Data</label>
+					<frontend_model>mpanel/adminhtml_config_demo</frontend_model>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>1</show_in_store>
+					<fields>
+						<import translate="label">
+							<frontend_type>text</frontend_type>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>1</show_in_store>
+						</import>
+					</fields>
+				</demo>
+				
+                <general translate="label" >
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+					
+						<page_width translate="label">
+                            <label>Width</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_width</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </page_width>
+					
+						<right_to_left translate="label">
+                            <label>Right to left layout</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </right_to_left>
+					
+                        <layout translate="label">
+                            <label>Layout</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_layout</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layout>
+						
+                        <layout_style translate="label">
+                            <label>Layout Style</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_style</source_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layout_style>
+						
+                        <logo translate="label">
+                            <label>Logo</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">mpanel/logo</upload_dir>
+                            <base_url type="media" scope_info="1">mpanel/logo</base_url>
+                            <sort_order>201</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logo>
+						
+                        <header translate="label">
+                            <label>Header version</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_header</source_model>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header>
+						
+                        <footer translate="label">
+                            <label>Footer version</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_footer</source_model>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer>
+						
+						<sticky_menu translate="label">
+                            <label>Sticky menu</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>230</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sticky_menu>
+						
+                        <back_to_top translate="label">
+                            <label>Display back to top icon</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </back_to_top>
+						
+						<preloader translate="label">
+                            <label>Active Preloader</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </preloader>
+						
+						<snippets translate="label">
+                            <label>Enable Google rich snippets</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </snippets>
+						
+						<custom_css translate="label">
+                            <label>Custom css</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>600</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_css>
+                    </fields>
+                </general>
+				
+                <background translate="label" >
+                    <label>Background</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <bg_color translate="label">
+                            <label>Background color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>mpanel/adminhtml_fields_color</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bg_color>
+						
+						<bg_upload translate="label">
+                            <label>Background Image</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">mpanel/background</upload_dir>
+                            <base_url type="media" scope_info="1">mpanel/background</base_url>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bg_upload>
+						
+                        <bg_image translate="label">
+                            <label>Background pattern</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_background</source_model>
+                            <comment>applied for boxed layout style</comment>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bg_image>
+						
+                        <bg_repeat translate="label">
+                            <label>Background repeat</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_repeat</source_model>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bg_repeat>
+						
+                        <bg_position_x translate="label">
+                            <label>Background position (x)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_xposition</source_model>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bg_position_x>
+						
+                        <bg_position_y translate="label">
+                            <label>Background position (y)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_yposition</source_model>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bg_position_y>
+                    </fields>
+                </background>
+				
+                <color translate="label" >
+                    <label>Color</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>300</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <theme_color translate="label">
+                            <label>Theme color</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_color</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </theme_color>
+                    </fields>
+                </color>
+				
+                <fonts translate="label" >
+                    <label>Fonts</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>400</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <font translate="label">
+                            <label>Default font</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_fonts</source_model>
+                            <frontend_model>mpanel/adminhtml_fields_fonts</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </font>
+						
+                        <h1 translate="label">
+                            <label>Heading 1</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_fonts</source_model>
+                            <frontend_model>mpanel/adminhtml_fields_fonts</frontend_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </h1>
+						
+                        <h2 translate="label">
+                            <label>Heading 2</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_fonts</source_model>
+                            <frontend_model>mpanel/adminhtml_fields_fonts</frontend_model>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </h2>
+						
+                        <h3 translate="label">
+                            <label>Heading 3</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_fonts</source_model>
+                            <frontend_model>mpanel/adminhtml_fields_fonts</frontend_model>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </h3>
+						
+						<h4 translate="label">
+                            <label>Heading 4</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_fonts</source_model>
+                            <frontend_model>mpanel/adminhtml_fields_fonts</frontend_model>
+                            <sort_order>420</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </h4>
+						
+						<h5 translate="label">
+                            <label>Heading 5</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_fonts</source_model>
+                            <frontend_model>mpanel/adminhtml_fields_fonts</frontend_model>
+                            <sort_order>440</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </h5>
+						
+						<h6 translate="label">
+                            <label>Heading 6</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_fonts</source_model>
+                            <frontend_model>mpanel/adminhtml_fields_fonts</frontend_model>
+                            <sort_order>460</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </h6>
+						
+                        <price translate="label">
+                            <label>Price</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_fonts</source_model>
+                            <frontend_model>mpanel/adminhtml_fields_fonts</frontend_model>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </price>
+						
+						<menu translate="label">
+                            <label>Menu</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_fonts</source_model>
+                            <frontend_model>mpanel/adminhtml_fields_fonts</frontend_model>
+                            <sort_order>600</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menu>
+                    </fields>
+                </fonts>
+            </groups>
+        </mgs_theme>
+        <mpanel translate="label">
+            <label>MGS Panel</label>
+            <tab>mgscore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" >
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <account translate="label">
+                            <label>Email Accounts to use panel</label>
+                            <frontend_type>textarea</frontend_type>
+							<comment>Comma-separated.</comment>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account>
+                    </fields>
+                </general>
+				
+                <catalog translate="label">
+                    <label>Catalog</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <layout translate="label">
+                            <label>Default Page Layout For Category Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_layouts</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layout>
+						
+                        <product_layout translate="label">
+                            <label>Default Page Layout For Product Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_layouts</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_layout>
+						
+						<product_per_row translate="label">
+                            <label>Number Of Product Per Row</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_perrow</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_per_row>
+						
+                        <featured translate="label">
+                            <label>Featured Product Attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_featured</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </featured>
+						
+                        <hot translate="label">
+                            <label>Best Selling Product Attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_hot</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hot>
+						
+                        <brands translate="label">
+                            <label>Brands Attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_brands</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </brands> 
+
+                        <picture_ratio translate="label">
+                            <label>Product Picture ratio</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_ratio</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </picture_ratio>
+						
+                        <new_label translate="label">
+                            <label>New Label</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Empty to disable</comment>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </new_label>
+						
+                        <sale_label translate="label">
+                            <label>Sale Label</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Empty to disable</comment>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sale_label>
+						
+						<price_slider translate="label">
+                            <label>Active Price Slider</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </price_slider>
+						
+						<more_view translate="label">
+                            <label>Active Ajax Load More Products</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </more_view>
+						
+						<preload translate="label">
+                            <label>Active Preload</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </preload>
+						
+						<wishlist_button translate="label">
+                            <label>Hide Add to Wishlist button</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </wishlist_button>
+						
+						<compare_button translate="label">
+                            <label>Hide Add to Compare button</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </compare_button>
+                    </fields>
+                </catalog>
+				
+                <product_tabs translate="label">
+                    <label>Product Tabs</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>250</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <description translate="label">
+                            <label>Show description</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment>Show description on tabs</comment>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </description>
+						
+                        <aditional translate="label">
+                            <label>Show Additional Information</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment>Show additional information on tabs</comment>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </aditional>
+						
+                        <reviews translate="label">
+                            <label>Show Reviews</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment>Show reviews on tabs</comment>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </reviews>
+						
+                        <tags translate="label">
+                            <label>Show Product Tags</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment>Show product tags on tabs</comment>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tags>
+						
+                        <custom_tab_one translate="label">
+                            <label>Custom tab 1</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_tabs</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_tab_one>
+						
+                        <custom_tab_one_title translate="label">
+                            <label>Custom tab 1 title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_tab_one_title>
+						
+                        <custom_tab_one_value translate="label">
+                            <label>Custom tab 1 value</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>attribute code or static block identifier</comment>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_tab_one_value>
+						
+                        <custom_tab_two translate="label">
+                            <label>Custom tab 2</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_tabs</source_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_tab_two>
+						
+                        <custom_tab_two_title translate="label">
+                            <label>Custom tab 2 title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_tab_two_title>
+						
+                        <custom_tab_two_value translate="label">
+                            <label>Custom tab 2 value</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>attribute code or static block identifier</comment>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_tab_two_value>
+						
+                        <custom_tab_three translate="label">
+                            <label>Custom tab 3</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_tabs</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_tab_three>
+						
+                        <custom_tab_three_title translate="label">
+                            <label>Custom tab 3 title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_tab_three_title>
+						
+                        <custom_tab_three_value translate="label">
+                            <label>Custom tab 3 value</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>attribute code or static block identifier</comment>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_tab_three_value>
+                    </fields>
+                </product_tabs>
+                
+                <product_details translate="label">
+                    <label>Product Details</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>250</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<sku translate="label">
+                            <label>Show Sku</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sku>
+						
+                        <email_friend translate="label">
+                            <label>Show Email Friend</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_friend>
+						
+                        <reviews_summary translate="label">
+                            <label>Show Reviews Summary</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </reviews_summary>
+						
+                        <alert_urls translate="label">
+                            <label>Show Alert URLs</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alert_urls>
+                        
+                        <wishlist_compare translate="label">
+                            <label>Show Wishlist, Compare Link</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </wishlist_compare>
+                        
+                        <short_description translate="label">
+                            <label>Show Short Description</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </short_description>
+                        
+                        <upsell_products translate="label">
+                            <label>Show Upsell Products</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </upsell_products>                                           
+						                        
+                    </fields>
+                </product_details>
+				
+                <twitter translate="label">
+                    <label>Twitter config</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>300</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<token translate="label">
+                            <label>Token</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </token>
+						
+						<token_secret translate="label">
+                            <label>Token Secret</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </token_secret>
+						
+						<consumer_key translate="label">
+                            <label>Consumer Key</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </consumer_key>
+						
+						<consumer_secret translate="label">
+                            <label>Consumer Secret</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </consumer_secret>
+						
+                        <twitter_title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twitter_title>
+                        <twitter_user translate="label">
+                            <label>Twitter user</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twitter_user>
+						
+                        <twitter_count translate="label">
+                            <label>Count display</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twitter_count>
+						
+						<truncate translate="label">
+                            <label>Character Count</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </truncate>
+                    </fields>
+                </twitter>
+				
+                <contact>
+                    <label>Contact Map</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>400</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						
+                        <enabled translate="label">
+                            <label>Display google map</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+						
+                        <address translate="label">
+                            <label>Address</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </address>
+						
+                        <html translate="label">
+                            <label>Html</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </html>
+						
+                        <image translate="label">
+                            <label>Pin image</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">mpanel/map</upload_dir>
+                            <base_url type="media" scope_info="1">mpanel/map</base_url>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </image>
+                    </fields>
+                </contact>
+				
+				<my_account>
+                    <label>My Account Page</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>500</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <layout translate="label">
+                            <label>Page Layout</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mpanel/source_layouts</source_model>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layout>
+                    </fields>
+                </my_account>
+            </groups>
+        </mpanel>
+        
+    </sections>
+</config>

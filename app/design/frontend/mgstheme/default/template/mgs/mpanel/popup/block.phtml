@@ -1,0 +1,107 @@
+<div class="edit-static-form">
+	<form action="<?php echo $this->getUrl('mpanel/post/block') ?>" method="POST" enctype="multipart/form-data" id="block-form">
+		
+		<div class="row">
+			<div class="col-md-12 builder-title">
+				<h2><?php echo $this->__('Section Settings') ?></h2>
+			</div>
+		</div>
+		
+		<div class="form-horizontal">
+			<div class="row">
+				<div class="form-group">
+					<input type="hidden" name="name" value="<?php echo $this->_blockId ?>"/>
+					<input type="hidden" name="theme_name" value="<?php echo $this->_themeName ?>"/>
+					<input type="hidden" name="current_url" value="<?php echo Mage::helper('core/url')->getCurrentUrl() ?>"/>
+					
+					<label class="col-sm-4 control-label" for="class_name"><?php echo $this->__('Class name') ?></label>
+					<div class="col-sm-8">
+						<input type="text" name="class" id="class_name" class="input-text" value="<?php echo $this->_block->getClass() ?>"/>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="background"><?php echo $this->__('Background color') ?></label>
+					<div class="col-sm-8">
+						<input type="text" name="background" id="background" class="input-text" value="<?php echo $this->_block->getBackground() ?>"/>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="background"><?php echo $this->__('Background image') ?></label>
+					<div class="col-sm-8">
+						
+						<input type="file" name="background_image" id="background"/>
+						<?php if($this->_block->getBackgroundImage()!=''): ?>
+							<div class="image-temp">
+								<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'mpanel/background/'.$this->_block->getBackgroundImage()?>" class="background-preview" alt=""/>
+								<label for="remove_background">
+									<input type="checkbox" name="remove_background" value="1" id="remove_background"/> <?php echo $this->__('Remove background') ?>
+								</label>
+							</div>
+						<?php endif ?>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="background_repeat"><?php echo $this->__('Background repeat') ?></label>
+					<div class="col-sm-8">
+						<select class="input-text" name="background_repeat" id="background_repeat">
+							<option value="0"><?php echo $this->__('No') ?></option>
+							<option value="1"<?php if($this->_block->getBackgroundRepeat()): ?> selected="selected"<?php endif ?>><?php echo $this->__('Yes') ?></option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="parallax"><?php echo $this->__('Parallax') ?></label>
+					<div class="col-sm-8">
+						<select class="input-text" name="parallax" id="parallax">
+							<option value="0"><?php echo $this->__('No') ?></option>
+							<option value="1"<?php if($this->_block->getParallax()): ?> selected="selected"<?php endif ?>><?php echo $this->__('Yes') ?></option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="padding_top"><?php echo $this->__('Padding top') ?></label>
+					<div class="col-sm-8">
+						<input type="text" name="padding_top" id="padding_top" class="input-text validate-number" value="<?php echo $this->_block->getPaddingTop() ?>"/>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="padding_bottom"><?php echo $this->__('Padding bottom') ?></label>
+					<div class="col-sm-8">
+						<input type="text" name="padding_bottom" id="padding_bottom" class="input-text validate-number" value="<?php echo $this->_block->getPaddingBottom() ?>"/>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="col-md-12 builder-action">
+						<div class="buttons">
+							<input type="submit" value="Submit" class="btn btn-primary"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</form>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+	var dataForm = new VarienForm('block-form');
+//]]>
+</script>
+	
+<?php if(Mage::getSingleton('core/session')->getSaved()==1): ?>
+	<?php Mage::getSingleton('core/session')->setSaved(false); ?>
+	
+	<script type="text/javascript">
+		parent.loadHomepageContent();
+		if (window.parent == window.top) {
+			window.parent.mgsjQuery.magnificPopup.close();
+		}
+	</script>
+<?php endif ?>

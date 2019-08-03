@@ -1,0 +1,15 @@
+<?php
+/**
+ * @var $this Qbikz_InformaxionSms_Block_Adminhtml_System_Config_Field_Info
+ */
+?>
+<div class="imsms_settings_notice">
+    <div class="imsms_title">
+        <?php echo $this->__('No SMS account yet?.. Just %ssignup for an account at %sSMS Alert%s%s and start to boost your sales.', '<a href="'.$this->getInfoUrl().'" target="_blank" title="'.$this->escapeHtml($this->__('Visit SMS Portal in new window')).'">', '<b>', '</b>', '</a>')?>
+    </div>
+
+    <div class="imsms_new_block imsms_head"><?php echo $this->__('Get help')?></div>
+    <div><?php echo $this->__('If you need help setting up your SMS Account of have any other questions, we\'re here to help you.')?></div>
+    <div><?php echo $this->__('Just send an e-email to %s or call us at %s', $this->getEmail(), $this->getPhoneNumber());?></div>
+    <div class="imsms_new_block"><?php echo $this->__('If you want to know what else we can offer you, please visit our website at %s', $this->getHomeUrl());?></div>
+</div>

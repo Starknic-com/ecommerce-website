@@ -1,0 +1,85 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php $helper = $this->helper('mpanel'); ?>	 
+<div class="header header-container header-container-2 alt reveal <?php if(Mage::getStoreConfig('mgs_theme/general/sticky_menu')): ?>sticky-menu<?php endif ?>" id="header-v4" >    
+	<?php if (!(Mage::app()->getRequest()->getControllerName() == 'index' && Mage::app()->getRequest()->getActionName() == 'index' && Mage::app()->getRequest()->getModuleName() == 'cms')): ?>
+		<div class="topbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+						<div class="welcome-msg">
+							<span id="design-header-welcome-text"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></span>
+						</div>
+					</div>
+					<div class="col-lg-10 col-md-8 col-sm-6 col-xs-12 lefttop nopadding">
+						<?php echo $this->getChildHtml('top.currency') ?>
+						<?php echo $this->getChildHtml('store_language') ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif ?>
+	<div class="content-h">
+		<div class="container">
+			<div class="row wrap">
+			<?php if (!(Mage::app()->getRequest()->getControllerName() == 'index' && Mage::app()->getRequest()->getActionName() == 'index' && Mage::app()->getRequest()->getModuleName() == 'cms')): ?>
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 logo">
+			<?php endif ?>
+				<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+					<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+				</a>
+			<?php if (!(Mage::app()->getRequest()->getControllerName() == 'index' && Mage::app()->getRequest()->getActionName() == 'index' && Mage::app()->getRequest()->getModuleName() == 'cms')): ?>
+				</div>
+			<?php endif ?>
+			<?php if (!(Mage::app()->getRequest()->getControllerName() == 'index' && Mage::app()->getRequest()->getActionName() == 'index' && Mage::app()->getRequest()->getModuleName() == 'cms')): ?>
+				<div class="col-lg-10 col-md-10 col-sm-6 col-xs-6 nav-container">
+			<?php else: ?>
+				<div class="col-lg-12 col-md-12 col-sm-9 col-xs-8 nav-container text-center">
+			<?php endif ?>
+					<button id="open-button" class="menu-button"></button>					
+					<div class="content-wrapper">
+						<div class="main-menu">
+							<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo hidden-sm hidden-xs">
+								<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+							</a>
+							<h4 class="title-menu">Main menu</h4>
+							<button id="close-button" class="close-button"><i class="fa fa-times"></i></button>
+						</div>
+						<?php echo $this->getChildHtml('topMenu') ?>
+					</div>	
+					
+				</div>
+			</div>
+		</div>
+		<?php echo $this->getChildHtml('topLinks') ?>
+		<?php echo $this->getChildHtml('cart_sidebar3') ?>
+		<?php echo $this->getChildHtml('topSearch') ?>
+	</div>
+</div>

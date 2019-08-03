@@ -1,0 +1,44 @@
+<?php $helper = $this->helper('mpanel') ?>
+<?php
+if ($this->getPageId()) {
+    $pageId = $this->getPageId();
+} else {
+    $pageId = Mage::getBlockSingleton('cms/page')->getPage()->getId();
+}
+?>
+<section class="builder-container">
+    <div>                
+        <?php $templateLayout = $this->getTemplateLayout() ?>
+        <?php $blockName = $this->getBlockName() ?>
+        <?php $block = $this->getBlockInCms() ?>
+        <?php $blocks = unserialize($block->getData('right')) ?>        
+        <?php if ($blocks != false): ?>
+            <div id="sortable<?php echo $templateLayout ?><?php echo $blockName ?>" class="sort-block">
+                <?php foreach ($blocks as $key => $value): ?>                        
+                    <?php if ($value != 0): ?>
+                        <div class="sort-item builder-container child-builder" id="<?php echo $templateLayout . '_' . $blockName . '_' . $value ?>">
+                            <?php echo $helper->getEditChildInCms($templateLayout, $blockName, $value, 'static', $pageId) ?>                                
+                            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($value)->toHtml() ?>
+                        </div>
+                    <?php else: ?>
+                        <?php $helper->renderHtmlContentInCms($templateLayout, $blockName, $pageId, $key, $value, true); ?>                        
+                    <?php endif; ?>                        
+                <?php endforeach ?>
+            </div>
+            <script type="text/javascript">
+                mgsjQuery(document).ready(function () {
+                    initSortable("sortable<?php echo $templateLayout ?><?php echo $blockName ?>", "<?php echo $this->getUrl('mpanel/post/sortInCms', array('el' => $templateLayout . '_' . $blockName, 'page_id' => $pageId, 'position' => 'right')) ?>");
+                });
+            </script>
+            <div class="col-md-12">                
+                <a class="btn btn-primary popup-link btn-new-block" href="<?php echo $this->getUrl('mpanel/index/newInCms', array('template' => $templateLayout, 'block' => $blockName, 'page_id' => $pageId)) ?>"><em class="fa fa-plus"></em><?php echo $this->__(' Add new Block') ?></a>
+            </div>
+        <?php else: ?>
+            <div class="empty-block">
+                <div class="col-md-12">                    
+                    <a class="btn btn-primary popup-link btn-new-block" href="<?php echo $this->getUrl('mpanel/index/newInCms', array('template' => $templateLayout, 'block' => $blockName, 'page_id' => $pageId)) ?>"><em class="fa fa-plus"></em><?php echo $this->__(' Add new Block') ?></a>
+                </div>
+            </div>
+        <?php endif ?>
+    </div>
+</section>

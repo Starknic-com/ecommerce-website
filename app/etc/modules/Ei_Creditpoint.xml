@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ei_Creditpoint>
+            <active>false</active>
+            <codePool>community</codePool>
+        </Ei_Creditpoint>
+    </modules>
+</config>
+

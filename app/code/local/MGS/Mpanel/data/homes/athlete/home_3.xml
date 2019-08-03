@@ -1,0 +1,371 @@
+<layout>
+	<name>3_columns_equal</name>
+
+	<!--  Blocks  -->
+	<block>
+		<block_name>block1</block_name>
+		<class><![CDATA[background-norepeat background-cover]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-products.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>60</padding_top>
+		<padding_bottom>58</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block10</block_name>
+		<custom_class><![CDATA[]]></custom_class>
+		<background><![CDATA[#ec3642]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block11</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-fitstrong.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>90</padding_top>
+		<padding_bottom>50</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block2</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[#ec3642]]></background>
+		<background_image><![CDATA[]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>0</padding_top>
+		<padding_bottom>0</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block3</block_name>
+		<class><![CDATA[background-norepeat background-cover]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-cate-home3.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>1</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>100</padding_top>
+		<padding_bottom>80</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block6</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[]]></background>
+		<background_image><![CDATA[bg-cate-home3.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>80</padding_top>
+		<padding_bottom>50</padding_bottom>
+	</block>
+	
+	<block>
+		<block_name>block7</block_name>
+		<class><![CDATA[]]></class>
+		<background><![CDATA[bg-brand.png]]></background>
+		<background_image><![CDATA[bg-cate-home3.png]]></background_image>
+		<background_repeat>0</background_repeat>
+		<parallax>0</parallax>
+		<fullwidth>0</fullwidth>
+		<padding_top>15</padding_top>
+		<padding_bottom>50</padding_bottom>
+	</block>
+	
+	<!--  Childs  -->
+	
+	<child>
+		<block_name>block10</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-scroll-man]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block2_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div id="category-man" style="height: 0;">&nbsp;</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block10</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-men-collection]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_1_column_full_block2_2]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="men-colection">
+<div class="content-main content-main-left col-md-8 col-sm-8 col-xs-12">
+<div class="img-class img-class-left move_to_center"><img src="{{media url="wysiwyg/static-block/img-men.png"}}" alt="" /></div>
+<div class="class-content class-content-left">
+<div class="title">
+<h3 class="title-men move_to_center">men collection</h3>
+</div>
+<div class="class-content-text">
+<p class="desc-content  move_to_center">Lorem ipsum dolor sit amet, consectetur adi<br /> sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, <br /> et mollis tellus neque vitae elit</p>
+</div>
+</div>
+</div>
+<div class="content-main content-main-right scrollcate_women col-md-4 col-sm-4 col-xs-12 ">
+<div class="img-class img-class-right move_to_center"><img src="{{media url="wysiwyg/static-block/img-girl.png"}}" alt="" /></div>
+<div class="class-content class-content-right">
+<div class="title">
+<h3 class="title-men move_to_center">ladies collection</h3>
+</div>
+<div class="class-content-text">
+<p class="desc-content  move_to_center">Lorem ipsum dolor sit amet, consectetur adi<br /> sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare</p>
+</div>
+</div>
+</div>
+<div id="to-top-bottom" class="to-top-bottom"><em class="fa fa-angle-down">&nbsp;</em></div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block11</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-title-category-body]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block11_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="carousel_wrapper carousel-title">
+<div class="title title-name">
+<h4>muscle body</h4>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"title-center","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block11</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-boxing]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block11_2]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="boxing-card category">
+<div class="our-price">
+<div class="image-price-right"><a href="{{store url="men.html"}}"><img src="{{media url="wysiwyg/static-block/img-boxing.png"}}" alt="" /></a></div>
+<div class="boxing-card-content">
+<h3>Boxing Gloves</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adi sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis</p>
+<div class="price"><a class="shopping-buy" href="#"><span>$199</span></a></div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>6</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block1</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-title-category-love]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block1_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="carousel_wrapper carousel-title">
+<div class="title title-name">
+<h4>love movement</h4>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"title-center","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block1</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-yoga-card]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block1_3]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="yoga-card category">
+<div class="our-price">
+<div class="image-price-left"><a href="{{store url="women.html"}}"><img src="{{media url="wysiwyg/static-block/img-love.png"}}" alt="" /></a></div>
+<div class="yoga-content">
+<div class="yoga-card-content ">
+<h3>Yoga monthly card</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adi sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis</p>
+<div class="price"><a class="shopping-buy" href="#"><span>$39</span></a></div>
+</div>
+</div>
+</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>3</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>6</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block2</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-scroll-women]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block2_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div id="category-women" style="height: 0;">&nbsp;</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block2</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-ladies-collection]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block2_2]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="girl-colection">
+<div class="content-main content-main-left col-md-4 col-sm-4 col-xs-12 scrollcate_man">
+<div class="img-class img-class-left"><img src="{{media url="wysiwyg/static-block/men-collection_1.png"}}" alt="" /></div>
+<div class="class-content class-content-left">
+<div class="title">
+<h3 class="title-men">men collection</h3>
+</div>
+<div class="class-content-text">
+<p class="desc-content ">Lorem ipsum dolor sit amet, consectetur adi<br /> sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, <br /> et mollis tellus neque vitae elit</p>
+<div class="join move_to_center"><a href="#">Shop Now</a></div>
+</div>
+</div>
+</div>
+<div class="content-main  col-md-8 col-sm-8 col-xs-12 ">
+<div class="img-class img-class-right "><img src="{{media url="wysiwyg/static-block/ladies-collection.png"}}" alt="" /></div>
+<div class="class-content class-content-right">
+<div class="title">
+<h3 class="title-men ">ladies collection</h3>
+</div>
+<div class="class-content-text">
+<p class="desc-content  ">Lorem ipsum dolor sit amet, consectetur adi<br /> sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare</p>
+</div>
+</div>
+</div>
+<div class="to-top-bottom"><em class="fa fa-angle-down">&nbsp;</em></div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block6</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-title-blog]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block6_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div class="title-blog">
+<h2 style="margin-top: 0;">Athlete blog</h2>
+<p>Working from home meant we could vary snack and coffee breaks, change our desks or view, goof off, drink on the job, even spend the day in pajamas.</p>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"text-center","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block3</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-athletic-clothing]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block3_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div id="boxOpenTime" class="img-box-right "><img src="http://mgs.arrowhitech.net/athlete/media/wysiwyg/static-block/fit-4.png" alt="" />
+<div class="open-hour ">
+<div class="open-hours-title">
+<h4>Athletic</h4>
+<p>Clothing</p>
+</div>
+</div>
+<div class="img-box-right-border">&nbsp;</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"img-category-box","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block4</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-fitness]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block4_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div id="boxOpenTime" class="img-box-right"><img src="{{media url="wysiwyg/static-block/img-fit5.png"}}" alt="" />
+<div class="open-hour">
+<div class="open-hours-title">
+<h4>Fitness</h4>
+<p>Fitness</p>
+</div>
+</div>
+<div class="img-box-right-border">&nbsp;</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"img-category-box","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block5</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<static_block_title><![CDATA[Athlete-leisure-sports]]></static_block_title>
+		<static_block_identifier><![CDATA[mgs_panel_3_columns_equal_block5_1]]></static_block_identifier>
+		<static_block_content><![CDATA[<div id="boxOpenTime" class="img-box-right "><img src="{{media url="wysiwyg/static-block/img-fit6.png"}}" alt="" />
+<div class="open-hour ">
+<div class="open-hours-title">
+<h4>Leisure</h4>
+<p>sports</p>
+</div>
+</div>
+<div class="img-box-right-border">&nbsp;</div>
+</div>]]></static_block_content>
+		<type>static</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"img-category-box","animation":"","animation_delay":""}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block7</block_name>
+		<block_content><![CDATA[{{block type="abrands/abrands" slider="1" title="" brand_count="6" auto_play="false" stop_hover="false" navigation="false" pagination="true" template="mgs/abrands/brands.phtml"}}]]></block_content>
+		<type>brands</type>
+		<position>1</position>
+		<setting><![CDATA[{"custom_class":"","animation":"","animation_delay":"","title":"","slider":{"active":"1","auto":"false","stop_hover":"false","navigation":"false","pagination":"true"},"brand_count":"6"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+	<child>
+		<block_name>block6</block_name>
+		<block_content><![CDATA[]]></block_content>
+		<type>separator</type>
+		<position>2</position>
+		<setting><![CDATA[{"custom_class":"","separator_type":"white-space","border_type":"full","border_style":"style1","border_icon":"","text_content":"","margin_top":"30","margin_bottom":"30"}]]></setting>
+		<col>12</col>
+		<custom_class><![CDATA[]]></custom_class>
+	</child>
+	
+</layout>

@@ -1,0 +1,50 @@
+<?php $posts = $this->getPosts(); ?>
+<div class="block block-blog">
+    <div class="block-content">
+        <?php if ($posts = $this->getRecent()): ?>
+            <div class="menu-recent">
+            	<div class="block-title">
+                	<span><?php echo Mage::helper('blog')->__('Recent Posts'); ?></span>
+                </div>
+                <div>
+                    <?php foreach ($posts as $post): ?>
+                    	<!-- <?php
+			            	$dest = $post->getPostContent();
+			            	$img = preg_match('/<img[^>]+>/i', $dest, $result);
+		            	?>
+		            	<?php if ($result): ?>
+                        	<?php echo current($result); ?>
+                    	<?php endif; ?>-->
+						<?php if($post->getFeaturedImage()!=''): ?>
+							<p class="featured-image"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'blog/'.$post->getFeaturedImage(); ?>" alt="" class="img-responsive"/></p>
+						<?php endif ?>
+                        <p class="blog-title"><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></p>
+                        <span><?php echo $this->__("By:"); ?> <?php echo $post->getUser(); ?></span>
+                        <span style="margin: 0 6px;"><?php echo $this->__("-"); ?></span>
+                        <?php echo date('F d', strtotime($post->getCreatedTime())) ?>
+                        <p><?php echo substr(strip_tags($dest),0,50)."..."; ?><a href="<?php echo $post->getAddress(); ?>" class="">
+						<?php echo $this->__('More') ?></a></p>
+                        <hr />                        
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+
+    </div>
+</div>
+<?php if ($this->getCategories()->count() && Mage::getStoreConfig('blog/menu/category')): ?>
+	<div class="menu-categories block">
+		<div class="block-content">
+			<div class="block-title">
+				<span><?php echo Mage::helper('blog')->__('Categories'); ?></span>
+			</div>
+			<ul>
+				<?php $cats = $this->getCategories(); ?>
+				<?php foreach ($cats as $cat): ?>
+					<li><a href="<?php echo $cat->getAddress(); ?>" ><?php echo $cat->getTitle(); ?></a></li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+	</div>
+<?php endif; ?>
+<?php echo $this->getChildHtml('blog_tags'); ?>

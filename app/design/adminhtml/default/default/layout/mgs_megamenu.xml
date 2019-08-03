@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<megamenu_adminhtml_megamenu_index>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>mgs_megamenu/styles.css</name></action>
+		</reference>
+	</megamenu_adminhtml_megamenu_index>
+    <megamenu_adminhtml_megamenu_edit>
+		<update handle="editor"/>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>mgs_megamenu/styles.css</name></action>
+			<action method="addItem"><type>skin_js</type><name>mgs_megamenu/ajax.js</name></action>
+		</reference>
+        <reference name="content">
+			<block type="adminhtml/store_switcher" name="store_switcher" template="store/switcher.phtml" />
+            <block type="core/template" name="script.megamenu" template="mgs_megamenu/script.phtml"/>
+        </reference>
+    </megamenu_adminhtml_megamenu_edit>
+	<adminhtml_system_config_edit>
+		<reference name="content">
+            <block type="core/template" name="script.megamenu" template="mgs_megamenu/config/script.phtml"/>
+        </reference>
+	</adminhtml_system_config_edit>
+</layout>

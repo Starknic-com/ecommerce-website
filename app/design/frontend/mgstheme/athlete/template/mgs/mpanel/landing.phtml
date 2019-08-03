@@ -1,0 +1,31 @@
+<?php if (!Mage::registry('current_category')) return ?>
+<?php $_categories = $this->getCurrentChildCategories() ?>
+<?php $_count = is_array($_categories)?count($_categories):$_categories->count(); ?>
+<?php if($_count): ?>
+<?php $panelHelper = $this->helper('mpanel'); ?>
+<?php $col = $panelHelper->getCol() ?>
+<div class="row">
+	<div class="landing-page products-grid">
+		<?php foreach ($_categories as $_category): ?>
+			<?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+			<?php if($_category->getIsActive()): ?>
+			<div class="landing-item col-md-<?php echo $col ?> col-sm-6 col-xs-12">
+				<?php if($_category->getThumbnail()!=''): ?>
+					<div class="category-thumbnail img-thumbnail product-info-box">
+						<a class="thumb-info" href="<?php echo $this->getCategoryUrl($_category) ?>">
+							<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA); ?>catalog/category/<?php echo $_category->getThumbnail() ?>" alt="<?php echo $this->escapeHtml($_category->getName()) ?>" class="img-responsive"/>
+							<span class="thumb-info-title">
+								<span class="thumb-info-inner"><?php echo $this->escapeHtml($_category->getName()) ?></span>
+								<span class="thumb-info-type"><?php echo $this->__('%s products',$_category->getProductCount()) ?></span>
+							</span>
+							<span class="thumb-info-action">
+							</span>
+						</a>
+					</div>
+				<?php endif ?>
+			</div>
+			<?php endif; ?>
+		<?php endforeach ?>
+	</div>
+</div>
+<?php endif; ?>

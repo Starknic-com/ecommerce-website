@@ -1,0 +1,40 @@
+<?php
+/* * ****************************************************
+ * Package   : AjaxCart
+ * Author    : http://www.arrowhitech.com
+ * Copyright : (c) 2013 - ArrowHiTech.Com
+ * ***************************************************** */
+?>
+<?php $_product = $this->getProduct(); ?>
+<?php 
+	$panelHelper = $this->helper('mpanel');
+	$size = $panelHelper->convertRatioToSize();
+?>
+<div class="mfp-iframe-scaler ajaxcart-iframe">
+	<div class="frame">
+		<div class="loader" id="success-message-container">
+			<p><?php echo $this->__('You\'ve just added this product to the cart:') ?></p>
+			<p>
+				<b><?php echo $_product->getName(); ?></b>
+			</p>
+			<img src="<?php echo Mage::helper('catalog/image')->init($_product, 'image')->resize($size['width'], $size['height']); ?>"/>
+			<br><br>
+			<button class="button btn-cart" id="finish_and_checkout" onclick="window.location.href = '<?php echo $this->getUrl('checkout/cart') ?>'" name="finish_and_checkout" type="button">
+				<span>
+					<span><?php echo $this->__('Go to cart page') ?></span>                    
+				</span>
+			</button>
+			<br><br>
+			<button class="button btn-cart" id="continue_shopping" onclick="closeMgs()" name="continue_shopping" type="button">
+				<span>
+					<span><?php echo $this->__('Continue shopping') ?></span>                                    
+				</span>
+			</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    function closeMgs() {
+        mgsjQuery.magnificPopup.close();
+    }
+</script>

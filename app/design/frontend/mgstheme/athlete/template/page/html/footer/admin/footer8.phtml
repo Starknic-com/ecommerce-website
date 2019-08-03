@@ -1,0 +1,99 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php $helper = $this->helper('mpanel') ?>
+<div id="footer8" class="footer-container builder-container footer-builder">
+	<?php echo $helper->getEditFooterPanel() ?>
+	<div class="contentf footer3">
+		<div class="container footer-blocks">
+			<div class="row fcontent">
+				<div class="col-md-2 col-lg-2 col-sm-4 col-xs-12">
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('athlete_main_menu')->setCanEdit(1)->toHtml(); ?>
+				</div>
+				<div class="col-md-2 col-lg-2 col-sm-4 col-xs-12">
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('athlete_shopping_info')->setCanEdit(1)->toHtml(); ?>
+				</div>
+				<div class="col-md-2 col-lg-2 col-sm-4 col-xs-12">
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('athlete_policies')->setCanEdit(1)->toHtml(); ?>
+				</div>
+				<div class="col-md-2 col-lg-2 col-sm-6 col-xs-12">
+					<div class="builder-container child-builder static-can-edit">
+						<?php echo $helper->getEditTwitterConfig() ?>
+						<?php echo $this->helper('mpanel/social')->getLastTwitter()?>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 send-mail">
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('athlete_newsletter')->setCanEdit(1)->toHtml(); ?>		
+					<div class="clear"></div>			
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('athlete_social')->setCanEdit(1)->toHtml(); ?>
+				</div>										
+			</div>
+		</div>
+	</div>
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+					<address class="builder-container inline-builder copy">
+						<?php echo $helper->getEditStoreConfig('design-footer-copyright', Mage::getStoreConfig('design/footer/copyright')) ?>
+						<div id="design-footer-copyright-text"><?php echo $this->getCopyright() ?></div>
+					</address>
+				</div>
+				<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+					<div class="right brand">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('athlete_brand')->setCanEdit(1)->toHtml(); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<?php $helper = $this->helper('mpanel') ?>
+<?php
+if ($this->getPageId()) {
+    $pageId = $this->getPageId();
+} else {
+    $pageId = Mage::getBlockSingleton('cms/page')->getPage()->getId();
+}
+?>               
+<?php $templateLayout = $this->getTemplateLayout() ?>
+<?php $blockName = $this->getBlockName() ?>
+<?php $block = $this->getBlockInCms() ?>
+<?php $blocks = unserialize($block->getData('left')) ?>        
+<?php if ($blocks != false): ?>
+    <?php foreach ($blocks as $key => $value): ?>                        
+        <?php if ($value != 0): ?>
+            <div id="<?php echo $templateLayout . '_' . $blockName . '_' . $value ?>" class="block block-content">                                                           
+                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($value)->toHtml() ?>
+            </div>
+        <?php else: ?>
+            <?php $helper->renderHtmlContentInCms($templateLayout, $blockName, $pageId, $key, $value, false); ?>                        
+        <?php endif; ?>                        
+    <?php endforeach ?>
+<?php endif ?>

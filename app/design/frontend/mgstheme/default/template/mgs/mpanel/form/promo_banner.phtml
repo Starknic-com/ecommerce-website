@@ -1,0 +1,316 @@
+<?php $template = $this->getRequest()->getParam('template') ?>
+<?php $block = $this->getRequest()->getParam('block') ?>
+
+<?php 
+	$exist = 0;
+	if($id = $this->getRequest()->getParam('id')){
+		$child =  Mage::getModel('mpanel/childs')->load($id);
+		
+		$exist = 1;
+		$settings = json_decode($child->getSetting(), true);
+		
+		$banner = Mage::getModel('promobanners/promobanners')->load($settings['banner_id']);
+	}
+?>
+<?php $helper = $this->helper('mpanel') ?>
+<?php if($helper->acceptToUsePanel()): ?>
+	
+	<div class="edit-static-form">
+		
+		<form id="edit_form" method="post" action="<?php echo $this->getUrl('mpanel/post/child') ?>" enctype="multipart/form-data">
+			
+			<div class="row">
+				<div class="col-md-12 builder-title">
+					<h2><?php echo $this->__('Promo Banner Block') ?></h2>
+				</div>
+			</div>
+			
+			<div class="form-horizontal">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="col"><?php echo $this->__('Block col (12 to full)') ?></label>
+						<div class="col-sm-8">
+							<select name="col" class="required-entry input-text" id="col" onchange="changeCol(this.value)">
+								<?php for($i=12; $i>=1; $i--): ?>
+									<option value="<?php echo $i ?>"<?php if($exist && ($child->getCol()==$i)): ?> selected="selected"<?php endif ?>><?php echo $i ?></option>
+								<?php endfor ?>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="custom_class"><?php echo $this->__('Custom Class') ?></label>
+						<div class="col-sm-8">
+							<input type="text" name="setting[custom_class]" class="input-text" id="custom_class"<?php if($exist): ?> value="<?php echo $settings['custom_class'] ?>"<?php endif ?> />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="animation"><?php echo $this->__('Block Animation') ?></label>
+						<div class="col-sm-4">
+							<select name="setting[animation]" class="input-text" id="animation" onchange="changeAnimationClass(this.value)">
+								<?php $animation = $helper->getAnimationClass() ?>
+								<?php foreach($animation as $_animate): ?>
+									<option value="<?php echo $_animate['value'] ?>"<?php if($exist && ($settings['animation']==$_animate['value'])): ?> selected="selected"<?php endif ?>><?php echo $_animate['label'] ?></option>
+								<?php endforeach ?>
+							</select>
+						</div>
+						<div class="col-sm-4 text-center animated<?php if($exist && ($settings['animation']!='')): ?> <?php echo $settings['animation'] ?><?php endif ?>" id="animation-test"><h1>Animation Preview</h1></div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="animation_delay"><?php echo $this->__('Animation Delay') ?></label>
+						<div class="col-sm-8">
+							<input type="text" name="setting[animation_delay]" class="input-text validate-number" id="animation_delay" placeholder="ms" <?php if($exist && isset($settings['animation_delay'])): ?> value="<?php echo $settings['animation_delay'] ?>"<?php endif ?>/>
+						</div>
+					</div>
+					
+					<?php $banners = Mage::getModel('promobanners/promobanners')->getCollection()->addFieldToFilter('status', 1) ?>
+					<?php if(!$exist && count($banners)>0): ?>
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="chooser"><?php echo $this->__('Create new or choose exist banner') ?></label>
+							<div class="col-sm-8">
+								<select name="chooser" class="required-entry input-text" id="chooser" onchange="chooserBanner(this.value)">
+									<option value="new"><?php echo $this->__('Create New Promo Banner') ?></option>
+									<option value="exist"><?php echo $this->__('Choose exist banner') ?></option>
+								</select>
+							</div>
+						</div>
+						
+						
+						
+						<div id="exist-banner-container" style="display:none">
+							<hr/>
+							<div class="form-group">
+								<label class="col-sm-4 control-label" for="exist_id"><?php echo $this->__('Banner') ?></label>
+								<div class="col-sm-8">
+									<select name="exist_id" class="required-entry input-text" id="exist_id" onchange="loadBannerContent()">
+										<?php foreach($banners as $_banner): ?>
+											<option value="<?php echo $_banner->getId() ?>"><?php echo $_banner->getTitle() ?></option>
+										<?php endforeach ?>
+									</select>
+								</div>
+							</div>
+						</div>
+					<?php endif ?>
+					
+					
+					
+					<div id="new-banner-container">
+						<hr/>
+						<div class="form-group">
+							<input type="hidden" value="promo_banner" name="type" id="block_type"/>
+							<input type="hidden" value="<?php echo $template ?>" name="home_name" id="block_home_name"/>
+							<input type="hidden" value="<?php echo $block ?>" name="block_name" id="block_block_name"/>
+							<input type="hidden" name="current_url" value="<?php echo Mage::helper('core/url')->getCurrentUrl() ?>"/>
+							<?php if($exist): ?>
+								<input type="hidden" value="<?php echo $child->getId() ?>" name="child_id" />
+								<input type="hidden" value="<?php echo $settings['banner_id'] ?>" name="banner_id" />
+							<?php endif ?>
+							
+							<label class="col-sm-4 control-label" for="title"><?php echo $this->__('Title') ?></label>
+							<div class="col-sm-8">
+								<input type="text" name="title" class="input-text" id="title"<?php if($exist): ?> value="<?php echo $banner->getTitle() ?>"<?php endif ?>/>
+							</div>
+						</div>
+					
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="url"><?php echo $this->__('Link') ?></label>
+							<div class="col-sm-8">
+								<input type="text" name="url" class="input-text" id="url"<?php if($exist): ?> value="<?php echo $banner->getUrl() ?>"<?php endif ?>/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="button"><?php echo $this->__('Button') ?></label>
+							<div class="col-sm-8">
+								<input type="text" name="button" class="input-text" id="button" onchange="updateButton()"<?php if($exist): ?> value="<?php echo $banner->getButton() ?>"<?php endif ?>/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="filename"><?php echo $this->__('Background Image') ?></label>
+							<div class="col-sm-8">
+								<input type="file" name="filename" id="filename"/>
+							</div>
+						</div>
+					
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="content"><?php echo $this->__('Html Content') ?></label>
+							<div class="col-sm-8">
+								<textarea name="content" class="input-text" id="content" onchange="updateContent()"><?php if($exist): ?><?php echo $banner->getContent() ?><?php endif ?></textarea>
+							</div>
+						</div>
+					
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="text_algin"><?php echo $this->__('Text Align') ?></label>
+							<div class="col-sm-8">
+								<select name="text_align" class="required-entry input-text" id="text_align">
+									<option value="left"<?php if($exist && $banner->getTextAlign()=='left'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Left') ?></option>
+									<option value="center"<?php if($exist && $banner->getTextAlign()=='center'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Center') ?></option>
+									<option value="right"<?php if($exist && $banner->getTextAlign()=='right'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Right') ?></option>
+									<option value="top-left"<?php if($exist && $banner->getTextAlign()=='top-left'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Top Left') ?></option>
+									<option value="top-right"<?php if($exist && $banner->getTextAlign()=='top-right'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Top Right') ?></option>
+									<option value="bottom-left"<?php if($exist && $banner->getTextAlign()=='bottom-left'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Bottom Left') ?></option>
+									<option value="bottom-right"<?php if($exist && $banner->getTextAlign()=='bottom-right'): ?> selected="selected"<?php endif ?>><?php echo $this->__('Bottom Right') ?></option>
+									
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-<?php if($exist): ?><?php echo $child->getCol() ?><?php else: ?>12<?php endif ?>" id="promo-banner-temp">
+							<div class="promo-banner">
+								<div class="banner-position">
+									<div class="banner">
+										<div class="text-content" id="text_temp"><?php if($exist): ?><?php echo $banner->getContent() ?><?php endif ?></div>
+										<div class="button-content" id="button-container"<?php if(!$exist || ($exist && $banner->getButton()=='')): ?> style="display:none"<?php endif ?>>
+											<button class="btn btn-primary btn-promo-banner"><?php if($exist): ?><?php echo $banner->getButton() ?><?php endif ?></button>
+										</div>
+
+									</div>
+								</div>
+								<img class="img-responsive" src="<?php if($exist): ?><?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'promobanners/'.$banner->getFilename() ?><?php endif ?>" alt="" id="img_temp" style="width:100%"/>
+								<div class="banner-hover">
+									<a href="#">&nbsp;</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group builder-action">
+						<div class="col-md-12">
+							<div class="buttons">
+								<?php if(!$exist): ?>
+									<button onclick="history.go(-1)" class="btn btn-back" type="button">
+										<span><span><?php echo $this->__('Back') ?></span></span>
+									</button>
+								<?php endif ?>
+								<button id="submit-button" onclick="updateForm.submit(this)" class="btn btn-primary" type="button">
+									<span><span><?php echo $this->__('Submit') ?></span></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>	
+	<script type="text/javascript">
+		var updateForm = new VarienForm('edit_form');
+		updateForm.submit = function(button, url) {
+			if (this.validator.validate()) {
+				mgsjQuery('#submit-button span span').html('<?php echo $this->__('Saving...') ?>');
+				button.disabled = true;
+				var form = this.form;
+				var oldUrl = form.action;
+
+				if (url) {
+				   form.action = url;
+				}
+				var e = null;
+				try {
+					this.form.submit();
+				} catch (e) {
+				}
+				this.form.action = oldUrl;
+				if (e) {
+					throw e;
+				}
+				if (button && button != 'undefined') {
+					button.disabled = true;
+				}
+			}
+		}.bind(updateForm);
+	</script>	
+	
+	<script type="text/javascript">		
+		oldCol = 'col-sm-<?php if($exist): ?><?php echo $child->getCol() ?><?php else: ?>12<?php endif ?>';
+		
+		mgsjQuery('#filename').change( function(event) {		
+			var tmppath = URL.createObjectURL(event.target.files[0]);
+			mgsjQuery("#img_temp").attr('src',URL.createObjectURL(event.target.files[0]));		
+		});
+		
+		mgsjQuery("#content").keypress(function( event ){
+			updateContent();
+		});
+		
+		function updateContent(){
+			mgsjQuery('#text_temp').html(mgsjQuery("#content").val());
+		}
+		
+		function changeCol(col){
+			mgsjQuery('#promo-banner-temp').removeClass(oldCol);
+			mgsjQuery('#promo-banner-temp').addClass('col-sm-'+col);
+			oldCol = 'col-sm-'+col;
+		}	
+		
+		function toggleEl(el){
+			mgsjQuery('#'+el).slideToggle('fast');
+		}
+		
+		function chooserBanner(val){
+			toggleEl('new-banner-container'); 
+			toggleEl('exist-banner-container');
+			if(val=='exist'){
+				loadBannerContent();
+			}
+			else{
+				mgsjQuery("#img_temp").attr('src','');
+				mgsjQuery('#text_temp').html('');
+				mgsjQuery('#button-container button').html('');
+				mgsjQuery('#button-container').hide();
+			}
+		}
+		
+		function loadBannerContent(){
+			mgsjQuery.ajax({
+				url: '<?php echo $this->getUrl('mpanel/index/banner') ?>id/'+mgsjQuery('#exist_id').val(),
+				success: function(data, textStatus, xhr){
+					mgsjQuery('#promo-banner-temp').html(data);
+				}
+			});
+		}
+		
+		mgsjQuery("#button").keypress(function( event ){
+			updateButton();
+		});
+		
+		function updateButton(){
+			mgsjQuery('#button-container button').html(mgsjQuery("#button").val());
+			if(mgsjQuery('#button-container button').html()!=''){
+				mgsjQuery('#button-container').show();
+			}
+			else{
+				mgsjQuery('#button-container').hide();
+			}
+		}
+		
+		var currentAnimate = '';
+		<?php if($exist): ?>
+			currentAnimate = '<?php echo $settings['animation'] ?>';
+		<?php endif ?>
+		
+		function changeAnimationClass(animate){
+			if(currentAnimate!=''){
+				mgsjQuery('#animation-test').removeClass(currentAnimate);
+			}
+			mgsjQuery('#animation-test').addClass(animate);
+			currentAnimate = animate;
+		}
+	</script>
+<?php endif ?>
+
+<?php if(Mage::getSingleton('core/session')->getSaved()==1): ?>
+	<?php Mage::getSingleton('core/session')->setSaved(false); ?>
+	
+	<script type="text/javascript">
+		parent.loadHomepageContent();
+		if (window.parent == window.top) {
+			window.parent.mgsjQuery.magnificPopup.close();
+		}
+	</script>
+<?php endif ?>

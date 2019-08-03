@@ -1,0 +1,106 @@
+<?php $helper = $this->helper('mpanel') ?>
+<?php $layouts = $helper->getHomeLayouts() ?>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/tooltipster.css') ?>" />
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.tooltipster.js') ?>"></script>
+<form action="<?php echo $this->getUrl('mpanel/post/layout') ?>" method="POST" id="panel-form" enctype="multipart/form-data">
+    <input type="hidden" name="current_url" value="<?php echo Mage::helper('core/url')->getCurrentUrl() ?>"/>
+    <input type="hidden" name="status" id="configstatus"/>
+    <div class="col-md-7 col-sm-4 col-xs-4">
+        <div class="row">
+            <div id="settings" class="panel-group">
+                <div class="panel">
+                    <div class="general-setting">
+                        <a data-toggle="collapse" data-parent="#settings" href="#general-setting" class="collapsed"><em class="fa fa-gear"></em></a>
+                        <h2 class="title">
+                            <?php echo $this->__('Homepage') ?>
+                        </h2>
+                    </div>
+                    <div class="homepage-config">
+                        <?php echo $helper->getHomepageConfigHtml() ?>
+                    </div>
+                    <div class="layout-button" id="layout-button">
+                        <a data-toggle="collapse" data-parent="#settings" href="#layout-setting" class="template-button collapsed"><em class="fa fa-th-large"></em>&nbsp;<?php echo $this->__('Template') ?></a>
+                    </div>
+                    <div class="seo-setting">
+                        <a data-toggle="collapse" data-parent="#settings" href="#seo-setting" class="collapsed"><em class="fa fa-globe"></em>&nbsp;<?php echo $this->__('SEO') ?></a>
+                    </div>
+                </div>
+
+                <div class="panel col-md-12">
+                    <div id="general-setting" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('mgs/mpanel/panel/general.phtml')->toHtml() ?>
+                        </div>
+                    </div>
+                    <div id="layout-setting" class="panel-collapse collapse">
+                        <div class="panel-body" id="builder-layouts">
+                            <?php if (count($layouts) > 0): ?>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2><?php echo $this->__('Choose homepage layout:') ?></h2>
+                                        <div id="layouts" class="row">
+                                            <?php $active = ''; ?>
+                                            <?php foreach ($layouts as $layout): ?>
+                                                <div class="item col-md-2">
+                                                    <div>
+                                                        <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA); ?>mpanel/home/<?php echo $layout->getName() ?>.png" alt="" class="img-responsive<?php if ($helper->isActiveLayout($layout->getName())): $active = $layout->getName(); ?> active<?php endif ?>" onclick="setLayout('<?php echo $layout->getName() ?>')" id="<?php echo $layout->getName() ?>"/>
+                                                    </div>
+                                                </div>
+                                                <?php if (Mage::getDesign()->getTheme('frontend') != 'default'): ?>
+                                                    <?php $filePath = Mage::getBaseDir() . '/skin/frontend/mgstheme/' . Mage::getDesign()->getTheme('frontend') . '/asset/layouts/' . $layout->getName() . '.png'; ?>
+                                                    <?php if (is_readable($filePath)): ?>
+														<?php $fileUrl = 'asset/layouts/' . $layout->getName() . '.png'; ?>
+                                                        <script type="text/javascript">
+                                                            mgsjQuery(document).ready(function() {
+                                                                mgsjQuery('#<?php echo $layout->getName() ?>').tooltipster({
+                                                                    content: mgsjQuery('<img src="<?php echo $this->getSkinUrl($fileUrl); ?>" alt=""/>'),
+                                                                    theme: 'layout-tooltip',
+                                                                    touchDevices: false,
+                                                                    trigger: 'hover',
+                                                                    position: 'right'
+                                                                });
+                                                            });
+                                                        </script>
+                                                    <?php endif ?>
+                                                <?php endif ?>
+                                            <?php endforeach ?>
+
+                                        </div>
+                                        <input type="hidden" name="layout" value="<?php echo $active ?>" id="layout-input"/>
+
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button class="btn btn-primary" type="submit"><span><span><?php echo $this->__('Update') ?></span></span></button>
+                                    </div>
+                                </div>
+                            <?php endif ?>
+                        </div>
+                    </div>
+
+                    <div id="seo-setting" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('mgs/mpanel/panel/seo.phtml')->toHtml() ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 col-sm-4 col-xs-4">
+        <a href="<?php echo $this->getUrl('adminhtml') ?>" class="backend-link" title="<?php echo $this->__('Go to backend') ?>" target="_blank">
+            <?php echo $this->__('Admin') ?><em class="fa fa-user"></em>
+        </a>
+        <?php echo $this->getLayout()->createBlock('page/switch')->setTemplate('mgs/mpanel/languages.phtml')->toHtml() ?>
+
+        <?php if (Mage::getStoreConfig('dev/translate_inline/active')): ?>
+            <a href="<?php echo $this->getUrl('mpanel/index/translate', array('value' => 0, 'referrer' => Mage::helper('core/url')->getCurrentBase64Url())) ?>" class="translate-link" title="<?php echo $this->__('Disable Translate Inline') ?>">
+                <?php echo $this->__('Disable Translate Inline') ?>&nbsp;<em class="fa fa-book"></em>
+            </a>
+        <?php else: ?>
+            <a href="<?php echo $this->getUrl('mpanel/index/translate', array('value' => 1, 'referrer' => Mage::helper('core/url')->getCurrentBase64Url())) ?>" class="translate-link" title="<?php echo $this->__('Enable Translate Inline') ?>">
+                <?php echo $this->__('Enable Translate Inline') ?>&nbsp;<em class="fa fa-book"></em>
+            </a>
+        <?php endif ?>
+    </div>
+</form>

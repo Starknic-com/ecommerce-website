@@ -1,0 +1,54 @@
+<?php $tabs = $this->getTabs(); $tabs = explode(',', $tabs) ?>
+
+<div id="product_tabs" class="tabbable block-tabs">
+	<ul class="nav nav-tabs">
+		<?php $i=0; foreach($tabs as $_tab): $i++?>
+			<li<?php if($i==1): ?> class="active"<?php endif ?>>
+				<a href="#box-<?php echo $_tab ?>" data-toggle="tab">					
+					<?php echo $this->helper('mpanel')->changeTabTitle($_tab) ?>					
+				</a>
+			</li>
+		<?php endforeach ?>
+	</ul>
+	<div class="tab-content">
+		<?php $i=0; foreach($tabs as $_tab): $i++;?>
+			<div class="tab-pane<?php if($i==1): ?> active<?php endif ?>" id="<?php echo "box-".$_tab ?>">
+				<?php if($_tab != 'new_products'): ?>
+				<?php 
+					$html = $this->getLayout()
+								->createBlock('mpanel/products')
+								->setTitle('')
+								->setProductsCount($this->getProductsCount())
+								->setSlider($this->getSlider())
+								->setCountPerRow($this->getCountPerRow())
+								->setAutoPlay($this->getAutoPlay())
+								->setStopHover($this->getStopHover())
+								->setNavigation($this->getNavigation())
+								->setPagination($this->getPagination())
+								->setTemplate('mgs/mpanel/products/'.$_tab.'.phtml')
+								->toHtml();
+					
+				?>
+				<?php else: ?>
+				<?php 
+					$html = $this->getLayout()
+								->createBlock('catalog/product_widget_new')
+								->setTitle('')
+								->setDisplayType('new_products')
+								->setProductsCount($this->getProductsCount())
+								->setSlider($this->getSlider())
+								->setCountPerRow($this->getCountPerRow())
+								->setAutoPlay($this->getAutoPlay())
+								->setStopHover($this->getStopHover())
+								->setNavigation($this->getNavigation())
+								->setPagination($this->getPagination())
+								->setTemplate('mgs/mpanel/products/new_products.phtml')
+								->toHtml();
+					
+				?>
+				<?php endif ?>
+				<?php echo $html; ?>
+			</div>
+		<?php endforeach ?>
+	</div>
+</div>
