@@ -1,0 +1,5 @@
+a:4:{i:0;s:53:"Mage registry key "application_params" already exists";i:1;s:384:"#0 /home/s2mwodk5cbfq/public_html/app/Mage.php(223): Mage::throwException('Mage registry k...')
+#1 /home/s2mwodk5cbfq/public_html/app/code/core/Mage/Core/Model/App.php(349): Mage::register('application_par...', Array)
+#2 /home/s2mwodk5cbfq/public_html/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#3 /home/s2mwodk5cbfq/public_html/index.php(85): Mage::run('', 'store')
+#4 {main}";s:3:"url";s:28:"/index.php/api/v2_soap/?wsdl";s:11:"script_name";s:10:"/index.php";}

@@ -1,0 +1,10 @@
+a:5:{i:0;s:39:"This product is currently out of stock.";i:1;s:1253:"#0 /home/s2mwodk5cbfq/public_html/app/code/core/Mage/Sales/Model/Quote.php(1022): Mage::throwException('This product is...')
+#1 /home/s2mwodk5cbfq/public_html/app/code/core/Mage/Sales/Model/Quote.php(1046): Mage_Sales_Model_Quote->addProductAdvanced(Object(MGS_Abrands_Model_Product), 1, 'full')
+#2 /home/s2mwodk5cbfq/public_html/app/code/local/Starknic/Starknic/controllers/CartController.php(32): Mage_Sales_Model_Quote->addProduct(Object(MGS_Abrands_Model_Product), 1)
+#3 /home/s2mwodk5cbfq/public_html/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Starknic_Starknic_CartController->musicbulbAction()
+#4 /home/s2mwodk5cbfq/public_html/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('musicbulb')
+#5 /home/s2mwodk5cbfq/public_html/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#6 /home/s2mwodk5cbfq/public_html/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#7 /home/s2mwodk5cbfq/public_html/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#8 /home/s2mwodk5cbfq/public_html/index.php(83): Mage::run('', 'store')
+#9 {main}";s:3:"url";s:34:"/index.php/checkout/cart/musicbulb";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}
