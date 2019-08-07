@@ -42,7 +42,7 @@
                 <connection>
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[ashokm710]]></username>
-                    <password><![CDATA[Ashok3071!]]></password>
+                    <password><![CDATA[ashok307]]></password>
                     <dbname><![CDATA[starknic]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
