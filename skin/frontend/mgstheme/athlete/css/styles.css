@@ -6063,8 +6063,13 @@ ul#payment_form_ccavenuepay > p {
 @media only screen and (max-height: 639px) {
     .checkout-footer{
         position: absolute;
-        bottom: 0;
+        bottom: auto;
         width: 100%;
+    }
+}
+@media only screen and (max-width: 349px) {
+    div#footer3 {
+        font-size: 11px;
     }
 }
 @media only screen and (min-width: 601px) {

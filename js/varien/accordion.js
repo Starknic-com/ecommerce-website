@@ -91,6 +91,7 @@ Accordion.prototype = {
                        document.getElementById("footer").classList.remove("checkout-footer");
                 }
             } else {
+		if((window.innerHeight != null? window.innerHeight : document.documentElement && document.documentElement.clientHeight ?  document.documentElement.clientHeight : document.body != null? document.body.clientHeight : null) >= 640)
                 document.getElementById("footer").classList.remove("checkout-footer");
             }
         } else {
@@ -112,6 +113,7 @@ Accordion.prototype = {
                            document.getElementById("footer").classList.remove("checkout-footer");
                     }
                 } else {
+		    if((window.innerHeight != null? window.innerHeight : document.documentElement && document.documentElement.clientHeight ?  document.documentElement.clientHeight : document.body != null? document.body.clientHeight : null) >= 640)
                     document.getElementById("footer").classList.remove("checkout-footer");
                 }
             };
