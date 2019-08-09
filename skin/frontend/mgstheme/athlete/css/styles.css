@@ -6060,6 +6060,13 @@ p.required {
 ul#payment_form_ccavenuepay > p {
     display: none;
 }
+@media only screen and (max-height: 639px) {
+    .checkout-footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
 @media only screen and (min-width: 601px) {
 	nav.mobile-myaccount.megamenu.navbar-collapse.bs-navbar-collapse.navbar-right.mainnav.col-md-10 {
 		display: none;
